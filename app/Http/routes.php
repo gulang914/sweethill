@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::get('index',function (){
     return view('Admin\Index\index');
 });
+//显示登陆页面
+Route::get('admin/login','Admin\LoginController@login');
+//处理登陆操作
+Route::post('admin/handle','Admin\LoginController@handle');
+//获取验证码
+Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
