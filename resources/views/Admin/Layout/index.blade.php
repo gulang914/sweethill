@@ -10,25 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="icon" type="image/png" href="model/admin/assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="model/admin/assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="/model/admin/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/model/admin/assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
-    <script src="model/admin/assets//js/echarts.min.js"></script>
-    <link rel="stylesheet" href="model/admin/assets/css/amazeui.min.css" />
-    <link rel="stylesheet" href="model/admin/assets/css/amazeui.datatables.min.css" />
-    <link rel="stylesheet" href="model/admin/assets/css/app.css">
-    <script src="model/admin/assets//js/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="/model/admin/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/model/admin/assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="/model/admin/assets/css/app.css">
+    <script src="/model/admin/assets/js/jquery.min.js"></script>
+    <script src="/model/admin/assets/js/echarts.min.js"></script>
 </head>
 
 <body data-type="index">
-    <script src="model/admin/assets//js/theme.js"></script>
+    <script src="/model/admin/assets/js/theme.js"></script>
     <div class="am-g tpl-g">
         <!-- 头部 -->
         <header>
             <!-- logo -->
             <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="model/admin/assets//img/logo.png" alt=""></a>
+                <a href="javascript:;"><img src="/model/admin/assets/img/logo.png" alt=""></a>
             </div>
             <!-- 右侧内容 -->
             <div class="tpl-header-fluid">
@@ -64,7 +63,7 @@
                                 <li class="tpl-dropdown-menu-messages">
                                     <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
                                         <div class="menu-messages-ico">
-                                            <img src="model/admin/assets//img/user04.png" alt="">
+                                            <img src="/model/admin/assets/img/user04.png" alt="">
                                         </div>
                                         <div class="menu-messages-time">
                                             3小时前
@@ -83,7 +82,7 @@
                                 <li class="tpl-dropdown-menu-messages">
                                     <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
                                         <div class="menu-messages-ico">
-                                            <img src="model/admin/assets//img/user02.png" alt="">
+                                            <img src="/model/admin/assets/img/user02.png" alt="">
                                         </div>
                                         <div class="menu-messages-time">
                                             5天前
@@ -189,7 +188,7 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="model/admin/assets//img/user04.png" alt="">
+                        <img src="/model/admin/assets/img/user04.png" alt="">
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
@@ -206,22 +205,40 @@
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
-                
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="table-list.html">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="table-list-img.html">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
 
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
-
-           
+            @section('content')
+           @show
         </div>
     </div>
     </div>
-    <script src="model/admin/assets//js/amazeui.min.js"></script>
-    <script src="model/admin/assets//js/amazeui.datatables.min.js"></script>
-    <script src="model/admin/assets//js/dataTables.responsive.min.js"></script>
-    <script src="model/admin/assets//js/app.js"></script>
+    <script src="/model/admin/assets/js/amazeui.min.js"></script>
+    <script src="/model/admin/assets/js/amazeui.datatables.min.js"></script>
+    <script src="/model/admin/assets/js/dataTables.responsive.min.js"></script>
+    <script src="/model/admin/assets/js/app.js"></script>
 
 </body>
 

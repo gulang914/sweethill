@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class GoodsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +16,19 @@ class IndexController extends Controller
      */
     public function index()
     {
-       return view('Admin/Index/index');
+        //
+        return view('Admin/Goods/index');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 加载添加页面
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
-        dd(456);
+        return view('Admin/Goods/create');
     }
 
     /**

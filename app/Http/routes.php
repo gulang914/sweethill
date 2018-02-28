@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('index',function (){
     return view('Admin\Index\index');
 });
+//后台界面
+Route::resource('admin/index','Admin\IndexController');
+//商品页面
+Route::resource('admin/goods','Admin\GoodsController');
