@@ -18,7 +18,26 @@ Route::get('/', function () {
 Route::get('index',function (){
     return view('Admin\Index\index');
 });
+
 //后台界面
 Route::resource('admin/index','Admin\IndexController');
 //商品页面
 Route::resource('admin/goods','Admin\GoodsController');
+
+//显示登陆页面
+Route::get('admin/login','Admin\LoginController@login');
+//处理登陆操作
+Route::post('admin/handle','Admin\LoginController@handle');
+//获取验证码
+Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
+
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],function(){	
+
+	//后台首页
+	Route::get('index','IndexController@index');
+	//退出登录
+	Route::get('logout','LoginController@logout');
+
+});
+

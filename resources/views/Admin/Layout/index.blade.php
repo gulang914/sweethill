@@ -159,7 +159,7 @@
 
                         <!-- 退出 -->
                         <li class="am-text-sm">
-                            <a href="javascript:;">
+                            <a href="/admin/logout">
                                 <span class="am-icon-sign-out"></span> 退出
                             </a>
                         </li>
@@ -239,7 +239,6 @@
     <script src="/model/admin/assets/js/amazeui.datatables.min.js"></script>
     <script src="/model/admin/assets/js/dataTables.responsive.min.js"></script>
     <script src="/model/admin/assets/js/app.js"></script>
-
 </body>
 
 </html>
