@@ -24,6 +24,6 @@ Route::get('admin/login','Admin\LoginController@login');
 //处理登陆操作
 Route::post('admin/handle','Admin\LoginController@handle');
 //获取验证码
-Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
+Route::get('/admin/code/out/{tmp}', 'Admin\LoginController@captcha');
 //后台首页
 Route::get('admin/index','Admin\IndexController@index');
