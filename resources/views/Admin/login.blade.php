@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="am-form-group">
-                        <input type="password" class="tpl-form-input" name="password" id="user-name" placeholder="请输入密码">
+                        <input type="password" class="tpl-form-input" name="password" id="user-pass" placeholder="请输入密码">
 
                     </div>
                     <div class="am-form-group">
