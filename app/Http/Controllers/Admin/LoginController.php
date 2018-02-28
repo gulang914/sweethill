@@ -32,12 +32,13 @@ class LoginController extends Controller
     {
         //获取表单提交的数据
         $input = $request->except('_token');
-
+        //表单验证规则
         $rule = [
             'username' => 'required|between:5,18',
             'password' => 'required|between:5,20|alpha_dash',
             'captcha' => 'required'
         ];
+        //表单验证错误信息
         $msg = [
             'username.required' => '用户名是必填的哟',
             'password.required'  => '密码是必填的哟',
@@ -46,8 +47,9 @@ class LoginController extends Controller
             'password.between'  => '密码长度必须在5-20位之间哟',
             'password.alpha_dash'  => '密码格式不对哟',
         ];
-        $validator = Validator::make($input, $rule, $msg);
-
+        //执行表单验证
+        $validator = Validator::make($input, $rule, $msg); 
+        //如果验证错误 返回登录页面 并保存闪存
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
@@ -99,7 +101,16 @@ class LoginController extends Controller
         // 生成图片
         header("Cache-Control: no-cache, must-revalidate");
         header("Content-Type:image/jpeg");
-        $builder->save('admin/code/out.jpg');
         $builder->output();
+    }
+
+    //退出登录
+    public function logout()
+    {
+        // dd(session('user'));
+        //清空用户信息
+        session()->flush();
+        //退出到登录页面
+        return redirect('admin/login');
     }
 }

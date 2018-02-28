@@ -25,5 +25,13 @@ Route::get('admin/login','Admin\LoginController@login');
 Route::post('admin/handle','Admin\LoginController@handle');
 //获取验证码
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
-//后台首页
-Route::get('admin/index','Admin\IndexController@index');
+
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],function(){	
+
+	//后台首页
+	Route::get('index','IndexController@index');
+	//退出登录
+	Route::get('logout','LoginController@logout');
+
+});

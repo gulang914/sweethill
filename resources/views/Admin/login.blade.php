@@ -22,7 +22,8 @@
 
 <body data-type="login">
     <script src="/Admin/js/theme.js"></script>
-    <script type="text/javascript">  
+    <script type="text/javascript"> 
+    //点击切换验证码的js代码 
     function re_captcha() {  
         $url = "{{ URL('/code/captcha') }}";
         $url = $url + "/" + Math.random();

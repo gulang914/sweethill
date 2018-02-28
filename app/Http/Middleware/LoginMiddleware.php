@@ -15,6 +15,11 @@ class LoginMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        //如果没有登录 返回登录页面
+        if(!session('user')) {
+            return redirect('admin/login');
+        }
+        //登录之后执行下一步操作
+        return $next($request); 
     }
 }
