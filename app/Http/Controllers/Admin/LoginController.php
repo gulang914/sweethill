@@ -54,7 +54,7 @@ class LoginController extends Controller
         // 验证是否存在用户
         $user = User::where('username',$input['username'])->first();
         if(empty($user)) {
-            return back()->withErrors('用户不存在');
+            return back()->withErrors('用户不存在')->withInput();
         }
         //数据库里的密码
         $upass = $user->password;
@@ -63,13 +63,18 @@ class LoginController extends Controller
         // 判断密码是否一致
         if (!Hash::check($password , $upass))
         {
-            return back()->withErrors('两次密码不一致');
+            return back()->withErrors('两次密码不一致')->withInput();
         }
 
         //验证码验证
         if ($input['captcha'] != Session::get('code')) {
-            return back()->withErrors('验证码不正确');
+            return back()->withErrors('验证码不正确')->withInput();
         }
+
+        //登陆成功以后把数据存到session
+        session()->put('user',$input);
+
+        return redirect('admin/index');
     }
     
     // 验证码生成
@@ -94,6 +99,7 @@ class LoginController extends Controller
         // 生成图片
         header("Cache-Control: no-cache, must-revalidate");
         header("Content-Type:image/jpeg");
+        $builder->save('admin/code/out.jpg');
         $builder->output();
     }
 }

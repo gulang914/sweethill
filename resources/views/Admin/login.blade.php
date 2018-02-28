@@ -75,7 +75,7 @@
                     <div class="am-form-group">
                         <input name="captcha" type="text" placeholder="验证码" style="width:180px;float:left;">  
                         <a style="float:right;" onclick="javascript:re_captcha();">  
-                            <img src="{{ URL('/code/captcha/1') }}" id="127ddf0de5a04167a9e427d883690ff6">  
+                            <img src="/admin/code/out.jpg" id="127ddf0de5a04167a9e427d883690ff6">  
                         </a> 
                     </div>
 
