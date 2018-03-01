@@ -269,7 +269,7 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="/admin/order">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 订单列表
                             </a>
                         </li>

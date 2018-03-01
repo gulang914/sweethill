@@ -34,12 +34,38 @@ Route::post('admin/handle','Admin\LoginController@handle');
 Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
 
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],function(){	
+// Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],function(){	
 
-	//后台首页
-	Route::get('index','IndexController@index');
-	//退出登录
-	Route::get('logout','LoginController@logout');
+// 	//后台首页
+// 	Route::get('index','IndexController@index');
+// 	//退出登录
+// 	Route::get('logout','LoginController@logout');
 
-});
+// });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//后台订单路由
+Route:resource('admin/order','Admin\OrderController');
