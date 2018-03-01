@@ -19,10 +19,12 @@ Route::get('index',function (){
     return view('Admin\Index\index');
 });
 
-//后台界面
+//后台主界面路由
 Route::resource('admin/index','Admin\IndexController');
-//商品页面
+//商品路由
 Route::resource('admin/goods','Admin\GoodsController');
+//分页路由
+Route::resource('admin/cate','Admin\CateController');
 
 //显示登陆页面
 Route::get('admin/login','Admin\LoginController@login');
