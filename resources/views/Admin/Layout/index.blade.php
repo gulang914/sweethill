@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>Sweet Hill 甜丘后台</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
         <header>
             <!-- logo -->
             <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="/model/admin/assets/img/logo.png" alt=""></a>
+                <a href="javascript:;"><img src="/model/admin/assets/img/logoa.jpg" width="240px" alt=""></a>
             </div>
             <!-- 右侧内容 -->
             <div class="tpl-header-fluid">
@@ -49,7 +49,7 @@
                     <ul>
                         <!-- 欢迎语 -->
                         <li class="am-text-sm tpl-header-navbar-welcome">
-                            <a href="javascript:;">欢迎你, <span>用户名</span> </a>
+                            <a href="javascript:;">欢迎回家, <span>用户名</span> </a>
                         </li>
 
                         <!-- 新邮件 -->
@@ -71,10 +71,10 @@
                                         <div class="menu-messages-content">
                                             <div class="menu-messages-content-title">
                                                 <i class="am-icon-circle-o am-text-success"></i>
-                                                <span>夕风色</span>
+                                                <span>某某某</span>
                                             </div>
-                                            <div class="am-text-truncate"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </div>
-                                            <div class="menu-messages-content-time">2016-09-21 下午 16:40</div>
+                                            <div class="am-text-truncate"> 山川湖海 甜丘与你 </div>
+                                            <div class="menu-messages-content-time">2018-03-01 下午 23:30</div>
                                         </div>
                                     </a>
                                 </li>
@@ -90,10 +90,10 @@
                                         <div class="menu-messages-content">
                                             <div class="menu-messages-content-title">
                                                 <i class="am-icon-circle-o am-text-warning"></i>
-                                                <span>禁言小张</span>
+                                                <span>用户名</span>
                                             </div>
-                                            <div class="am-text-truncate"> 为了能最准确的传达所描述的问题， 建议你在反馈时附上演示，方便我们理解。 </div>
-                                            <div class="menu-messages-content-time">2016-09-16 上午 09:23</div>
+                                            <div class="am-text-truncate"> 走进甜丘 你我依旧 </div>
+                                            <div class="menu-messages-content-time">2018-03-01 下午 23:30</div>
                                         </div>
                                     </a>
                                 </li>
@@ -192,7 +192,7 @@
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              禁言小张
+              某某某
           </span>
                     <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
                 </div>
