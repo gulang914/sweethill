@@ -31,7 +31,7 @@
                                 <td>
                                     <div class="tpl-table-black-operation">
                                         <a href="javascript:;">
-                                            <i class="am-icon-pencil"></i> 编辑
+                                            <i class="am-icon-pencil"></i> 添加子分类
                                         </a>
                                         <a href="javascript:;" class="tpl-table-black-operation-del">
                                             <i class="am-icon-trash"></i> 删除
