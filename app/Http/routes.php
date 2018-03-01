@@ -33,11 +33,14 @@ Route::get('/code/captcha/{tmp}', 'Admin\LoginController@captcha');
 
 
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],function(){	
-
+	//登录
 	//后台首页
 	Route::get('index','IndexController@index');
 	//退出登录
 	Route::get('logout','LoginController@logout');
-
+	//用户
+	Route::resource('user','UserController');
+	//状态
+	Route::get('status/{id}','StatusController@status');
 });
 

@@ -52,7 +52,11 @@
 
                 </div>
 
-
+                <script type="text/javascript">
+                    $(".alert").click(function() {
+                        $(".alert").hide("slow");
+                    });
+                </script>
                  @if (count($errors) > 0)
                     <div class="alert alert-danger" style="color:red;">
                         <ul>

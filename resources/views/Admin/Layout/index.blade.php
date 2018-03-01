@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="/model/admin/assets/css/app.css">
     <script src="/model/admin/assets/js/jquery.min.js"></script>
     <script src="/model/admin/assets/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/model/admin/assets/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+    <!-- <script type="text/javascript" src="/model/admin/assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="/model/admin/assets/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 </head>
 
 <body data-type="index">
@@ -224,9 +227,21 @@
                         </li>
                     </ul>
                 </li>
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 用户列表
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="{{url('/admin/user')}}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户首页
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
-
 
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
@@ -239,6 +254,11 @@
     <script src="/model/admin/assets/js/amazeui.datatables.min.js"></script>
     <script src="/model/admin/assets/js/dataTables.responsive.min.js"></script>
     <script src="/model/admin/assets/js/app.js"></script>
+    <script type="text/javascript">
+        $(".alert").click(function() {
+            $(".alert").hide("slow");
+        });
+    </script>
 </body>
 
 </html>
