@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>Sweet Hill 甜丘后台</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +49,7 @@
 
             <div class="tpl-login-content">
                 <div class="tpl-login-logo">
-
+                    <img src="/model/admin/assets/img/logo.jpg" width="220px">
                 </div>
 
                 <script type="text/javascript">
