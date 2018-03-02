@@ -52,7 +52,11 @@
 
                 </div>
 
-
+                <script type="text/javascript">
+                    $(".alert").click(function() {
+                        $(".alert").hide("slow");
+                    });
+                </script>
                  @if (count($errors) > 0)
                     <div class="alert alert-danger" style="color:red;">
                         <ul>
@@ -70,7 +74,7 @@
                     </div>
 
                     <div class="am-form-group">
-                        <input type="password" class="tpl-form-input" name="password" id="user-name" placeholder="请输入密码">
+                        <input type="password" class="tpl-form-input" name="password" id="user-pass" placeholder="请输入密码">
 
                     </div>
                     <div class="am-form-group">
