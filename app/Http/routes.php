@@ -23,8 +23,12 @@ Route::get('index',function (){
 Route::resource('admin/index','Admin\IndexController');
 //商品路由
 Route::resource('admin/goods','Admin\GoodsController');
-//分页路由
+//分类路由
 Route::resource('admin/cate','Admin\CateController');
+//添加子分类路由
+Route::get('admin/cate/created/{id}','Admin\CateController@created');
+Route::post('admin/cate/docreate','Admin\CateController@docreate');
+
 
 //显示登陆页面
 Route::get('admin/login','Admin\LoginController@login');

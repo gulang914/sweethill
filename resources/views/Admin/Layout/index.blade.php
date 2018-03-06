@@ -229,13 +229,13 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{url('/admin/cate')}}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 分类列表
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="table-list-img.html">
+                            <a href="/admin/cate/create">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 添加分类
                             </a>
                         </li>
@@ -248,13 +248,13 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{url('/admin/goods')}}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 商品列表
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="table-list-img.html">
+                            <a href="/admin/goods/create">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 添加商品
                             </a>
                         </li>

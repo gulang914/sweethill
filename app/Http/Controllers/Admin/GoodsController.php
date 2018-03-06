@@ -17,7 +17,7 @@ class GoodsController extends Controller
     public function index()
     {
         //
-        return view('Admin/Goods/index');
+        return view('Admin/Goods/list');
     }
 
     /**
