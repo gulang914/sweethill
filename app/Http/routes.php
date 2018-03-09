@@ -44,5 +44,18 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],func
 	Route::resource('user','UserController');
 	//状态
 	Route::get('status/{id}','StatusController@status');
+	//异步文件上传
+	Route::post('user/uploads', 'UploadController@uploads');
+	//站点配置
+	Route::get('set/alter','SetController@alter');
+	Route::post('set/amend','SetController@amend');
+	Route::post('set/cajax','SetController@cajax');
+	Route::get('set/delete','SetController@delete');
+	Route::post('set/remove','SetController@remove');
+	Route::resource('set','SetController');
+	//友情链接
+	Route::resource('link','LinkController');
+	//导航
+	Route::resource('gps','GpsController');
 });
 

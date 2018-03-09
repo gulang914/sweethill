@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sweet Hill 甜丘后台</title>
     <meta name="description" content="这是一个 index 页面">
@@ -307,20 +308,19 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{url('/admin/gps')}}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 导航列表
-                                =======
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                    <a href="{{url('/admin/link')}}" class="sidebar-nav-sub-title">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 友情链接
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="index.html" class="active">
+                    <a href="{{url('/admin/set')}}" class="active">
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 网站配置
                     </a>
                 </li>
