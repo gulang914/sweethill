@@ -2,67 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e60e216b-5b4e-4609-90a4-e8bf782e1df8" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309012641248.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309111827829.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309111926389.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309113859530.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309114214820.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309131134748.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180309131158300.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309012619226.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013115887.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013216417.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013301643.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013421337.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013510552.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013533342.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013547647.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013608234.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013728360.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309013936196.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014048635.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014131414.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014219279.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014441862.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014513897.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014518788.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014631389.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014730298.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309014818441.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309015117307.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309015514264.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309015826374.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309020029907.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309020432801.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309020803972.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309020930737.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309021130578.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180309021209903.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GpsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LinkController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SetController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UploadController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/NavController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/gps.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/link.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Link/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Link/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Link/list.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/gps/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/gps/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/gps/list.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/set/alter.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/set/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/set/delete.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/set/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/03a7ad6e49a0036eb2dbeaa190afa35f.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/08deb58f52846f5bbd5c0de50f48ae7f.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/1ee6ad6040ecb052b85de1cd9a0122ef.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/277d053af00c0b730c070317685ff6d0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/2892f9b4d254ba17473d93dc56a98265.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/3ec04d4152a447e2d09e64dbe76dc7f1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/40b70044f49041560b03abe2362f7a27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/4b464421592c225fba78591408e9eed7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/4b56002ca0f42798b68a02b951cf3910.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/559c4e133813883e3f52a956c64d2778.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/5771132f80ec345dc41baf826c2e1971.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/5b6d7a9becdf2114adef3ba97ca55614.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/6915de9181f91dcd3cbd99ce16d29934.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/6e9cbe7dadee55dee736ac1c28628960.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/74c5ae74de50c6261f81491acd48c8a5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/7c43274dbbe2cd4cffa4f3854da42713.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/8ba5f77d720058523afdff4454761075.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/9dff0d65b161e3c8da31ddb7756652e5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/9e583a1c5d939f5898c71bf7e1e35a88.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/9e71d02b930930384a96bf89e1f18429.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/a92474b62da3f5f43f545ef19f733d4a.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/b4f8361487885973914086fea40d3565.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/c0e14b8a1c1c6378ae104ff38ab64f79.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/c1c1dfcc9a8097fcf6f9cfbc92d26669.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/d2e939a0f688007974f0d78eb876f83c.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/adv/ebdc1d30fea41e203b04a0a9fa2722e3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdvController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarouselController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RecommendController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/Address.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/Adv.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/Carousel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/Order.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/model/Recommend.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Adv/adv.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Adv/advlist.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Adv/carousel.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Adv/carousellist.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Adv/recommend.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Adv/recommendlist.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Order/detail.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Admin/Order/list.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/User/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/User/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/User/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/User/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/User/list.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/User/list.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,18 +60,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1393">
-              <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -121,7 +94,6 @@
         <option value="$PROJECT_DIR$/resources/views/Admin/cate/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/cate/create1.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/cate/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/cate/list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/goods/create.blade.php" />
@@ -130,10 +102,11 @@
         <option value="$PROJECT_DIR$/app/model/Goods.php" />
         <option value="$PROJECT_DIR$/app/model/Label.php" />
         <option value="$PROJECT_DIR$/app/model/GoodsDetail.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/goods/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -405,97 +378,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sweethill" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -671,19 +554,19 @@
       <workItem from="1520386520375" duration="16101000" />
       <workItem from="1520481641698" duration="665000" />
       <workItem from="1520506439566" duration="26352000" />
-      <workItem from="1520605506253" duration="351000" />
+      <workItem from="1520605506253" duration="957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130132000" />
+    <option name="totallyTimeSpent" value="130738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="1" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16189112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16189112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681563" sideWeight="0.5083333" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -934,13 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/cate/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1039,16 +915,8 @@
         <state relative-caret-position="349">
           <caret line="119" column="90" lean-forward="false" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
           <folding>
-            <element signature="e#46#66#0#PHP" expanded="true" />
+            <element signature="e#46#66#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="48" column="67" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,10 +925,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="320" column="29" lean-forward="true" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1077">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1393">
-          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
           <folding />
         </state>
       </provider>

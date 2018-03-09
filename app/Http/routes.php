@@ -68,3 +68,17 @@ Route::resource('admin/cate','Admin\CateController');
 
 Route::get('admin/goods/created/{id}','Admin\GoodsController@created');
 Route::resource('admin/goods','Admin\GoodsController');
+
+
+//后台订单路由
+Route::resource('admin/order','Admin\OrderController');
+
+//后台广告模块文件上传路由
+Route::post('admin/upload','Admin\AdvController@upload');
+//后台广告模块路由
+Route::resource('admin/adv','Admin\AdvController');
+//后台轮播图模块路由
+Route::resource('admin/carousel','Admin\CarouselController');
+//后台推荐位模块路由
+Route::resource('admin/recommend','Admin\RecommendController');
+

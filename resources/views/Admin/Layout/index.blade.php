@@ -15,6 +15,7 @@
     <link rel="icon" type="image/png" href="/model/admin/assets/i/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/model/admin/assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="/model/admin/assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="/model/admin/assets/css/amazeui.datatables.min.css" />
     <link rel="stylesheet" href="/model/admin/assets/css/app.css">
@@ -216,22 +217,22 @@
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
+
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 用户管理
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
-                        <a href="{{url('/admin/user')}}">
-                            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户首页
-                        </a>
+                        <li class="sidebar-nav-link">
+                            <a href="{{url('/admin/user')}}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户首页
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
                         <i class="am-icon-table sidebar-nav-link-logo"></i> 分类管理
-
-                            <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
-                        </a>
-
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
@@ -273,7 +274,7 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{ url('admin/order') }}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 订单列表
                             </a>
                         </li>
@@ -286,21 +287,21 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{ url('admin/adv') }}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 广告位
                             </a>
                         </li>
                     </ul>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{ url('admin/carousel') }}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 轮播图
                             </a>
                         </li>
                     </ul>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{{ url('admin/recommend') }}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 推荐位
                             </a>
                         </li>
@@ -315,6 +316,8 @@
                         <li class="sidebar-nav-link">
                             <a href="{{url('/admin/gps')}}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 导航列表
+
+                            </a>
                         </li>
                     </ul>
                 </li>
