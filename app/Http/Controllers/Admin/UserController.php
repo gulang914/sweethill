@@ -127,7 +127,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        dump(Session('user_search'));
+        //dump(Session('user_search'));
         $user = User::find($id);
         return view('admin/user/edit',['user'=>$user]);
     }

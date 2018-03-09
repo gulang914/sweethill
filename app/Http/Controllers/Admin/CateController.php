@@ -37,6 +37,8 @@ class CateController extends Controller
         } else {
             $perPage = '2';
         }
+//        dump($search);
+//        dd($perPage);
         if(empty($search)) {
             $cates = Cate::paginate($perPage);
         } else {

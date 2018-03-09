@@ -82,19 +82,26 @@
 
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <form action="/admin/cate/created/{{$v->id}}" method="get" style="display:inline">
-                                                            {{--<input type="hidden" name="id" value="{{ $v->id }}">--}}
-                                                           <span class="am-icon-plus-square am-icon-sm" style="position:relative;">
-                                                                <input type="submit" style="position:absolute;opacity:0;top:0px;left:0px;" value="" >
-                                                           </span>
-                                                        </form>
+                                                        @if($v->pid == 0)
+                                                            <form action="/admin/cate/created/{{$v->id}}" method="get" style="display:inline">
+                                                                <span class="am-icon-plus-square am-icon-sm" title="添加子分类" style="position:relative;">
+                                                                    <input type="submit" style="position:absolute;opacity:0;top:0px;left:0px;" value="" >
+                                                               </span>
+                                                            </form>
+                                                        @else
+                                                            <form action="/admin/goods/created/{{ $v->id }}" method="get" style="display:inline">
+                                                                <span class="am-icon-plus-square am-icon-sm" title="添加商品" style="position:relative;">
+                                                                    <input type="submit" style="position:absolute;opacity:0;top:0px;left:0px;" value="" >
+                                                                    {{--<input type="hidden" name="id" value="{{ $v->id }}">--}}
+                                                               </span>
+                                                            </form>
+                                                        @endif
                                                         <form action="/admin/cate/{{$v['id']}}" style="display:inline" method="post">
                                                             {{csrf_field()}}
                                                             {{method_field('DELETE')}}
-                                                            <span class="am-icon-trash am-icon-sm" style="position:relative;">
+                                                            <span class="am-icon-trash am-icon-sm" title="删除分类" style="position:relative;">
                                                                 <input type="submit" style="position:absolute;opacity:0;top:0px;" value="" >
                                                             </span>
-
                                                         </form>
                                                     </div>
                                                 </td>
@@ -109,8 +116,8 @@
                                     <div class="am-fr" style="margin-right:300px;">
                                         <ul class="am-pagination tpl-pagination">
                                             <li class="am-disabled">
-                                                @if(!empty(Session('cates_search')) && !empty(Session('cates_perPage')))
-                                                {!! $cates->appends(['search'=>Session('cates_search'),'perPage'=>Session('cates_perPage')])->render() !!}
+                                                @if(!empty(Session('cate_search')) && !empty(Session('cate_perPage')))
+                                                {!! $cates->appends(['search'=>Session('cate_search'),'perPage'=>Session('cate_perPage')])->render() !!}
                                                 @else
                                                 {!! $cates->appends(['search'=>$search,'perPage'=>$perPage])->render() !!}
                                                 @endif

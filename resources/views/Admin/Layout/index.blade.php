@@ -9,6 +9,7 @@
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="icon" type="image/png" href="/model/admin/assets/i/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/model/admin/assets/i/app-icon72x72@2x.png">
@@ -16,6 +17,10 @@
     <link rel="stylesheet" href="/model/admin/assets/css/amazeui.min.css" />
     <link rel="stylesheet" href="/model/admin/assets/css/amazeui.datatables.min.css" />
     <link rel="stylesheet" href="/model/admin/assets/css/app.css">
+    <link rel="stylesheet" href="/upload/css/iconfont.css">
+    <link href="/upload/css/fileUpload.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/upload/js/fileUpload.js"></script>
+.
     <script src="/model/admin/assets/js/jquery.min.js"></script>
     <script src="/model/admin/assets/js/echarts.min.js"></script>
     <script type="text/javascript" src="/model/admin/assets/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>

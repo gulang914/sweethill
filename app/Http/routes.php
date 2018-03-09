@@ -19,16 +19,6 @@ Route::get('index',function (){
     return view('Admin\Index\index');
 });
 
-//后台主界面路由
-Route::resource('admin/index','Admin\IndexController');
-//商品路由
-Route::resource('admin/goods','Admin\GoodsController');
-//分类路由
-Route::resource('admin/cate','Admin\CateController');
-//添加子分类路由
-Route::get('admin/cate/created/{id}','Admin\CateController@created');
-Route::post('admin/cate/docreate','Admin\CateController@docreate');
-
 
 //显示登陆页面
 Route::get('admin/login','Admin\LoginController@login');
@@ -50,3 +40,18 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'login'],func
 	Route::get('status/{id}','StatusController@status');
 });
 
+//后台主界面路由
+Route::resource('admin/index','Admin\IndexController');
+//商品图片上传路由
+Route::post('admin/goods/upload','Admin\GoodsController@upload');
+Route::post('admin/goods/uploads','Admin\GoodsController@uploads');
+//商品详情添加路由
+Route::post('admin/goods/detail/{id}','Admin\GoodsController@detail');
+//分类路由
+//添加子分类路由
+Route::get('admin/cate/created/{id}','Admin\CateController@created');
+Route::post('admin/cate/docreate','Admin\CateController@docreate');
+Route::resource('admin/cate','Admin\CateController');
+
+Route::get('admin/goods/created/{id}','Admin\GoodsController@created');
+Route::resource('admin/goods','Admin\GoodsController');
