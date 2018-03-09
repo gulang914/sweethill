@@ -51,13 +51,19 @@
 						  <fieldset>
 						    <div class="am-form-group">
 							    <label for="doc-vld-name-2-1">用户名：</label>
-							    <!-- @if(!empty($search))
-                                <input type="hidden" name="search" value="{{$search}}">
-                               @endif
-                               @if(!empty($perPage))
-                                <input type="hidden" name="perPage" value="{{$perPage}}">
-                                @endif -->
 							    <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="5" maxlength="18" placeholder="输入用户名（5 - 18 个字符）" value="{{$user['username']}}" name="username" required/>
+						    </div>
+						    <div class="am-form-group">
+							    <label for="doc-vld-name-2-1">原头像：</label>
+							    <img style="width:120px;" src="{{$user['photo']}}">
+						    </div>
+						    <div class="am-form-group">
+						    	<input id="uploads" name="uploads" type="file">
+						    	<input type="hidden" name="photo" id="photo" value="">
+						    </div>
+						    <div class="am-form-group">
+							    <label for="doc-vld-name-2-1">预览：</label>
+							    <img id="users" style="width:120px;">
 						    </div>
 							<div class="am-form-group">
 							    <label for="doc-vld-name-2-1">原密码</label>
@@ -91,4 +97,51 @@
 			</div>
 		</div>
    	</div>
+<script type="text/javascript">
+	 $(function () {
+          $("#uploads").change(function () {
+              uploadImage();
+          });
+      });
+  function uploadImage() {
+  	// alert(1);
+ // 判断是否有选择上传文件
+  var imgPath = $("#uploads").val();
+  if (imgPath == "") {
+      alert("请选择上传图片！");
+      return;
+  }
+  //判断上传文件的后缀名
+  var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+  if (strExtension != 'jpg' && strExtension != 'gif' && strExtension != 'png' && strExtension != 'bmp') {
+      alert("请选择图片文件");
+      return;
+  }
+  //将整个表单打包进formData
+//                                          var formData = new FormData($('#art_forml'));
+//									  console.log(formData)
+	// var photo = document.getElementById('photo');
+  //只将上传文件打包进formData
+   var formData = new FormData();
+   formData.append('uploads',$('#uploads')[0].files[0]);
+   formData.append('_token','{{ csrf_token() }}');
+  $.ajax({
+      type: "POST",
+      url: "/admin/user/uploads",
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+          $('#users').attr('src',data);
+          $('#photo').val(data);
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+          alert("上传失败，请检查网络后重试");
+      }
+  });
+}
+</script>
 @endsection

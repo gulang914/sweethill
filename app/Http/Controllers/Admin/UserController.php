@@ -68,31 +68,8 @@ class UserController extends Controller
         $repass = $request->input('repass');
         //判断表单提交的密码和确认密码是否一致
         //表单提交的数据
-        $input = $request -> except('_token','repass');
-        // $rule = [
-        //     'username' => 'required|between:5,18',
-        //     'password' => 'required|between:5,20|alpha_dash',
-        //     'phone' => 'required|regex:/^1[34578]{1}[0-9]{9}$/',
-        //     'email' => 'required|email'
-        // ];
-        // //表单验证错误信息
-        // $msg = [
-        //     'username.required' => '用户名是必填的哟',
-        //     'password.required'  => '密码是必填的哟',
-        //     'phone.required'  => '手机号是必填的哟',
-        //     'email.required'  => '邮箱是必填的哟',
-        //     'username.between'  => '用户名长度必须在5-18位之间哟',
-        //     'password.between'  => '密码长度必须在5-20位之间哟',
-        //     'password.alpha_dash'  => '密码格式不对哟',
-        //     'phone.regex'  => '手机号格式不对哟',
-        //     'email.email'  => '邮箱格式不对哟',
-        // ];
-        // //执行表单验证
-        // $validator = Validator::make($input, $rule, $msg); 
-        // //如果验证错误 返回登录页面 并保存闪存
-        // if ($validator->fails()) {
-        //     return back()->withErrors($validator)->withInput();
-        // }
+        $input = $request -> except('_token','repass','uploads');
+        // dd($input);
         //判断表单提交的密码和确认密码是否一致
         if($input['password'] != $repass) {
             return back()->withErrors('两次密码不一致')->withInput();
@@ -127,7 +104,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //dump(Session('user_search'));
+
         $user = User::find($id);
         return view('admin/user/edit',['user'=>$user]);
     }
@@ -150,32 +127,7 @@ class UserController extends Controller
         //input表单提交的确认密码
         $repass = $request->input('repass');
         //input表单提交的数据
-        $input = $request->except('_token','repass','oldpass','_method','search','perPage');
-        // $rule = [
-        //     'username' => 'required|between:5,18',
-        //     'password' => 'required|between:5,20|alpha_dash',
-        //     'phone' => 'required|regex:/^1[34578]{1}[0-9]{9}$/',
-        //     'email' => 'required|email'
-        // ];
-        // //表单验证错误信息
-        // $msg = [
-        //     'username.required' => '用户名是必填的哟',
-        //     'password.required'  => '密码是必填的哟',
-        //     'phone.required'  => '手机号是必填的哟',
-        //     'email.required'  => '邮箱是必填的哟',
-        //     'username.between'  => '用户名长度必须在5-18位之间哟',
-        //     'password.between'  => '密码长度必须在5-20位之间哟',
-        //     'password.alpha_dash'  => '密码格式不对哟',
-        //     'phone.regex'  => '手机号格式不对哟',
-        //     'email.email'  => '邮箱格式不对哟',
-        // ];
-        // //执行表单验证
-        // $validator = Validator::make($input, $rule, $msg); 
-        // //如果验证错误 返回登录页面 并保存闪存
-        // if ($validator->fails()) {
-        //     return back()->withErrors($validator)->withInput();
-        // }
-
+        $input = $request->except('_token','repass','oldpass','_method','search','perPage','uploads');
         //判断确认密码和新密码是否一致
         if($repass != $input['password']) {
             return back()->withErrors('两次密码不一致');
@@ -210,7 +162,7 @@ class UserController extends Controller
         if($res) {
             return redirect('admin/user');
         } else {
-            return back();
+            return back()->withErrors('删除失败');
         }
     }
 }
