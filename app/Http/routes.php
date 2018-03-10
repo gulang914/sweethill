@@ -82,3 +82,8 @@ Route::resource('admin/carousel','Admin\CarouselController');
 //后台推荐位模块路由
 Route::resource('admin/recommend','Admin\RecommendController');
 
+
+//前台路由
+//前台首页
+Route::get('index','home\IndexController@index');
+Route::get('user','home\UserController@index');
