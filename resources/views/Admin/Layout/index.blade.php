@@ -261,8 +261,8 @@
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="/admin/goods/create">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 添加商品
+                            <a href="/admin/goods/recy">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 商品回收站
                             </a>
                         </li>
                     </ul>

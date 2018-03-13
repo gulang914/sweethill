@@ -1,19 +1,5 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//后台路由
 
 Route::get('index',function (){
     return view('Admin\Index\index');
@@ -58,15 +44,24 @@ Route::resource('admin/index','Admin\IndexController');
 //商品图片上传路由
 Route::post('admin/goods/upload','Admin\GoodsController@upload');
 Route::post('admin/goods/uploads','Admin\GoodsController@uploads');
-//商品详情添加路由
-Route::post('admin/goods/detail/{id}','Admin\GoodsController@detail');
+//商品详情资源路由
+Route::resource('admin/goodsdetal','Admin\GoodsDetalController');
 //分类路由
 //添加子分类路由
 Route::get('admin/cate/created/{id}','Admin\CateController@created');
+//添加子分类处理路由
 Route::post('admin/cate/docreate','Admin\CateController@docreate');
+//分类资源路由
 Route::resource('admin/cate','Admin\CateController');
-
+//商品回收站路由
+Route::get('admin/goods/recy','Admin\GoodsController@recy');
+//商品恢复路由
+Route::get('admin/goods/recy/{id}','Admin\GoodsController@recyc');
+//商品彻底删除路由
+Route::post('admin/goods/recyd/{id}','Admin\GoodsController@recyd');
+//商品详情添加页面路由
 Route::get('admin/goods/created/{id}','Admin\GoodsController@created');
+//商品资源路由
 Route::resource('admin/goods','Admin\GoodsController');
 
 

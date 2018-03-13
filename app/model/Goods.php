@@ -19,4 +19,8 @@ class Goods extends Model
     {
         return $this->hasOne('App\model\GoodsDetail','gid');
     }
+    //多对多关系商品表与标签表
+    public function label(){
+        return $this->belongsToMany('App\model\Label', 'goods_label', 'gid', 'tid');
+    }
 }

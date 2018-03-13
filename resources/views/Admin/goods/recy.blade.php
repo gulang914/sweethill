@@ -31,7 +31,6 @@
                             <div class="am-form-group">
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">
-
                                         <!-- <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
                                         <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
                                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button> -->
@@ -39,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="/admin/goods" method="get">
+                        <form action="/admin/goods/recy" method="get">
                             <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                 <div class="am-form-group tpl-table-list-select">
                                     <select data-am-selected="{btnSize: 'sm'}" name="perPage">
@@ -82,22 +81,15 @@
                                         <td>
 
                                             <div class="tpl-table-black-operation">
-                                                <form action="/admin/goods/{{$v['id']}}" method="get" title="商品详情" style="display:inline">
+                                                <form action="/admin/goods/recy/{{$v['id']}}" method="get" title="恢复" style="display:inline">
                                                     {{--<input type="hidden" name="id" value="{{ $v->id }}">--}}
-                                                    <span class="am-icon-cog am-icon-sm" style="position:relative;">
+                                                    <span class="am-icon-undo am-icon-sm" style="position:relative;">
                                                         <input type="submit" style="position:absolute;opacity:0;top:0px;left:0px;" value="" >
                                                    </span>
                                                 </form>&nbsp;&nbsp;&nbsp;
-                                                <form action="/admin/goods/{{$v['id']}}/edit" method="get" title="商品修改" style="display:inline">
-                                                    {{--<input type="hidden" name="id" value="{{ $v->id }}">--}}
-                                                    <span class="am-icon-plus-square am-icon-sm" style="position:relative;">
-                                                        <input type="submit" style="position:absolute;opacity:0;top:0px;left:0px;" value="" >
-                                                   </span>
-                                                </form>&nbsp;&nbsp;&nbsp;
-                                                <form action="/admin/goods/{{$v['id']}}" style="display:inline" title="加入回收站" method="post">
+                                                <form action="/admin/goods/recyd/{{$v['id']}}" style="display:inline" title="彻底删除" method="post">
                                                     {{csrf_field()}}
-                                                    {{method_field('DELETE')}}
-                                                    <span class="am-icon-trash-o am-icon-sm" style="position:relative;">
+                                                    <span class="am-icon-trash am-icon-sm" style="position:relative;">
                                                         <input type="submit" style="position:absolute;opacity:0;top:0px;" value="" >
                                                     </span>
 

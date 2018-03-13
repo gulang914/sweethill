@@ -28,7 +28,7 @@
 				  <fieldset>
 					<div class="am-form-group">
 						<label for="doc-vld-name-2-1">商品名称</label>
-						<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="输入商品名称" value="{{old('username')}}" name="goods_name" required/>
+						<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="输入商品名称" value="{{old('username')}}" name="goods_name" required/>
 					</div>
 					  <input type="hidden" name="cid" value="{{ $cid }}">
 					  <div class="am-form-group">

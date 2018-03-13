@@ -28,47 +28,47 @@
 				  <fieldset>
 					<div class="am-form-group">
 						<label for="doc-vld-name-2-1">商品名称</label>
-						<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" value="{{ $goods_name }}" name="goods_name" required/>
+						<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" value="{{ $goods_name }}" name="goods_name" required/>
 					</div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">商品销量</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入商品销量" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入商品销量" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">商品单价</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入商品单价" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入商品单价" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">商品库存</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入商品库存" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入商品库存" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">商品类型</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入商品类型" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入商品类型" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">商品配料</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入商品配料" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入商品配料" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">商品保质期</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入商品保质期" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入商品保质期" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">生产许可证编号</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入生产许可证编号" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入生产许可证编号" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">生产标准号</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入生产标准号" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入生产标准号" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">产品规格</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入产品规格" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入产品规格" value="" name="goods_name" required/>
 					  </div>
 					  <div class="am-form-group">
 						  <label for="doc-vld-name-2-1">产地</label>
-						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="请输入产地" value="" name="goods_name" required/>
+						  <input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="请输入产地" value="" name="goods_name" required/>
 					  </div>
 					  <input type="hidden" name="cid" value="{{ $goodsd->gid }}">
 
