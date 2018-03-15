@@ -66,6 +66,7 @@
                                         <thead>
                                             <tr>
                                                 <th>id </th>
+                                                <th>头像 </th>
                                                 <th>用户名</th>
                                                 <th>手机号</th>
                                                 <th>邮箱</th>
@@ -78,6 +79,10 @@
                                             @foreach($user as $k=>$v)
                                             <tr class="gradeX">
                                                 <td>{{$v['id']}} </td>
+                                                <!-- <td><img style="width:40px;" src="/upload/{{$v['photo']}}"></td> -->
+                                            <td>
+                                                <img style="width:40px;" src="{{$v['photo']}}">
+                                            </td>
                                                 <td>{{$v['username']}}</td>
                                                 <td>{{$v['phone']}}</td>
                                                 <td>{{$v['email']}}</td>
@@ -102,7 +107,7 @@
                                                             @endif
                                                         </a>
                                                         <form action="/admin/user/{{$v['id']}}/edit" method="get" style="display:inline">
-                                                           <span class="am-icon-edit am-icon-sm" style="position:relative;">
+                                                           <span class="am-icon-edit am-icon-sm" title="修改" style="position:relative;">
                                                            <input type="submit" style="position:absolute;opacity:0;top:0px;" value="" >
                                                            </span>
                                                            <!-- @if(!empty($search))
@@ -116,7 +121,7 @@
                                                             {{csrf_field()}}
                                                             {{method_field('DELETE')}}
 
-                                                           <span class="am-icon-trash am-icon-sm" style="position:relative;">
+                                                           <span class="am-icon-trash am-icon-sm" title="删除" style="position:relative;">
                                                            <input type="submit" style="position:absolute;opacity:0;top:0px;" value="" >
                                                            </span>
                                                             
