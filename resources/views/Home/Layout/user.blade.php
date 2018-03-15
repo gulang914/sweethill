@@ -11,9 +11,11 @@
     <link href="/model/home/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 
     <link href="/model/home/css/personal.css" rel="stylesheet" type="text/css">
-
+    @section('css')
+    @show
     <script src="/model/home/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="/model/home/AmazeUI-2.4.2/assets/js/amazeui.js" type="text/javascript"></script>
+
 
 </head>
 
@@ -24,14 +26,25 @@
         <div class="mt-logo">
             <!--顶部导航条 -->
             <div class="am-container header">
-                <ul class="message-l">
-                    <div class="topMessage">
-                        <div class="menu-hd">
-                            <a href="#" target="_top" class="h">亲，请登录</a>
-                            <a href="#" target="_top">免费注册</a>
-                        </div>
-                    </div>
-                </ul>
+        @if(empty(Session::get('users')))
+        <ul class="message-l">
+            <div class="topMessage">
+                <div class="menu-hd">
+                    <a href="{{url('/login')}}" target="_top" class="h">亲，请登录</a>
+                    <a href="{{url('/register')}}" target="_top">免费注册</a>
+                </div>
+            </div>
+        </ul>
+        @else
+        <ul class="message-l">
+            <div class="topMessage">
+                <div class="menu-hd">
+                    <a href="#" target="_top" class="h">尊敬的用户，{{Session::get('users')['nickname']}} 您好</a>
+                    <!-- <a href="#" target="_top">免费注册</a> -->
+                </div>
+            </div>
+        </ul>
+        @endif
                 <ul class="message-r">
                     <div class="topMessage home">
                         <div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
@@ -68,16 +81,59 @@
         </div>
     </article>
 </header>
-
-
-
-
-
-
-
+            <div class="nav-table">
+                       <div class="long-title"><span class="all-goods">全部分类</span></div>
+                       <div class="nav-cont">
+                            <ul>
+                                <li class="index"><a href="#">首页</a></li>
+                                <li class="qc"><a href="#">闪购</a></li>
+                                <li class="qc"><a href="#">限时抢</a></li>
+                                <li class="qc"><a href="#">团购</a></li>
+                                <li class="qc last"><a href="#">大包装</a></li>
+                            </ul>
+                            <div class="nav-extra">
+                                <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
+                                <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
+                            </div>
+                        </div>
+            </div>
+            <b class="line"></b>
 <div class="center">
     <div class="col-main">
         <div class="main-wrap">
+            @if (count($errors) > 0)
+                    <div class="alert alert-danger" style="color:red;">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <script type="text/javascript">
+                    $(function() {
+                      $('#doc-vld-msg').validator({
+                        onValid: function(validity) {
+                          $(validity.field).closest('.am-form-group').find('.am-alert').hide();
+                        },
+
+                        onInValid: function(validity) {
+                          var $field = $(validity.field);
+                          var $group = $field.closest('.am-form-group');
+                          var $alert = $group.find('.am-alert');
+                          // 使用自定义的提示信息 或 插件内置的提示信息
+                          var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+                          if (!$alert.length) {
+                            $alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+                              appendTo($group);
+                          }
+
+                          alert.html(msg).show();
+                        }
+                      });
+                    });
+                </script>
         @section('content')
         @show
         </div>
@@ -109,13 +165,13 @@
     <aside class="menu">
         <ul>
             <li class="person">
-                <a href="/model/home/index.html">个人中心</a>
+                <a href="/user/index">个人中心</a>
             </li>
             <li class="person">
-                <a href="#">个人资料</a>
+                <a href="/user/index">个人资料</a>
                 <ul>
-                    <li> <a href="/model/home/information.html">个人信息</a></li>
-                    <li> <a href="/model/home/safety.html">安全设置</a></li>
+                    <li> <a href="/user/create">个人信息</a></li>
+                    <li> <a href="/user/secure">安全设置</a></li>
                     <li> <a href="/model/home/address.html">收货地址</a></li>
                 </ul>
             </li>

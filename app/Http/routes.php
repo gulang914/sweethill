@@ -85,5 +85,61 @@ Route::resource('admin/recommend','Admin\RecommendController');
 
 //前台路由
 //前台首页
-Route::get('index','home\IndexController@index');
-Route::get('user','home\UserController@index');
+Route::group(['namespace'=>'home'],function(){	
+//前台首页
+Route::get('index','IndexController@index');
+
+//前台用户
+Route::get('user','UserController@index');
+
+// 前台登录页面显示
+Route::get('login','LoginController@login');
+
+// 前台注册页面显示
+Route::get('register','LoginController@register');
+
+//前台找回密码页面显示
+Route::get('pass','LoginController@pass');
+
+// 前台发送手机验证码
+Route::post('sendcode','LoginController@sendCode');
+
+// 前台处理注册操作
+Route::post('doRegister','LoginController@doRegister');
+
+// 前台处理登陆操作
+Route::post('doLogin','LoginController@doLogin');
+
+//前台找回密码处理
+Route::post('doPass','LoginController@doPass');
+
+//个人中心的显示
+Route::get('user/index','UserController@index');
+//个人信息的添加和修改页面的显示
+Route::get('user/create','UserController@create');
+//个人信息的添加和修改处理
+Route::post('user/userAlter','UserController@userAlter');
+//安全设置页面的显示
+Route::get('user/secure','UserController@secure');
+//修改密码页面显示
+Route::get('user/setpass','UserController@setPass');
+//修改密码操作
+Route::post('user/changepass','UserController@changePass');
+//修改支付密码的显示
+Route::get('user/paypass','UserController@payPass');
+//修改支付密码的操作
+Route::post('user/setPaypass','UserController@setPaypass');
+//手机换绑页面显示
+Route::get('user/phone','UserController@phone');
+//手机换绑操作
+Route::post('user/setphone','UserController@setPhone');
+//换绑新手机号页面
+Route::get('user/newphone','UserController@newPhone');
+//换绑新手机号操作
+Route::post('user/setnewphone','UserController@setNewPhone');
+//实名认证页面显示
+Route::get('user/autonym','UserController@autonym');
+//实名认证操作
+Route::post('user/setautonym','UserController@setAutonym');
+
+});

@@ -23,20 +23,31 @@
 <div class="hmtop">
     <!--顶部导航条 -->
     <div class="am-container header">
+        @if(empty(Session::get('users')))
         <ul class="message-l">
             <div class="topMessage">
                 <div class="menu-hd">
-                    <a href="#" target="_top" class="h">亲，请登录</a>
-                    <a href="#" target="_top">免费注册</a>
+                    <a href="{{url('/login')}}" target="_top" class="h">亲，请登录</a>
+                    <a href="{{url('/register')}}" target="_top">免费注册</a>
                 </div>
             </div>
         </ul>
+        @else
+        <ul class="message-l">
+            <div class="topMessage">
+                <div class="menu-hd">
+                    <a href="#" target="_top" class="h">尊敬的用户，{{Session::get('users')['nickname']}} 您好</a>
+                    <!-- <a href="#" target="_top">免费注册</a> -->
+                </div>
+            </div>
+        </ul>
+        @endif
         <ul class="message-r">
             <div class="topMessage home">
                 <div class="menu-hd"><a href="/#" target="_top" class="h">商城首页</a></div>
             </div>
             <div class="topMessage my-shangcheng">
-                <div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                <div class="menu-hd MyShangcheng"><a href="{{url('/user/index')}}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
             </div>
             <div class="topMessage mini-cart">
                 <div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
@@ -102,6 +113,21 @@
             })
         </script>
 
+        <!-- 美洽客服插件 -->
+        <script type='text/javascript'>
+            (function(m, ei, q, i, a, j, s) {
+                m[i] = m[i] || function() {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                j = ei.createElement(q),
+                    s = ei.getElementsByTagName(q)[0];
+                j.async = true;
+                j.charset = 'UTF-8';
+                j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+                s.parentNode.insertBefore(j, s);
+            })(window, document, 'script', '_MEIQIA');
+            _MEIQIA('entId', 100382);
+        </script>
 
 
         <!--小导航 -->
@@ -127,7 +153,6 @@
                 </a>
             </div>
         </div>
-
     </div>
     <script type="text/javascript">
         if ($(window).width() < 640) {

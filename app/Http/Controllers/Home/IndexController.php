@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class IndexController extends Controller
 {
     /**
@@ -16,7 +16,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('home/index/index');
+    	$users = Session()->get('users');
+    	// $username = $users->phone;
+        return view('home/index/index',['users',$users]);
     }
 
 }
