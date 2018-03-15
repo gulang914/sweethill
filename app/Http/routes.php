@@ -82,3 +82,9 @@ Route::resource('admin/recommend','Admin\RecommendController');
 //前台首页
 Route::get('index','home\IndexController@index');
 Route::get('user','home\UserController@index');
+//商品列表页路由
+Route::get('goods/{id}','home\GoodsController@index');
+//商品详情处理路由
+Route::post('detal','home\GoodsDetalController@detal');
+//商品详情页面显示路由
+Route::get('goods/detal/show/{id}','home\GoodsController@show');

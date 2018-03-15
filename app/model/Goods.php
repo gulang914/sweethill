@@ -23,4 +23,9 @@ class Goods extends Model
     public function label(){
         return $this->belongsToMany('App\model\Label', 'goods_label', 'gid', 'tid');
     }
+
+    //多对多关系商品表与标签表
+    public function labelpid(){
+        return $this->belongsToMany('App\model\Label', 'goods_label', 'gid', 'tid')->where('pid',0);
+    }
 }

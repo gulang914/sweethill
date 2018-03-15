@@ -50,8 +50,8 @@
 					  <fieldset>
 						<div class="am-form-group">
 							<label for="doc-vld-name-2-1">分类名称</label>
-							<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="输入子分类名称" value="{{old('username')}}" name="cate_name" required/>
-							<input class="form-control" type="hidden" id="doc-vld-name-2-1" minlength="3" maxlength="18" placeholder="" value="{{$id}}" name="id" required/>
+							<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="输入子分类名称" value="{{old('username')}}" name="cate_name" required/>
+							<input class="form-control" type="hidden" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="" value="{{$id}}" name="id" required/>
 						</div>
 						<div class="am-form-group">
 							<div class="">
