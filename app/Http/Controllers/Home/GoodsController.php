@@ -56,11 +56,11 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
-        //获取商品信息
+        //1获取商品信息
         $goods = Goods::find($id);
         $detail = $goods->goodsdetail;
 
-        //获取商品对应的标签
+        //2获取商品对应的标签
         $label = $goods->label;
         //一级标签存储数组
         $label_one = [];
@@ -77,45 +77,10 @@ class GoodsController extends Controller
                 }
             }
         }
-//        dump($label_one);
-//        dump(123123123);
-//        dump($label_two);
-//
-//        dd($detail);
-        return view('/Home/Goods/detal',['goods'=>$goods,'detail'=>$detail,'lable_one'=>$label_one,'lable_two'=>$label_two]);
+        //相关商品
+        $related  = Goods::where('cid',$goods->cid)->take(5)->get();
+        return view('/Home/Goods/detal',['goods'=>$goods,'detail'=>$detail,'lable_one'=>$label_one,'lable_two'=>$label_two,'related'=>$related]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -259,6 +259,11 @@
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 商品列表
                             </a>
                         </li>
+                        <li class="sidebar-nav-link">
+                            <a href="{{url('/admin/goods/create')}}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 添加商品
+                            </a>
+                        </li>
 
                         <li class="sidebar-nav-link">
                             <a href="/admin/goods/recy">

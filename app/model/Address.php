@@ -8,4 +8,6 @@ class Address extends Model
 {
     //地址表模型
     public $table = 'address';
+    public $guarded = [];
+    public $timestamps = false;
 }

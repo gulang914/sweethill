@@ -89,7 +89,10 @@ Route::get('goods/{id}','home\GoodsController@index');
 Route::post('detal','home\GoodsDetalController@detal');
 //商品详情页面显示路由
 Route::get('goods/detal/show/{id}','home\GoodsController@show');
+//购物车相关路由
+Route::resource('cart','home\CartController');
 
+//前台路由组
 Route::group(['namespace'=>'home'],function(){	
 //前台首页
 Route::get('index','IndexController@index');

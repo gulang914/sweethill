@@ -16,25 +16,13 @@
                         <li class="qc"><a href="#">团购</a></li>
                         <li class="qc last"><a href="#">大包装</a></li>
                     </ul>
-                    <div class="nav-extra">
-                        <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
-                        <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
-                    </div>
                 </div>
             </div>
 
 
             <div class="am-g am-g-fixed">
                 <div class="am-u-sm-12 am-u-md-12">
-                    <div class="theme-popover">
-                        <div class="searchAbout">
-                            <span class="font-pale">相关搜索：</span>
-                            <a title="坚果" href="#">坚果</a>
-                            <a title="瓜子" href="#">瓜子</a>
-                            <a title="鸡腿" href="#">豆干</a>
 
-                        </div>
-                    </div>
 
                     <div class="search-content">
                         <div class="sort">

@@ -30,8 +30,16 @@
 						<label for="doc-vld-name-2-1">商品名称</label>
 						<input class="form-control" type="text" id="doc-vld-name-2-1" minlength="1" maxlength="18" placeholder="输入商品名称" value="{{old('username')}}" name="goods_name" required/>
 					</div>
-					  <input type="hidden" name="cid" value="{{ $cid }}">
-
+					  <div class="am-form-row">
+						  <label class="am-form-label">商品分类</label>
+						  <div class="am-form-item">
+							  <select class="small" title="" name="cid">
+								  @foreach($cates as $cate)
+									  <option value="{{$cate->id}}">{{$cate->cate_name}}</option>
+								  @endforeach
+							  </select>
+						  </div>
+					  </div>
 					  <div class="am-form-group">
 						  <label for="user-weibo" class="am-u-sm-12 am-form-label  am-text-left">商品图片 </label>
 						  <div class="am-u-sm-12 am-margin-top-xs">
