@@ -66,11 +66,11 @@
 							{{csrf_field()}}
 							   <div class="user-name">
 								    <label for="user"><i class="am-icon-user"></i></label>
-								    <input type="text" name="phone" id="user" placeholder="请输入手机号">
+								    <input type="text" name="phone" id="user" placeholder="请输入手机号" pattern="^(1[34578][0-9]{9})$" required>
     			             </div>
 			                 <div class="user-pass">
 											    <label for="password"><i class="am-icon-lock"></i></label>
-											    <input type="password" name="password" id="password" placeholder="请输入密码">
+											    <input type="password" name="password" id="password" placeholder="请输入密码" minlength="8" maxlength="20" required>
 			                 </div>
 			           </div>
 			            

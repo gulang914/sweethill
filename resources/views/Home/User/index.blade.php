@@ -7,15 +7,103 @@
 						<div class="wrap-list">
 							<div class="m-user">
 								<!--个人信息 -->
+								
 								<div class="m-bg"></div>
 								<div class="m-userinfo">
 									<div class="m-baseinfo">
-										<a href="information.html"><img src="{{Session::get('users')['photo']}}">
+										<a href="javascript:void();" type="button"   data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 400, height: 225}"><img src="{{Session::get('users')['photo']}}">
 										</a>
 										<em class="s-name">({{Session::get('users')['nickname']}})</em>
 										<div class="s-prestige am-btn am-round">
 										</div>
 									</div>
+								<!-- 	<button type="button" class="am-btn am-btn-primary"  data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 400, height: 225}">  Modal</button> -->
+
+									<div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+									  <div class="am-modal-dialog">
+									    <div class="am-modal-hd">请上传图片
+									      <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+									    </div>
+									    <div class="am-modal-bd">
+									    <form action="{{url('/user/setButton')}}" method="post">
+									    	{{csrf_field()}}
+									      <div class="am-form-group">
+									    	<input id="uploads" name="uploads" type="file">
+									    	<input type="hidden" name="photo" id="photo" value="">
+									    </div>
+									    <div class="am-form-group">
+										    <label for="doc-vld-name-2-1">预览：</label>
+										    <img id="users" style="width:50px;">
+									    </div>
+									    </form>
+										    <div class="am-form-group">
+											<button type="button" class="am-btn am-btn-primary" data-am-modal="{target: '#my-alert'}" id="button">确认修改</button></div>
+											<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+											  <div class="am-modal-dialog">
+											    <div class="am-modal-hd">您好</div>
+											    <div class="am-modal-hd upload">
+											    </div>
+											  </div>
+											</div>
+
+									  </div>
+									</div>
+									</div>
+									<script type="text/javascript">
+										 $(function () {
+									          $("#uploads").change(function () {
+									              uploadImage();
+									          });
+									      });
+									  function uploadImage() {
+									  	// alert(1);
+									 // 判断是否有选择上传文件
+									  var imgPath = $("#uploads").val();
+									  if (imgPath == "") {
+									      alert("请选择上传图片！");
+									      return;
+									  }
+									  //判断上传文件的后缀名
+									  var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+									  if (strExtension != 'jpg' && strExtension != 'gif' && strExtension != 'png' && strExtension != 'bmp') {
+									      alert("请选择图片文件");
+									      return;
+									  }
+									  //将整个表单打包进formData
+									//                                          var formData = new FormData($('#art_forml'));
+									//									  console.log(formData)
+										// var photo = document.getElementById('photo');
+									  //只将上传文件打包进formData
+									   var formData = new FormData();
+									   formData.append('uploads',$('#uploads')[0].files[0]);
+									   formData.append('_token','{{ csrf_token() }}');
+									  $.ajax({
+									      type: "POST",
+									      url: "{{url('/user/setPhoto')}}",
+									      headers: {
+									          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+									      },
+									      data: formData,
+									      contentType: false,
+									      processData: false,
+									      success: function(data) {
+									      	// var data = data;
+									          $('#users').attr('src',data);
+									          $('#photo').val(data);
+
+									      },
+									      error: function(XMLHttpRequest, textStatus, errorThrown) {
+									          alert("上传失败，请检查网络后重试");
+									      }
+									  });
+									}
+
+							          $('#button').click(function() {
+							          		$(".upload").text('上传成功');
+							          		setTimeout("location.reload();",1000);
+					         		 	});							
+									</script>
+									
 									<div class="m-right">
 										<div class="m-new">
 											<a href="news.html"><i class="am-icon-bell-o"></i>消息</a>
@@ -339,4 +427,5 @@
 						</div>
 
 					</div>
+
 @endsection

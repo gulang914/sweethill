@@ -31,13 +31,13 @@
 						<div class="am-form-group bind">
 							<label for="user-phone" class="am-form-label">验证手机</label>
 							<div class="am-form-content">
-								<span id="user-phone"><input type="hidden" pattern="^(1[34578][0-9]{9})$" id="phone" value="{{Session::get('users')['phone']}}">{{Session::get('users')['phone']}}</span>
+								<span id="user-phone"><input type="hidden"  pattern="^(1[34578][0-9]{9})$" id="phone" value="{{Session::get('users')['phone']}}" required>{{Session::get('users')['phone']}}</span>
 							</div>
 						</div>
 						<div class="am-form-group code">
 							<label for="user-code" class="am-form-label">验证码</label>
 							<div class="am-form-content">
-								<input type="tel" id="user-code" name="phonecode" placeholder="短信验证码">
+								<input type="tel" id="user-code"  maxlength="5" minlength="3"  name="phonecode" placeholder="短信验证码" required>
 							</div>
 							<a class="btn" href="javascript:void(0);" onClick="sendCode();" id="sendMobileCode">
 								<div class="am-btn am-btn-danger">验证码</div>

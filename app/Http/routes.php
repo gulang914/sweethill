@@ -92,6 +92,7 @@ Route::get('goods/detal/show/{id}','home\GoodsController@show');
 //购物车相关路由
 Route::resource('cart','home\CartController');
 
+
 //前台路由组
 Route::group(['namespace'=>'home'],function(){	
 //前台首页
@@ -99,6 +100,7 @@ Route::get('index','IndexController@index');
 
 //前台用户
 Route::get('user','UserController@index');
+
 
 // 前台登录页面显示
 Route::get('login','LoginController@login');
@@ -120,6 +122,17 @@ Route::post('doLogin','LoginController@doLogin');
 
 //前台找回密码处理
 Route::post('doPass','LoginController@doPass');
+//前台退出登录
+Route::get('logout','LoginController@logout');
+
+});
+
+Route::group(['namespace'=>'home','middleware'=>'homeLogin'],function(){	
+//前台首页
+Route::get('index','IndexController@index');
+
+//前台用户
+Route::get('user','UserController@index');
 
 //个人中心的显示
 Route::get('user/index','UserController@index');
@@ -149,6 +162,12 @@ Route::post('user/setnewphone','UserController@setNewPhone');
 Route::get('user/autonym','UserController@autonym');
 //实名认证操作
 Route::post('user/setautonym','UserController@setAutonym');
-
+//修改头像
+Route::post('user/setPhoto','UserController@setPhoto');
+Route::post('user/setButton','UserController@setButton');
+//休息一下特效
+Route::get('rest','UserController@rest');
+//评论显示
+Route::get('comment','UserController@comment');
 });
 

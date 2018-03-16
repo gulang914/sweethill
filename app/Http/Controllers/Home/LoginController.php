@@ -12,6 +12,7 @@ use App\SMS\SendTemplateSMS;
 use DB;
 use Hash;
 use App\model\Users;
+use App\model\UserDetail;
 class LoginController extends Controller
 {
     /**
@@ -61,7 +62,7 @@ class LoginController extends Controller
         //判断code是否一致
         $Scode = Session()->get('code');
         //判断验证码是否为空
-        if(empty($Scode)) {
+        if(empty($input['code'])) {
             return back()->withErrors('验证码不能为空')->withInput();
         }
         //判断密码是否为空
@@ -83,15 +84,17 @@ class LoginController extends Controller
             return back()->withErrors('两次密码不一致')->withInput();
         }
         //加密表单提交的密码
-        $password = Hash::make($input['password']);
         //将验证完的数据保存到数据库
-        $users = new Users;
-        $users -> phone = $phone;
-        $users -> password = $password;
-        $users -> nickname = $nickname;
-        $res = $users->save();
-        if($res){
-            return redirect('login')->withErrors('注册成功，请登录');
+        $data = $request->only('phone','password','nickname');
+        $data['password'] = Hash::make($data['password']);
+        $id = DB::table('users')->insertGetId($data);
+        if($id){
+            $user_detail = new UserDetail;
+            $user_detail -> uid = $id;
+            $res = $user_detail->save();
+            if($res) {
+                return redirect('login')->withErrors('注册成功，请登录');
+            }
         } else {
             return back()->withErrors('注册失败，请检查网络连接后重新注册')->withInput();
         }    
@@ -171,5 +174,15 @@ class LoginController extends Controller
         } else {
             return back()->withErrors('注册失败，请检查网络连接后重新注册')->withInput();
         }    
+    }
+
+    //退出登录
+    public function logout()
+    {
+        // dd(session('user'));
+        //清空用户信息
+        session()->flush();
+        //退出到登录页面
+        return redirect('login');
     }
 }

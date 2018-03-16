@@ -7,6 +7,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>搜索页面</title>
 
+    <link rel="stylesheet" type="text/css" href="/model/home/mu/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/model/home/mu/css/audio.css">
+    
     <link href="/model/home/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
     <link href="/model/home/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
 
@@ -49,13 +52,16 @@
     @endif
     <ul class="message-r">
         <div class="topMessage home">
-            <div class="menu-hd"><a href="/index" target="_top" class="h">商城首页</a></div>
+            <div class="menu-hd"><a href="{{url('/index')}}" target="_top" class="h">商城首页</a></div>
         </div>
         <div class="topMessage my-shangcheng">
             <div class="menu-hd MyShangcheng"><a href="{{url('/user/index')}}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
         </div>
         <div class="topMessage mini-cart">
             <div class="menu-hd"><a id="mc-menu-hd" href="{{ url('/cart') }}" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"></strong></a></div>
+        </div>
+        <div class="topMessage favorite">
+            <div class="menu-hd"><a href="{{url('/logout')}}" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>退出登录</span></a></div>
         </div>
     </ul>
 </div>
@@ -173,7 +179,93 @@
 
 
 <div class="theme-popover-mask"></div>
+<div class="audio-box" id="mu">
+    <button class="mu" style="color:red;"><font size="3">></font></button>
+        <div class="audio-container">
 
+            <div class="audio-view">
+                <div class="audio-cover"></div>
+                <div class="audio-body">
+                    <h3 class="audio-title">未知歌曲</h3>
+                    <div class="audio-backs">
+                        <div class="audio-this-time">00:00</div>
+                        <div class="audio-count-time">00:00</div>
+                        <div class="audio-setbacks">
+                            <i class="audio-this-setbacks">
+                                <span class="audio-backs-btn"></span>
+                            </i>
+                            <span class="audio-cache-setbacks">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-btn">
+                    <div class="audio-select">
+                        <div action="prev" class="icon-fast-backward"></div>
+                        <div action="play" data-on="icon-play" data-off="icon-pause" class="icon-play"></div>
+                        <div action="next" class="icon-fast-forward"></div>
+                        <!--<div action="menu" class="icon-list-alt"></div>-->
+                        <div action="volume" class="icon-volume-up">
+                            <div class="audio-set-volume">
+                                <div class="volume-box">
+                                    <i><span  class="audio-backs-btn"></span></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="/model/home/mu/js/audio.js"></script>
+<script type="text/javascript">
+    // $("#mu").slideUp(1000);
+    // $("button").click(function(){
+//   $("div").animate({left:'250px'});
+// }); 
+
+    $(".mu").click(function(){
+        if($(".mu").text() == '>') {
+            $("#mu").animate({left:'1200px'});
+            $(".mu").text('<');
+        } else {
+            $("#mu").animate({left:'0px'});
+            $(".mu").text('>');
+        }
+    });
+    window.onload = function() {
+        
+        var setConfig = {
+
+            song : [
+                {
+
+                    title : 'Despacito (Remix)',
+                    src : '/model/home/mu/mp3/Luis Fonsi、Daddy Yankee、Justin Bieber - Despacito (Remix).flac',
+                    cover : '/model/home/mu/images/de.jpg'
+                },
+                {
+
+                    title : '为你我受冷风吹',
+                    src : '/model/home/mu/mp3/林忆莲 - 为你我受冷风吹.flac',
+                    cover : '/model/home/mu/images/de.jpg'
+                }
+            ],
+            error : function(meg){
+
+                console.log(meg);
+            }
+        };
+        var audioFn = audioPlay(setConfig);
+
+        if(audioFn){
+
+            //开始加载音频,true为播放,false不播放
+            audioFn.loadFile(1);
+        }
+        
+    }
 </body>
 
 </html>
