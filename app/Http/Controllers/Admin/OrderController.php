@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\Order;
 use App\model\Address;
+use App\model\Goods;
 use DB;
 
 class OrderController extends Controller
@@ -68,10 +69,20 @@ class OrderController extends Controller
     public function show($id)
     {
         $address = Address::find($id);
-        //查询订单表中的状态放到订单详情页中判断关闭订单是否可用。
-        $orderStatus = DB::table('order')->where('id','=',$id)->value('status');
-        // dd($orderStatus);
-        return view('admin.order.detail',['address'=>$address,'orderStatus'=>$orderStatus]);
+        //查询订单详情表中的商品名
+        $order = Order::find($id);
+        // dump($order->goods);
+    
+        // 获取商品名
+        $data = $order->goods;
+        foreach ($data as $key => $value) {
+            $value = $value;
+        }
+        // dd($value->goods_name);
+        $goods = $value->goods_name;
+
+
+        return view('admin.order.detail',['address'=>$address,'goods'=>$goods]);
     }
 
     /**

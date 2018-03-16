@@ -19,4 +19,11 @@ class Goods extends Model
     {
         return $this->hasOne('App\model\GoodsDetail','gid');
     }
+
+    //与订单表的一对多关系
+    //属于
+    public function orders()
+    {
+        return $this->belongsTo('App\model\Order','oid');
+    }
 }

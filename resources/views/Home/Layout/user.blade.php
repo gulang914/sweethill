@@ -4,18 +4,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>框架</title>
 
     <link href="/model/home/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
     <link href="/model/home/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
 
     <link href="/model/home/css/personal.css" rel="stylesheet" type="text/css">
-
+    <link href="/model/home/css/orstyle.css" rel="stylesheet" type="text/css">
+    <!-- 这是任高磊引入的Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="/model/home/AmazeUI-2.4.2/assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="/model/home/AmazeUI-2.4.2/assets/js/amazeui.js" type="text/javascript"></script>
+    <!-- 这是任高磊引入的layer弹层 -->
+    <script type="text/javascript" src="/layer/layer.js"></script>
+    <!-- 这是任高磊写的占位符 -->
+    @section('header')
 
+    @show
 </head>
+
+
+
 
 <body>
 <!--头 -->
@@ -116,13 +126,13 @@
                 <ul>
                     <li> <a href="/model/home/information.html">个人信息</a></li>
                     <li> <a href="/model/home/safety.html">安全设置</a></li>
-                    <li> <a href="/model/home/address.html">收货地址</a></li>
+                    <li> <a href="{{ url('index/address') }}">收货地址</a></li>
                 </ul>
             </li>
             <li class="person">
                 <a href="#">我的交易</a>
                 <ul>
-                    <li><a href="/model/home/order.html">订单管理</a></li>
+                    <li><a href="{{url('index/order')}}">订单管理</a></li>
                     <li> <a href="/model/home/change.html">退款售后</a></li>
                 </ul>
             </li>
