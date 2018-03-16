@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\model\Cate;
 use App\model\Goods;
 use App\model\GoodsDetail;
 use App\model\Label;
@@ -83,6 +84,12 @@ class GoodsController extends Controller
     public function created(Request $request , $cid)
     {
         return view('Admin/Goods/create',['cid'=>$cid]);
+    }
+
+    public function create()
+    {
+        $cates = Cate::all();
+        return view('admin.goods.create11',['cates'=>$cates,'title'=>'添加商品']);
     }
 
     /**

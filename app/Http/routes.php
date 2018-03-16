@@ -89,8 +89,18 @@ Route::get('goods/{id}','home\GoodsController@index');
 Route::post('detal','home\GoodsDetalController@detal');
 //商品详情页面显示路由
 Route::get('goods/detal/show/{id}','home\GoodsController@show');
+//购物车相关路由
+Route::resource('cart','home\CartController');
 
-Route::group(['namespace'=>'home'],function(){
+
+//前台路由组
+Route::group(['namespace'=>'home'],function(){	
+//前台首页
+Route::get('index','IndexController@index');
+
+//前台用户
+Route::get('user','UserController@index');
+
 
 // 前台登录页面显示
 Route::get('login','LoginController@login');

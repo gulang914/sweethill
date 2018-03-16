@@ -53,10 +53,7 @@
                 <div class="menu-hd MyShangcheng"><a href="{{url('/user/index')}}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
             </div>
             <div class="topMessage mini-cart">
-                <div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
-            </div>
-            <div class="topMessage favorite">
-                <div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+                <div class="menu-hd"><a id="mc-menu-hd" href="{{ url('/cart') }}" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
             </div>
             <div class="topMessage favorite">
                 <div class="menu-hd"><a href="{{url('/rest')}}" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>放松一下吧</span></a></div>
@@ -68,7 +65,20 @@
     </div>
 
     <!--悬浮搜索框-->
-
+    <script type='text/javascript'>
+        (function(m, ei, q, i, a, j, s) {
+            m[i] = m[i] || function() {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+            j = ei.createElement(q),
+                s = ei.getElementsByTagName(q)[0];
+            j.async = true;
+            j.charset = 'UTF-8';
+            j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+            s.parentNode.insertBefore(j, s);
+        })(window, document, 'script', '_MEIQIA');
+        _MEIQIA('entId', 100382);
+    </script>
     <div class="nav white">
         <div class="logo"><img src="/model/home/images/logo.png" /></div>
         <div class="logoBig">
@@ -111,10 +121,6 @@
                 <li class="qc"><a href="#">团购</a></li>
                 <li class="qc last"><a href="#">大包装</a></li>
             </ul>
-            <div class="nav-extra">
-                <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
-                <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
-            </div>
         </div>
 
         <!--侧边导航 -->
@@ -419,7 +425,7 @@
 
             </div>
             <div id="shopCart " class="item ">
-                <a href="# ">
+                <a href="{{ url('/cart') }} ">
                     <span class="message "></span>
                 </a>
                 <p>
@@ -427,45 +433,7 @@
                 </p>
                 <p class="cart_num ">0</p>
             </div>
-            <div id="asset " class="item ">
-                <a href="# ">
-                    <span class="view "></span>
-                </a>
-                <div class="mp_tooltip ">
-                    我的资产
-                    <i class="icon_arrow_right_black "></i>
-                </div>
-            </div>
 
-            <div id="foot " class="item ">
-                <a href="# ">
-                    <span class="zuji "></span>
-                </a>
-                <div class="mp_tooltip ">
-                    我的足迹
-                    <i class="icon_arrow_right_black "></i>
-                </div>
-            </div>
-
-            <div id="brand " class="item ">
-                <a href="#">
-                    <span class="wdsc "><img src="/model/home/images/wdsc.png " /></span>
-                </a>
-                <div class="mp_tooltip ">
-                    我的收藏
-                    <i class="icon_arrow_right_black "></i>
-                </div>
-            </div>
-
-            <div id="broadcast " class="item ">
-                <a href="# ">
-                    <span class="chongzhi "><img src="/model/home/images/chongzhi.png " /></span>
-                </a>
-                <div class="mp_tooltip ">
-                    我要充值
-                    <i class="icon_arrow_right_black "></i>
-                </div>
-            </div>
 
             <div class="quick_toggle ">
                 <li class="qtitem ">

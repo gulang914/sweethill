@@ -8,4 +8,6 @@ class Cate extends Model
 {
     //关联cate表
     public $table = 'cate';
+    public $guarded = [];
+    public $timestamps = false;
 }

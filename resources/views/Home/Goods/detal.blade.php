@@ -26,10 +26,6 @@
                     <li class="qc"><a href="#">团购</a></li>
                     <li class="qc last"><a href="#">大包装</a></li>
                 </ul>
-                <div class="nav-extra">
-                    <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
-                    <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
-                </div>
             </div>
         </div>
         <ol class="am-breadcrumb am-breadcrumb-slash">
@@ -82,6 +78,7 @@
                 </div>
                 <div class="tb-detail-list">
                     <!--价格-->
+                    <div class="gid" hidden><p>{{ $goods->id }}</p></div>
                     <div class="tb-detail-price">
                         <li class="price iteminfo_price">
                             <dt>单价</dt>
@@ -92,26 +89,6 @@
                     </div>
 
                     <!--地址-->
-                    <dl class="iteminfo_parameter freight">
-                        <dt>配送至</dt>
-                        <div class="iteminfo_freprice">
-                            <div class="am-form-content address">
-                                <select data-am-selected>
-                                    <option value="a">浙江省</option>
-                                    <option value="b">湖北省</option>
-                                </select>
-                                <select data-am-selected>
-                                    <option value="a">温州市</option>
-                                    <option value="b">武汉市</option>
-                                </select>
-                                <select data-am-selected>
-                                    <option value="a">瑞安区</option>
-                                    <option value="b">洪山区</option>
-                                </select>
-                            </div>
-                        </div>
-                    </dl>
-                    <div class="clear"></div>
 
                     <!--销量-->
                     <ul class="tm-ind-panel">
@@ -138,17 +115,18 @@
                                     <a href="javascript:;" title="关闭" class="close">×</a>
                                 </div>
                                 <div class="theme-popbod dform">
-                                    <form class="theme-signin" name="loginform" action="" method="post">
+                                    <form class="theme-signin" id="form" name="loginform" action="" method="post">
 
                                         <div class="theme-signin-left">
                                             @foreach($lable_one as $v)
-                                            <div class="theme-options">
+                                            <div class="theme-options label">
                                                 <div class="cart-title">{{ $v->label_name }}</div>
                                                 <ul>
                                                     @foreach($lable_two[$v->id] as $a)
-                                                    <li class="sku-line">{{ $a->label_name }}<i></i></li>
+                                                    <li class="sku-line">{{ $a->label_name }}<i><input type="hidden" name="{{ $v->label_name }}" value="{{ $a->label_name }}"></i></li>
                                                     @endforeach
                                                 </ul>
+
                                             </div>
                                             @endforeach
 
@@ -178,18 +156,53 @@
     </div>
 
     <div class="pay">
-
-        <li>
-            <div class="clearfix tb-btn tb-btn-buy theme-login">
-                <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
-            </div>
-        </li>
-        <li>
-            <div class="clearfix tb-btn tb-btn-basket theme-login">
-                <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
-            </div>
-        </li>
+        @if(empty(Session::get('users')))
+            <li>
+                <div class="clearfix tb-btn tb-btn-buy theme-login">
+                    <a id="LikBuy" title="未登录，请登录以后再购买" href="/login">立即购买</a>
+                </div>
+            </li>
+            <li>
+                <div class="clearfix tb-btn tb-btn-basket theme-login">
+                    <a id="LikBasket" title="加入购物车" href="/login"><i></i>加入购物车</a>
+                </div>
+            </li>
+        @else
+            <li>
+                <div class="clearfix tb-btn tb-btn-buy theme-login">
+                    <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+                </div>
+            </li>
+            <li>
+                <div class="clearfix tb-btn tb-btn-basket theme-login">
+                    <a id="LikBasket" title="加入购物车" href="javascript:;"><i></i>加入购物车</a>
+                </div>
+            </li>
+        @endif
     </div>
+                <script>
+                    $('#LikBasket').click(function () {
+                        var gid = $('.gid').find('p').html();
+                        var num = $('#text_box').val();
+                        var data1 = $('#form').serializeArray();
+                        var data2 = $('.selected').text();
+//
+                        $.ajax({
+                            url:"/cart",
+                            type:"post",
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            cache: false,
+                            async:false,
+                            data:{'gid':gid,'num':num,'data1':data1,'data2':data2},
+                            success: function(msg){
+                                console.log(msg);
+                            }
+                        })
+                    });
+
+                </script>
 
     </div>
 
@@ -197,33 +210,6 @@
 
     </div>
 
-    <!--优惠套装-->
-    <div class="match">
-        <div class="match-title">优惠套装</div>
-        <div class="match-comment">
-            <ul class="like_list">
-                <li>
-                    <div class="s_picBox">
-                        <a class="s_pic" href="#"><img src="/model/home/images/cp.jpg"></a>
-                    </div> <a class="txt" target="_blank" href="#">萨拉米 1+1小鸡腿</a>
-                    <div class="info-box"> <span class="info-box-price">¥ 29.90</span> <span class="info-original-price">￥ 199.00</span> </div>
-                </li>
-                <li class="plus_icon"><i>+</i></li>
-                <li>
-                    <div class="s_picBox">
-                        <a class="s_pic" href="#"><img src="/model/home/images/cp2.jpg"></a>
-                    </div> <a class="txt" target="_blank" href="#">ZEK 原味海苔</a>
-                    <div class="info-box"> <span class="info-box-price">¥ 8.90</span> <span class="info-original-price">￥ 299.00</span> </div>
-                </li>
-                <li class="plus_icon"><i>=</i></li>
-                <li class="total_price">
-                    <p class="combo_price"><span class="c-title">套餐价:</span><span>￥35.00</span> </p>
-                    <p class="save_all">共省:<span>￥463.00</span></p> <a href="#" class="buy_now">立即购买</a> </li>
-                <li class="plus_icon"><i class="am-icon-angle-right"></i></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clear"></div>
 
 
     <!-- introduce-->
@@ -787,33 +773,24 @@
                     <div class="am-tab-panel am-fade">
                         <div class="like">
                             <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
+                                @foreach($related as $v)
                                 <li>
                                     <div class="i-pic limit">
-                                        <img src="/model/home/images/imgsearch1.jpg" />
-                                        <p>【良品铺子_开口松子】零食坚果特产炒货
-                                            <span>东北红松子奶油味</span></p>
+                                        <a href="/goods/detal/show/{{ $v->id }}"><img src="{{ $v->goods_photo }}" /></a>
+                                        <p>{{ $v->goods_name }}</p>
                                         <p class="price fl">
                                             <b>¥</b>
-                                            <strong>298.00</strong>
+                                            <strong>{{ $v->goodsdetail->goods_price }}</strong>
                                         </p>
                                     </div>
                                 </li>
-
+                                    @endforeach
                             </ul>
                         </div>
                         <div class="clear"></div>
 
                         <!--分页 -->
-                        <ul class="am-pagination am-pagination-right">
-                            <li class="am-disabled"><a href="#">&laquo;</a></li>
-                            <li class="am-active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                        <div class="clear"></div>
+
 
                     </div>
 
