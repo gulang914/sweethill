@@ -9,7 +9,7 @@ class Users extends Model
     //前台用户模型
     //设置操作的表名
     public $table = 'users';
-    public $timestamps = false;
+
     //与商品表是一对多关系
     public function orders()
     {

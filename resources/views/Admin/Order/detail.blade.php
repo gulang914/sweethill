@@ -41,18 +41,14 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">商品名称 <span class="tpl-form-line-small-title">product name</span></label>
                                         <div class="am-u-sm-12">
-                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="">
+                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="{{ $goods }}">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <div class="am-u-sm-12 am-u-sm-push-12">
                                         	<!-- 根据传来的订单状态判断删除订单是否可点击 -->
 
-                                        	<!-- @if($orderStatus == 1)
-                                        		
-                                        		<button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success">删除订单</button>
-                                        	@endif
-                                        	                                             -->
+                                        	
                                         </div>
                                     </div>
                                 </form>

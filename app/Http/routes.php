@@ -82,6 +82,7 @@ Route::resource('admin/recommend','Admin\RecommendController');
 //前台首页
 
 
+
 Route::get('user','home\UserController@index');
 //商品列表页路由
 Route::get('goods/{id}','home\GoodsController@index');
@@ -170,4 +171,19 @@ Route::get('rest','UserController@rest');
 //评论显示
 Route::get('comment','UserController@comment');
 });
+
+
+
+//前台个人中心订单路由
+Route::resource('index/order','Home\OrderController');
+//前台个人中心收货地址路由
+Route::resource('index/address','Home\AddressController');
+//前台个人中心修改默认收货地址 用ajax
+Route::post('index/addredit','Home\AddressController@editAddress');
+//前台个人中心删除默认收货地址 用ajax
+Route::post('index/deleteaddress','Home\AddressController@deleteAddress');
+//前台从购物车跳转到结算页面的路由
+Route::resource('index/pay','Home\PayController');
+//前台支付页面地址添加路由，用ajax
+Route::post('index/addaddress','Home\PayController@addaddress');
 
