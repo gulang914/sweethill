@@ -30,25 +30,24 @@ class UserController extends Controller
 
     public function userAlter(Request $request)
     {
+        $data = $request->all();
         $id = Session::get('users')->id;
-        $nickname = $request->input('nickname');
-        $email = $request->input('email');
-        $age = $request->input('age');
-        $sex = $request->input('sex');
+        $nickname = $data['nickname'];
+        $email = $data['email'];
+        $sex = $data['sex'];
+        $age = $data['age'];
         $users = Users::find($id);
         $users -> nickname = $nickname;
         $users -> email = $email;
         $res = $users->save();
         if($res){
-                $users->UserDetail->age = $age;
-                $users->UserDetail->sex = $sex;
-                $res = $users->UserDetail->save();
+                $res = DB::table('user_detail')->where('uid',$id)->update(['age'=>$age,'sex'=>$sex]);
                 if($res) {
                     session()->put('users',$users);
-                    return redirect('user/create')->withErrors('信息更新成功');
+                    return '信息更新成功';
                 }
         } else {
-            return back()->withErrors('信息更新失败')->withInput();
+            return '信息更新失败';
         }  
 
     }
@@ -73,22 +72,22 @@ class UserController extends Controller
         // dd($dbpass);
         //判断原密码是否为空
         if(empty($oldpass)) {
-            return back()->withErrors('原密码不能为空')->withInput();
+            return '原密码不能为空';
         }
         //判断新密码是否为空
         if(empty($password)) {
-            return back()->withErrors('新密码不能为空')->withInput();
+            return '新密码不能为空';
         }
         //判断表单提交的密码和确认密码是否一致
         if($password != $repass) {
-            return back()->withErrors('两次密码不一致')->withInput();
+            return '两次密码不一致';
         }
         //判断input表单提交的原密码和数据库里的密码是否一致
         if (Hash::check($oldpass, $dbpass)) {
             //如果一致 就把新密码加密
             $password = Hash::make($password);
         } else {
-            return back()->withErrors('新旧密码不一致');
+            return '新旧密码不一致';
         }
         //修改数据库里的密码
         $users = Users::find($id);
@@ -97,9 +96,9 @@ class UserController extends Controller
         //判断是否修改成功
         if($res) {
             session()->put('users',$users);
-            return redirect('/user/setpass');
+            return '修改成功';
         } else {
-            return back()->withErrors('修改失败');
+            return '修改失败';
         }
 
     }
@@ -112,28 +111,28 @@ class UserController extends Controller
     public function setPaypass(Request $request)
     {
         $id = Session::get('users')['id'];
-        $input = $request->except('_token');
+        $data = $request->all();
         //判断验证码是否正确
         $code = Session::get('code');
         // dd($code);
-        if($input['paycode'] != $code) {
-            return back()->withErrors('验证码错误');
+        if($data['paycode'] != $code) {
+            return '验证码错误';
         }
         //判断两次密码是否一致
-        if($input['paypass'] != $input['repaypass']) {
-            return back()->withErrors('两次密码不一致');
+        if($data['paypass'] != $data['repaypass']) {
+            return '两次密码不一致';
         }
         //如果一致就加密支付密码
-        $paypass = Hash::make($input['paypass']);
+        $paypass = Hash::make($data['paypass']);
         $users = Users::find($id);
         $users->UserDetail->paypass = $paypass;
         $res = $users->UserDetail->save();
         //判断是否修改成功
         if($res) {
             session()->put('users',$users);
-            return redirect('/user/secure');
+            return '修改成功';
         } else {
-            return back()->withErrors('修改失败');
+            return '修改失败';
         }
     }
 
@@ -162,29 +161,29 @@ class UserController extends Controller
     public function setNewPhone(Request $request)
     {
         $id = Session::get('users')['id'];
-        $input = $request->except('_token');
+        $data = $request->all();
         //判断手机号是否存在 
-        $res = DB::table('users')->where('phone',$input['newPhone'])->first();
+        $res = DB::table('users')->where('phone',$data['newPhone'])->first();
         if($res){
-            return redirect('user/newphone')->withErrors('手机号已存在');
+            return '手机号已存在';
         }
         //判断验证码是否正确
         $code = Session::get('code');
         // dd($code);
-        if($input['newPhonecode'] != $code) {
-            return back()->withErrors('验证码错误');
+        if($data['newPhonecode'] != $code) {
+            return '验证码错误';
         }
 
         //如果验证通过 修改进数据库
         $users = Users::find($id);
-        $users->phone = $input['newPhone'];
+        $users->phone = $data['newPhone'];
         $res = $users->save();
         //判断是否修改成功
         if($res) {
             session()->put('users',$users);
-            return redirect('/user/secure');
+            return '修改成功';
         } else {
-            return back()->withErrors('修改失败');
+            return '修改失败';
         }
     }
 
@@ -196,17 +195,65 @@ class UserController extends Controller
     public function setAutonym(Request $request)
     {
         $id = Session::get('users')['id'];
-        $input = $request->except('_token');
+        $data = $request->all();
+        //判断真实姓名是否存在 
+        $res = DB::table('user_detail')->where('name',$data['name'])->first();
+        if($res){
+            return '姓名已存在';
+        }
+        //判断真实姓名是否存在 
+        $res = DB::table('user_detail')->where('id_card',$data['id_card'])->first();
+        if($res){
+            return '身份证号已存在';
+        }
         $users = Users::find($id);
-        $users->UserDetail->name = $input['name'];
-        $users->UserDetail->id_card = $input['id_card'];
+        $users->UserDetail->name = $data['name'];
+        $users->UserDetail->id_card = $data['id_card'];
         $res = $users->UserDetail->save();
         //判断是否修改成功
         if($res) {
             session()->put('users',$users);
-            return redirect('/user/secure');
+            return '修改成功';
         } else {
-            return back()->withErrors('修改失败');
+            return '修改失败';
         }
     }
+
+    public function setPhoto(Request $request)
+    {
+        $photo = $request->file('uploads');
+        // return $photo;
+        if($photo->isValid()){
+            //修改文件名并存入upload文件夹
+            $extension = $photo->getClientOriginalExtension();
+            $newName = date('YmdHis').mt_rand(100,999).".".$extension;
+            $path = $photo -> move(public_path().'/uploads/users',$newName);
+            $photo = '/uploads/users/'.$newName;
+
+                if(empty($photo)) {
+                 return '亲~还没有上传图片哟';
+                }
+                $id = Session::get('users')['id'];
+                $users = Users::find($id);
+                $users -> photo = $photo;
+                $res = $users->save();
+                if($res) {
+                    Session::put('users',$users);
+                    return '/uploads/users/'.$newName;
+                } else {
+                    return '头像上传失败，请确定网络是否连接或重新上传';
+                }
+        }
+    }
+
+    public function rest()
+    {
+        return view('/home/index/rest');
+    }
+
+    public function comment()
+    {
+        return view('/home/user/comment');
+    }
+
 }

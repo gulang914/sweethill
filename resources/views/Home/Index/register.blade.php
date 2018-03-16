@@ -95,25 +95,25 @@
 							{{csrf_field()}}
 					     <div class="user-phone">
 						    <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
-						    <input type="tel" name="phone" id="phone" value="{{old('phone')}}" placeholder="请输入手机号">
+						    <input type="tel" name="phone" id="phone" value="{{old('phone')}}" placeholder="请输入手机号" pattern="^(1[34578][0-9]{9})$" required>
 					    </div>																			
 						<div class="verification">
 							<label for="code"><i class="am-icon-code-fork"></i></label>
-							<input type="tel" name="code" id="code" placeholder="请输入验证码">
+							<input type="tel" name="code" id="code" placeholder="请输入验证码" minlength="3" maxlength="5" required>
 							<a class="btn" href="javascript:void(0);" onClick="sendCode();" id="sendMobileCode">
 								<span id="dyMobileButton">获取</span></a>
 						</div>
 						<div class="user-phone">
 						    <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
-						    <input type="tel" name="nickname" id="nickname" value="{{old('nickname')}}" placeholder="请输入昵称">
+						    <input type="tel" name="nickname" id="nickname" value="{{old('nickname')}}"  minlength="2" maxlength="18"  placeholder="请输入昵称" required>
 					    </div>
 						 <div class="user-pass">
 						    <label for="password"><i class="am-icon-lock"></i></label>
-						    <input type="password" name="password" id="password" placeholder="设置密码">
+						    <input type="password" name="password" id="password" placeholder="设置密码" minlength="8" maxlength="20" required>
 					     </div>										
 						 <div class="user-pass">
 						    <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
-						    <input type="password" name="repass" id="passwordRepeat" placeholder="确认密码">
+						    <input type="password" name="repass" minlength="8" maxlength="20" id="passwordRepeat" placeholder="确认密码" required>
 							 </div>	
 						<div class="am-cf">
 							<input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">

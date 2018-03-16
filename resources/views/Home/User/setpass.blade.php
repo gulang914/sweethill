@@ -26,29 +26,63 @@
 							<div class="u-progress-bar-inner"></div>
 						</div>
 					</div>
-					<form class="am-form am-form-horizontal" action="{{url('/user/changepass')}}" method="post">
+					<form class="am-form am-form-horizontal" id="form" action="{{url('/user/changepass')}}" method="post">
 						{{csrf_field()}}
 						<div class="am-form-group">
 							<label for="user-old-password" class="am-form-label">原密码</label>
 							<div class="am-form-content">
-								<input type="password" name="oldpass" id="user-old-password" placeholder="请输入原登录密码">
+								<input type="password" class="input"  maxlength="20" minlength="8"  name="oldpass" id="user-old-password" placeholder="请输入原登录密码" required>
 							</div>
 						</div>
 						<div class="am-form-group">
 							<label for="user-new-password" class="am-form-label">新密码</label>
 							<div class="am-form-content">
-								<input type="password" name="password" id="user-new-password" placeholder="由数字、字母组合">
+								<input type="password" class="input" maxlength="20" minlength="8" name="password" id="user-new-password" placeholder="由数字、字母组合" required>
 							</div>
 						</div>
 						<div class="am-form-group">
 							<label for="user-confirm-password" class="am-form-label">确认密码</label>
 							<div class="am-form-content">
-								<input type="password" name="repass" id="user-confirm-password" placeholder="请再次输入上面的密码">
+								<input type="password" class="input" maxlength="20" minlength="8" name="repass" id="user-confirm-password" placeholder="请再次输入上面的密码" required>
 							</div>
 						</div>
-						<div class="info-btn">
-							<input type="submit" value="保存修改">
-						</div>
-
 					</form>
+					<button type="button" class="am-btn am-btn-primary" data-am-modal="{target: '#my-alert'}" onclick="create()">确认修改</button>
+					<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+					  <div class="am-modal-dialog">
+					    <div class="am-modal-hd">您好</div>
+					    <div class="am-modal-bd button">
+					    </div>
+					    <div class="am-modal-footer">
+					      <span class="am-modal-btn">确定</span>
+					    </div>
+					  </div>
+					</div>
+					<script type="text/javascript">
+			        function create() {
+			        	var data = $('#form').serializeArray();
+			            $.ajax({
+			            //几个参数需要注意一下
+			                type: "POST",//方法类型
+			                // dataType: "json",//预期服务器返回的数据类型
+			                url: "{{url('/user/changepass')}}" ,//url
+			                headers: {
+							'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+							},
+			                data: data,
+			                success: function (result) {
+			                	$(".button").text(result);
+			                	$(".input").val("");
+			                    // alert(result);//打印服务端返回的数据(调试用)
+			                    if (result.resultCode == 200) {
+			                        alert("SUCCESS");
+			                    }
+			                    ;
+			                },
+			                error : function() {
+			                    alert("异常！");
+			                }
+			            });
+			        }
+   					</script>
 @endsection

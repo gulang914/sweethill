@@ -28,12 +28,12 @@
 
 						<!--个人信息 -->
 						<div class="info-main">
-							<form class="am-form am-form-horizontal" action="{{url('/user/userAlter')}}" method="post">
+							<form id="form" action="" class="am-form am-form-horizontal"  method="post">
 								{{csrf_field()}}
 								<div class="am-form-group">
 									<label for="user-name2" class="am-form-label">昵称</label>
 									<div class="am-form-content">
-										<input type="text" name="nickname" id="user-name2" placeholder="请输入昵称">
+										<input type="text" class="input" name="nickname" minlength="2" maxlength="18" id="user-name2" placeholder="请输入昵称" required>
 
 									</div>
 								</div>
@@ -41,7 +41,7 @@
 								<div class="am-form-group">
 									<label for="user-name" class="am-form-label">年龄</label>
 									<div class="am-form-content">
-										<input type="text" name="age" id="user-name2" placeholder="请输入年龄">
+										<input type="number" class="input" name="age" min="0" max="120" id="user-name2" style="height:30px;width:50px;font-size:12px;" required>
 
 									</div>
 								</div>
@@ -50,20 +50,20 @@
 									<label class="am-form-label">性别</label>
 									<div class="am-form-content sex">
 										<label class="am-radio-inline">
-											<input type="radio" name="sex" value="男" data-am-ucheck> 男
+											<input type="radio" class="input" name="sex" value="男" data-am-ucheck> 男
 										</label>
 										<label class="am-radio-inline">
-											<input type="radio" name="sex" value="女" data-am-ucheck> 女
+											<input type="radio" class="input" name="sex" value="女" data-am-ucheck> 女
 										</label>
 										<label class="am-radio-inline">
-											<input type="radio" name="sex" value="保密" data-am-ucheck> 保密
+											<input type="radio" class="input" name="sex" value="保密" data-am-ucheck> 保密
 										</label>
 									</div>
 								</div>
 								<div class="am-form-group">
 									<label for="user-email" class="am-form-label">电子邮箱</label>
 									<div class="am-form-content">
-										<input id="user-email" name="email" placeholder="请输入电子邮箱" type="email">
+										<input id="user-email" class="input" name="email" placeholder="请输入电子邮箱" type="email" required>
 
 									</div>
 								</div>
@@ -93,12 +93,47 @@
 
 									</div>
 								</div> -->
-								<div class="info-btn">
-									<div><input type="submit" value="保存修改"></div>
+							</form>
+								<button type="button" class="am-btn am-btn-primary" data-am-modal="{target: '#my-alert'}" onclick="create()">确认修改</button>
+								<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+								  <div class="am-modal-dialog">
+								    <div class="am-modal-hd">您好</div>
+								    <div class="am-modal-bd button">
+								    </div>
+								    <div class="am-modal-footer">
+								      <span class="am-modal-btn">确定</span>
+								    </div>
+								  </div>
 								</div>
 
-							</form>
 						</div>
-
+			
 					</div>
+					<script type="text/javascript">
+			        function create() {
+			        	var data = $('#form').serializeArray();
+			            $.ajax({
+			            //几个参数需要注意一下
+			                type: "POST",//方法类型
+			                // dataType: "json",//预期服务器返回的数据类型
+			                url: "{{url('/user/userAlter')}}" ,//url
+			                headers: {
+							'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+							},
+			                data: data,
+			                success: function (result) {
+			                	$(".button").text(result);
+			                	$(".input").val("");
+			                    // alert(result);//打印服务端返回的数据(调试用)
+			                    if (result.resultCode == 200) {
+			                        alert("SUCCESS");
+			                    }
+			                    ;
+			                },
+			                error : function() {
+			                    alert("异常！");
+			                }
+			            });
+			        }
+   					</script>
 @endsection
