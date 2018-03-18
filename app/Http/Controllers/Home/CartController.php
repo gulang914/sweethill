@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Home;
 
 use App\model\Cart;
+use App\model\CartGoods;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -16,6 +18,25 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $cart = Cart::find($id);
+        $res = $cart -> delete();
+        if($res){
+            $data = [
+                'status'=>1,
+                'msg'=>'删除成功'
+            ];
+        }else{
+            $data = [
+                'status'=>0,
+                'msg'=>'删除失败'
+            ];
+        }
+        return $data;
+    }
+
     public function index()
     {
         $users = session()->get('users');
@@ -55,13 +76,24 @@ class CartController extends Controller
         $uid = session()->get('users')->id;
         $gid = $request->gid;
         $num = $request->num;
-        $n = Cart::where('uid',$uid)->where('gid',gid)->get();
-        if(empty($n)){
+        $cart = Cart::where('uid',$uid)->get();
+        $n = 0;
+        foreach ($cart as $v) {
+            $goods = CartGoods::where('cid',$v->id)->get();
+            foreach ($goods as $a) {
+                if($gid == $a->gid){
+                    $n = 1;
+                    $cid = $v->id;
+                }
+            }
+        }
+
+//        return $cid;
+        if($n == 0){
             $data1 = $request->data1;
             json_encode($data1);
             $data2 = 'a'.$request->data2;
             $type =[];
-            $a = '';
             $str = '';
             foreach ($data1 as $k=>$v) {
                 if(strpos($data2,$v['value'])!= 0){
@@ -71,17 +103,25 @@ class CartController extends Controller
                 }
 //
             }
-            $cart = new Cart;
-            $cart->uid = $uid;
-            $cart->gid = $gid;
-            $cart->num = $num;
-            $cart->type = $str;
-            $res = $cart->save();
-
-            return $data;
+            $id = DB::table('cart')->insertGetId(
+                ['uid'=>$uid,'num'=>$num,'type'=>$str]
+            );
+//            $cart = new Cart;
+//            $cart->uid = $uid;
+//            $cart->num = $num;
+//            $cart->type = $str;
+//            $res = $cart->save();
+//            $cid = $res->id;
+//            return $id;
+            $res = DB::table('cart_goods')->insert(
+                [ 'cid'=>$id,'gid'=>$gid]
+            );
+//            return $res;
         }else{
-            $n->num +=$num;
-            $res =$n-save();
+            $cart = Cart::find($cid);
+//            return $cart;
+            $cart->num = $cart->num+$num;
+            $res =$cart->save();
         }
         if($res){
             $data = [
@@ -94,6 +134,7 @@ class CartController extends Controller
                 'msg'=>'添加失败'
             ];
         }
+        return $data;
     }
 
     /**
@@ -136,8 +177,5 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+
 }

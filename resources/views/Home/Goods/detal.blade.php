@@ -5,6 +5,7 @@
 @endsection
 
 @section('js')
+    <script type="text/javascript" src="/layer/layer.js"></script>
     <script type="text/javascript" src="/model/home/basic/js/quick_links.js"></script>
     <script type="text/javascript" src="/model/home/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
     <script type="text/javascript" src="/model/home/js/jquery.imagezoom.min.js"></script>
@@ -196,8 +197,24 @@
                             cache: false,
                             async:false,
                             data:{'gid':gid,'num':num,'data1':data1,'data2':data2},
-                            success: function(msg){
-                                console.log(msg);
+                            success: function(data) {
+//                                 console.log(data);
+                                if(data.status == 1){
+                                    layer.msg('添加成功', {
+                                        icon: 6,
+                                        time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                                    }, function(){
+                                        parent.location.reload()
+                                    });
+                                }else{
+                                    layer.alert('添加失败', {
+                                        icon: 5,
+                                        skin: 'layer-ext-moon'
+                                    })
+                                }
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                alert("上传失败，请检查网络后重试");
                             }
                         })
                     });
@@ -270,7 +287,7 @@
                             <div class="clear"></div>
                             <ul id="J_AttrUL">
                                 <li title="">产品类型:&nbsp;{{ $detail->goods_type }}</li>
-                                <li title="">产地:&nbsp;{{ $detail->goods_goods_origin }}</li>
+                                <li title="">产地:&nbsp;{{ $detail->goods_origin }}</li>
                                 <li title="">配料:&nbsp;{{ $detail->goods_ingre }}</li>
                                 <li title="">产品规格:&nbsp;{{ $detail->goods_specif }}</li>
                                 <li title="">保质期:&nbsp;{{ $detail->goods_sheif_life }}</li>

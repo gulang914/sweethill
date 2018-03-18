@@ -11,6 +11,7 @@
     <script type="text/javascript" src="/model/home/js/jquery.imagezoom.min.js"></script>
     <script type="text/javascript" src="/model/home/js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="/model/home/js/list.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
 @endsection
 
 @section('content')
@@ -51,62 +52,68 @@
                     <div class="bundle-main">
                         @foreach($cart as $v)
                             @foreach($v->goods as $a)
-                        <ul class="item-content clearfix">
-                            <li class="td td-chk">
-                                <div class="cart-checkbox ">
-                                    <input class="check"  name="items[]" value="{{ $v->id }}" type="checkbox">
-                                    <label for="J_CheckBox_170037950254"></label>
-                                </div>
-                            </li>
-                            <li class="td td-item">
-                                <div class="item-pic">
-                                    <a href="/goods/detal/show/{{ $a->id }}" target="_blank" data-title="{{ $a['goods_name'] }}" class="J_MakePoint" data-point="tbcart.8.12">
-                                        <img src="{{ $a['goods_photo'] }}" style="width: 100px;" class="itempic J_ItemImg"></a>
-                                </div>
-                                <div class="item-info">
-                                    <div class="item-basic-info">
-                                        <a href="#" target="_blank" title="{{ $a['goods_name'] }}" class="item-title J_MakePoint" data-point="tbcart.8.11">{{ $a['goods_name'] }}</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="td td-info">
-                                <div class="item-props item-props-can">
-                                    <span class="sku-line">{{ $v->type }}</span>
-                                </div>
-                            </li>
-                            <li class="td td-price">
-                                <div class="item-price price-promo-promo">
-                                    <div class="price-content">
-                                        <div class="price-line">
-                                            <em class="J_Price price-now" tabindex="0">{{ $a->goodsdetail->goods_price }}</em>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="td td-amount">
-                                <div class="amount-wrapper ">
-                                    <div class="item-amount ">
-                                        <div class="sl">
-                                            <input class="min am-btn" name="" type="button" value="-" />
-                                            <input class="text_box" name="" type="text" value="{{ $v->num }}" style="width:30px;" />
-                                            <input class="add am-btn" name="" type="button" value="+" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="td td-sum">
-                                <div class="td-inner">
-                                    <em tabindex="0" class="J_ItemSum number">{{ $v->num *$a->goodsdetail->goods_price }}</em>
-                                </div>
-                            </li>
-                            <li class="td td-op">
-                                <div class="td-inner">
-                                    <a href="javascript:;" data-point-url="#" class="delete">
-                                        删除</a>
-                                    <div class="cid"></div>
-                                </div>
-                            </li>
-                        </ul>
+                                <form action="" method="get" >
+                                    <ul class="item-content clearfix">
+                                        <li class="td td-chk">
+                                            <div class="cart-checkbox ">
+                                                <input class="check"  name="items[]" value="{{ $v->id }}" type="checkbox">
+                                                <label for="J_CheckBox_170037950254"></label>
+                                            </div>
+                                        </li>
+                                        <li class="td td-item">
+                                            <div class="item-pic">
+                                                <a href="/goods/detal/show/{{ $a->id }}" target="_blank" data-title="{{ $a['goods_name'] }}" class="J_MakePoint" data-point="tbcart.8.12">
+                                                    <img src="{{ $a['goods_photo'] }}" style="width: 100px;" class="itempic J_ItemImg"></a>
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="item-basic-info">
+                                                    <a href="#" target="_blank" title="{{ $a['goods_name'] }}" class="item-title J_MakePoint" data-point="tbcart.8.11">{{ $a['goods_name'] }}</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="td td-info">
+                                            <div class="item-props item-props-can">
+                                                <span class="sku-line">{{ $v->type }}</span>
+                                            </div>
+                                        </li>
+                                        <li class="td td-price">
+                                            <div class="item-price price-promo-promo">
+                                                <div class="price-content">
+                                                    <div class="price-line">
+                                                        <em class="J_Price price-now" tabindex="0">{{ $a->goodsdetail->goods_price }}</em>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="td td-amount">
+
+                                            <div class="amount-wrapper ">
+                                                <div class="item-amount ">
+                                                    <div class="sl">
+
+                                                        <input class="min am-btn" name="" type="button" value="-" />
+                                                        <input class="text_box" name="" type="text" value="{{ $v->num }}" style="width:30px;" />
+                                                        <input class="add am-btn" name="" type="button" value="+" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <li class="td td-sum">
+                                            <div class="td-inner">
+                                                <em tabindex="0" class="J_ItemSum number">{{ $v->num *$a->goodsdetail->goods_price }}</em>
+                                            </div>
+                                        </li>
+                                        <li class="td td-op">
+                                            <div class="td-inner">
+                                                <a href="javascript:;"  class="delete">
+                                                    删除</a>
+                                                <input type="submit" value="购买">
+                                                <div class="cid"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </form>
                                 @endforeach
                         @endforeach
 
@@ -131,22 +138,56 @@
                 <a href="#" hidefocus="true" class="deleteAll">删除</a>
             </div>
             <script>
+                $('.add').click(function(){
+                    var a = $(this).parent().find('.text_box').val();
+                    var b = parseInt(a)+1;
+                    $(this).parent().find('.text_box').val(b);
+                    var c = $(this).parent().parent().parent().parent().parent().find('.td-price').find('.price-now').text();
+                    c = parseFloat(c);
+                    $(this).parent().parent().parent().find('.td-sum').find('em').text(c*b);
+
+                });
+                $('.min').click(function(){
+                    var a = $(this).parent().find('.text_box').val();
+                    var b = parseInt(a);
+                    if(b != 1){
+                        b = b-1;
+                    }
+                    $(this).parent().find('.text_box').val(b);
+                    var c = $(this).parent().parent().parent().parent().parent().find('.td-price').find('.price-now').text();
+                    c = parseFloat(c);
+                    $(this).parent().parent().parent().parent().parent().find('.td-sum').find('em').text(c*b);
+                });
                 $('.delete').click(function(){
-                    var id = $this;
-                    console.log(id);
-//                    $.ajax({
-//                        url:"/cart",
-//                        type:"post",
-//                        headers: {
-//                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//                        },
-//                        cache: false,
-//                        async:false,
-//                        data:{'gid':gid,'num':num,'data1':data1,'data2':data2},
-//                        success: function(msg){
-//                            console.log(msg);
-//                        }
-//                    })
+                    var id = $(this).parent().parent().parent().find('.td-chk').find('input').val();
+                    $.ajax({
+                        url:"/cart/delete",
+                        type:"post",
+                        cache: false,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        async:false,
+                        data:{'id':id},
+                        success: function(data) {
+                            // console.log(data);
+                            if(data.status == 1){
+                                layer.alert('删除成功', {
+                                    icon: 6,
+                                    skin: 'layer-ext-moon'
+                                })
+                                parent.location.reload()
+                            }else{
+                                layer.alert('删除失败', {
+                                    icon: 5,
+                                    skin: 'layer-ext-moon'
+                                })
+                            }
+                        },
+                        error: function(XMLHttpRequest, textStatus, errorThrown) {
+                            alert("上传失败，请检查网络后重试");
+                        }
+                    })
                 });
             </script>
             <div class="float-bar-right">

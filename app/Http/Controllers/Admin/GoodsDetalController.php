@@ -57,9 +57,10 @@ class GoodsDetalController extends Controller
         $res = GoodsDetail::create($input);
         if($res){
             $typeone = [];
+            $typeonea = [];
             foreach($fenlei as $v) {
                 if($v == 1||$v == 6|| $v == 10){
-
+                $typeonea[] = $v;
                 }else{
                     $pid = Label::where('id',$v)->first()->pid;
                     if(!in_array($pid, $typeone)){
@@ -70,7 +71,9 @@ class GoodsDetalController extends Controller
 
             }
             foreach ($typeone as $v){
-                $this->adc($gid,$v);
+                if(!in_array($v,$typeonea)){
+                    $this->adc($gid,$v);
+                }
             }
             return redirect('admin/goods');
         }else{
@@ -114,20 +117,33 @@ class GoodsDetalController extends Controller
         $fenlei = $request->input('fenlei');
         if($res){
             $typeone = [];
+            $typeonea = [];
             foreach($fenlei as $v) {
                 if($v == 1||$v == 6|| $v == 10){
-
+                    $typeonea[] = $v;
                 }else{
                     $pid = Label::where('id',$v)->first()->pid;
                     if(!in_array($pid, $typeone)){
                         $typeone[] = $pid;
                     }
-                    $this->adc($gid,$v);
+                    $res = DB::table('goods_label')->where('gid',$gid)->where('tid',$v)->first();
+                    if($res){
+
+                    }else{
+                        $this->adc($gid,$v);
+                    }
                 }
 
             }
             foreach ($typeone as $v){
-                $this->adc($gid,$v);
+                if(!in_array($v,$typeonea)){
+                    $res = DB::table('goods_label')->where('gid',$gid)->where('tid',$v)->first();
+                    if($res){
+
+                    }else{
+                        $this->adc($gid,$v);
+                    }
+                }
             }
             return redirect('admin/goods');
         } else {

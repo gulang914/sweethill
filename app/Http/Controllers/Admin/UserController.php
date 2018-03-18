@@ -163,6 +163,12 @@ class UserController extends Controller
             return redirect('admin/user');
         } else {
             return back()->withErrors('删除失败');
+        }$user = User::find($id);
+        $res = $user -> delete();
+        if($res) {
+            return redirect('admin/user');
+        } else {
+            return back()->withErrors('删除失败');
         }
     }
 }

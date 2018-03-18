@@ -93,6 +93,7 @@ Route::get('goods/detal/show/{id}','home\GoodsController@show');
 //购物车相关路由
 Route::resource('cart','home\CartController');
 
+Route::post('cart/delete','home\CartController@delete');
 
 //前台路由组
 Route::group(['namespace'=>'home'],function(){	
