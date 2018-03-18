@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Session;
+use App\model\Config;
 class IndexController extends Controller
 {
     /**
@@ -17,7 +19,32 @@ class IndexController extends Controller
      */
     public function index()
     {
-
+        //友情链接
+        $li = [];
+        $link = DB::table('link')->get();
+        foreach ($link as $k => $v) {
+            $li[$k] = $v; 
+        }
+        Session::put('link',$li);
+        //导航
+        $gp = [];
+        $gps = DB::table('gps')->get();
+        foreach ($gps as $k => $v) {
+            $gp[$k] = $v; 
+        }
+        Session::put('gps',$gp);
+        //网站配置
+        $title[]='';
+        $content[]='';
+        $config = Config::get();
+        //遍历数组
+        foreach ($config as $key => $value) {
+            $content[$value['title']] = $value['content'];
+        }
+        // dd($title);
+        // dd($content);
+        // Session::put('title',$title);
+        Session::put('content',$content);
         $cate = Cate::where('pid',0)->get();
         $cates = [];
         foreach ($cate as $v) {

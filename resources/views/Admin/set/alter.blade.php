@@ -62,9 +62,9 @@
 							    <div class="am-form-group">
 								    <label for="doc-vld-name-2-1" style="margin-left:80px">网站内容：</label>
 								    @if($status == '1')
-								    <input style="width:200px;height:40px;margin-left:300px;" class="form-control" type="hidden" id="input" placeholder="输入网站内容" value="{{old('content')}}" name="content" checked>
+								    <input style="width:200px;height:40px;margin-left:300px;" class="form-control" type="hidden" id="input" placeholder="输入网站内容" checked name="content" checked>
 								    @else
-								    <input style="width:200px;height:40px;margin-left:300px;" class="form-control" type="hidden" id="input" placeholder="输入网站内容" value="{{old('content')}}" name="content" required/>
+								    <input style="width:200px;height:40px;margin-left:300px;" class="form-control" type="hidden" id="input" placeholder="输入网站内容" name="content" >
 								    @endif
 							    </div>
 								<script type="text/javascript">

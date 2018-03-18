@@ -59,7 +59,7 @@
                     <ul>
                         <!-- 欢迎语 -->
                         <li class="am-text-sm tpl-header-navbar-welcome">
-                            <a href="javascript:;">欢迎回家, <span>用户名</span> </a>
+                            <a href="javascript:;">欢迎回家, <span>{{Session::get('user')['username']}}</span> </a>
                         </li>
 
                         <!-- 新邮件 -->
@@ -81,7 +81,7 @@
                                         <div class="menu-messages-content">
                                             <div class="menu-messages-content-title">
                                                 <i class="am-icon-circle-o am-text-success"></i>
-                                                <span>某某某</span>
+                                                <span>{{Session::get('user')['username']}}</span>
                                             </div>
                                             <div class="am-text-truncate"> 山川湖海 甜丘与你 </div>
                                             <div class="menu-messages-content-time">2018-03-01 下午 23:30</div>
@@ -198,11 +198,11 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="/model/admin/assets/img/user04.png" alt="">
+                        <img src="{{Session::get('user')['photo']}}" alt="">
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              某某某
+              {{Session::get('user')['username']}}
           </span>
                     <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
                 </div>

@@ -76,6 +76,7 @@ class SetController extends Controller
             $type = 'checkbox';
             // 如果获取到的值为on 就代表开启 改成1 并存入数据库
             if($request->input('content') == 'on') {
+                // dd($request->input('content'));
                 //1 为开启 0 为关闭
                 $content = '1';
             } else {
@@ -139,11 +140,13 @@ class SetController extends Controller
         $title = $request->input('title');
         //获取form表单提交过来的type
         $type = $request->input('type');
+        // dd($type);
         if($type == 'checkbox') {
             //代表传过来的数据是status
             $content = $request->input('content');
             // 如果status不是空的 网站开启
             // 1 为开启 0 为关闭
+            // dd($content);
             if(!empty($content)) {
                 $content = '1';
             } else {

@@ -304,7 +304,7 @@
 
                     <div class="am-tab-panel am-fade">
 
-                        <div class="actor-new">
+                        <!-- <div class="actor-new">
                             <div class="rate">
                                 <strong>100<span>%</span></strong><br> <span>好评度</span>
                             </div>
@@ -354,423 +354,31 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <div class="clear"></div>
 
-                        <ul class="am-comments-list am-comments-list-flip">
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月02日 17:46</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255776406962">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">l***4 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年10月28日 11:33</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255095758792">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                没有色差，很暖和……美美的
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：蓝调灰&nbsp;&nbsp;尺码：2XL
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月02日 17:46</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255776406962">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">h***n (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月25日 12:48</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="258040417670">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                式样不错，初冬穿
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：L
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月02日 17:46</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255776406962">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">l***4 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年10月28日 11:33</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255095758792">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                没有色差，很暖和……美美的
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：蓝调灰&nbsp;&nbsp;尺码：2XL
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月02日 17:46</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255776406962">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">h***n (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月25日 12:48</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="258040417670">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                式样不错，初冬穿
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：L
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月02日 17:46</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255776406962">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">l***4 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年10月28日 11:33</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255095758792">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                没有色差，很暖和……美美的
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：蓝调灰&nbsp;&nbsp;尺码：2XL
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月02日 17:46</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="255776406962">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                摸起来丝滑柔软，不厚，没色差，颜色好看！买这个衣服还接到诈骗电话，我很好奇他们是怎么知道我买了这件衣服，并且还知道我的电话的！
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：S
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-                            <li class="am-comment">
-                                <!-- 评论容器 -->
-                                <a href="">
-                                    <img class="am-comment-avatar" src="/model/home/images/hwbn40x40.jpg" />
-                                    <!-- 评论者头像 -->
-                                </a>
-
-                                <div class="am-comment-main">
-                                    <!-- 评论内容容器 -->
-                                    <header class="am-comment-hd">
-                                        <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                        <div class="am-comment-meta">
-                                            <!-- 评论元数据 -->
-                                            <a href="#link-to-user" class="am-comment-author">h***n (匿名)</a>
-                                            <!-- 评论者 -->
-                                            评论于
-                                            <time datetime="">2015年11月25日 12:48</time>
-                                        </div>
-                                    </header>
-
-                                    <div class="am-comment-bd">
-                                        <div class="tb-rev-item " data-id="258040417670">
-                                            <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                                式样不错，初冬穿
-                                            </div>
-                                            <div class="tb-r-act-bar">
-                                                颜色分类：柠檬黄&nbsp;&nbsp;尺码：L
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 评论内容 -->
-                                </div>
-                            </li>
-
-                        </ul>
-
+                       <!--PC版-->
+                        <div id="SOHUCS" sid="33"></div>
+                        <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                        <script type="text/javascript">
+                        window.changyan.api.config({
+                        appid: 'cytvJTGWq',
+                        conf: 'prod_4efd6514d309331e3480575261c12f73'
+                        });
+                        </script>
                         <div class="clear"></div>
-
+                    <!--PC版-->
+<!--PC和WAP自适应版-->
+<!-- <div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytvJTGWq'; 
+var conf = 'prod_4efd6514d309331e3480575261c12f73'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script> -->
                         <!--分页 -->
-                        <ul class="am-pagination am-pagination-right">
+                        <!-- <ul class="am-pagination am-pagination-right">
                             <li class="am-disabled"><a href="#">&laquo;</a></li>
                             <li class="am-active"><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
@@ -778,7 +386,7 @@
                             <li><a href="#">4</a></li>
                             <li><a href="#">5</a></li>
                             <li><a href="#">&raquo;</a></li>
-                        </ul>
+                        </ul> -->
                         <div class="clear"></div>
 
                         <div class="tb-reviewsft">

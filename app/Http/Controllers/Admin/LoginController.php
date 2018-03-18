@@ -74,7 +74,7 @@ class LoginController extends Controller
         }
 
         //登陆成功以后把数据存到session
-        session()->put('user',$input);
+        session()->put('user',$user);
 
         return redirect('admin/index');
     }
