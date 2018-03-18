@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\model\Address;
+use App\model\Order;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,9 +16,29 @@ class SuccessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home.index.success');
+        $gid = $request->gid;
+        $aid = $request->aid;
+        $money = $request->money;
+        $users = session('users');
+        $uid = $users['id'];
+        $order_member = date('YmdHis',time()).rand('1111','9999');
+//        $order = new Order;
+//
+//        $order->gid = $gid;
+//        $order->aid = $aid;
+//        $order->totalmoney = $money;
+//        $order->uid = $uid;
+//        $order->order_member = $order_member;
+        $res = Order::create(['gid'=>$gid,'aid'=>$aid,'uid'=>$uid,'order_member'=>$order_member,'totalmoney'=>$money,'status'=>1]);
+
+        if($res){
+            $addr =Address::find($aid);
+            return view('home.index.success',['res'=>$res,'addr'=>$addr]);
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**

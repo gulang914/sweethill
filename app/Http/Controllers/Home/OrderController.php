@@ -43,9 +43,16 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addorder(Request $request)
     {
-        //
+//        money':money, 'address':address, 'address_detail':address_detail, 'name':name, 'phone':phone
+        $money = $request->money;
+        $address = $request->address;
+        $address_detail = $request->address_detail;
+        $name = $request->name;
+        $phone = $request->phone;
+        $users = session('users');
+        $uid = $users['id'];
     }
 
     /**

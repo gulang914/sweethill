@@ -10,11 +10,9 @@
                 <div class="long-title"><span class="all-goods">全部分类</span></div>
                 <div class="nav-cont">
                     <ul>
-                        <li class="index"><a href="#">首页</a></li>
-                        <li class="qc"><a href="#">闪购</a></li>
-                        <li class="qc"><a href="#">限时抢</a></li>
-                        <li class="qc"><a href="#">团购</a></li>
-                        <li class="qc last"><a href="#">大包装</a></li>
+                        @foreach(Session::get('gps') as $k => $v)
+                            <li class="index"><a href="{{$v['routes']}}">{{$v['name']}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -37,7 +35,7 @@
                             @foreach($goods as $k=>$v)
 
                             <li class="click">
-                                <div class="goodsid">{{ $v->id }}</div>
+                                <div class="goodsid" hidden>{{ $v->id }}</div>
                                 <div class="i-pic limit">
                                     <a href="/goods/detal/show/{{ $v->id }}">
                                     <img src="{{ $v->goods_photo }}" />
@@ -104,16 +102,6 @@
 
                     </div>
                     <div class="clear"></div>
-                    <!--分页 -->
-                    <ul class="am-pagination am-pagination-right">
-                        <li class="am-disabled"><a href="#">&laquo;</a></li>
-                        <li class="am-active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
 
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\model\Goods;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,8 +17,13 @@ class PayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $gid = $request->gid;
+        $num = $request->num;
+        $price = $request->price;
+        $type = $request->type;
+        $goods = Goods::find($gid);
         //session中获取用户id
         $users = session('users');
         $uid = $users['id'];
@@ -34,18 +40,12 @@ class PayController extends Controller
         //
        // $order = Order::where('uid', $uid)->where('gid',gid)->first();
         // dd($address);
-        return view('home.index.pay',['address'=>$address,'addr'=>$addr]);
+        return view('home.index.pay',['address'=>$address,'addr'=>$addr,'goods'=>$goods,'num'=>$num,'price'=>$price,'type'=>$type]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+
+
+
 
     /**
      * Store a newly created resource in storage.

@@ -92,6 +92,8 @@ Route::post('detal','home\GoodsDetalController@detal');
 Route::get('goods/detal/show/{id}','home\GoodsController@show');
 //购物车相关路由
 Route::resource('cart','home\CartController');
+//商品搜索路由
+Route::post('goods/search','home\GoodsController@search');
 
 Route::post('cart/delete','home\CartController@delete');
 

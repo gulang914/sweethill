@@ -56,7 +56,8 @@
                                     <ul class="item-content clearfix">
                                         <li class="td td-chk">
                                             <div class="cart-checkbox ">
-                                                <input class="check"  name="items[]" value="{{ $v->id }}" type="checkbox">
+                                                <input class="check"  name="items" value="{{ $v->id }}" type="hidden">
+                                                <input type="hidden" class="gid" value="{{ $a->id }}">
                                                 <label for="J_CheckBox_170037950254"></label>
                                             </div>
                                         </li>
@@ -92,7 +93,7 @@
                                                     <div class="sl">
 
                                                         <input class="min am-btn" name="" type="button" value="-" />
-                                                        <input class="text_box" name="" type="text" value="{{ $v->num }}" style="width:30px;" />
+                                                        <input class="text_box" name="number" type="text" value="{{ $v->num }}" style="width:30px;" />
                                                         <input class="add am-btn" name="" type="button" value="+" />
                                                     </div>
                                                 </div>
@@ -108,7 +109,8 @@
                                             <div class="td-inner">
                                                 <a href="javascript:;"  class="delete">
                                                     删除</a>
-                                                <input type="submit" value="购买">
+                                                <a href="javascript:;"  class="shop">
+                                                    购买</a>
                                                 <div class="cid"></div>
                                             </div>
                                         </li>
@@ -127,16 +129,7 @@
         <div class="clear"></div>
 
         <div class="float-bar-wrapper">
-            <div id="J_SelectAll2" class="select-all J_SelectAll">
-                <div class="cart-checkbox">
-                    <input class="check-all check" id="J_SelectAllCbx2" name="select-all" value="true" type="checkbox">
-                    <label for="J_SelectAllCbx2"></label>
-                </div>
-                <span>全选</span>
-            </div>
-            <div class="operations">
-                <a href="#" hidefocus="true" class="deleteAll">删除</a>
-            </div>
+
             <script>
                 $('.add').click(function(){
                     var a = $(this).parent().find('.text_box').val();
@@ -158,83 +151,52 @@
                     c = parseFloat(c);
                     $(this).parent().parent().parent().parent().parent().find('.td-sum').find('em').text(c*b);
                 });
-                $('.delete').click(function(){
+                $('.delete').click(function() {
                     var id = $(this).parent().parent().parent().find('.td-chk').find('input').val();
                     $.ajax({
-                        url:"/cart/delete",
-                        type:"post",
+                        url: "/cart/delete",
+                        type: "post",
                         cache: false,
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        async:false,
-                        data:{'id':id},
-                        success: function(data) {
+                        async: false,
+                        data: {'id': id},
+                        success: function (data) {
                             // console.log(data);
-                            if(data.status == 1){
+                            if (data.status == 1) {
                                 layer.alert('删除成功', {
                                     icon: 6,
                                     skin: 'layer-ext-moon'
                                 })
                                 parent.location.reload()
-                            }else{
+                            } else {
                                 layer.alert('删除失败', {
                                     icon: 5,
                                     skin: 'layer-ext-moon'
                                 })
                             }
                         },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
                             alert("上传失败，请检查网络后重试");
                         }
-                    })
+                    });
+                });
+//单击购买按钮
+                    $('.shop').click(function(){
+
+                        var id = $(this).parent().parent().parent().find('.td-chk').find('.gid').val();
+                        var num = $(this).parent().parent().parent().find('.td-amount').find('.text_box').val();
+                        var price = $(this).parent().parent().parent().find('.td-price').find('em').text();
+                        var type = $(this).parent().parent().parent().find('.td-info').find('.sku-line').text();
+//                        console.log(type);
+//                        console.log(price);
+                        window.location.href = '/index/pay?gid='+id+'&num='+num+'&price='+price+'&type='+type;
                 });
             </script>
-            <div class="float-bar-right">
-                <div class="amount-sum">
-                    <span class="txt">已选商品</span>
-                    <em id="J_SelectedItemsCount">0</em><span class="txt">件</span>
-                    <div class="arrow-box">
-                        <span class="selected-items-arrow"></span>
-                        <span class="arrow"></span>
-                    </div>
-                </div>
-                <div class="price-sum">
-                    <span class="txt">合计:</span>
-                    <strong class="price">¥<em id="J_Total">0.00</em></strong>
-                </div>
-                <div class="btn-area">
-                    <a href="pay.html" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
-                        <span>结&nbsp;算</span></a>
-                </div>
-            </div>
 
         </div>
 
-        <div class="footer">
-            <div class="footer-hd">
-                <p>
-                    <a href="#">恒望科技</a>
-                    <b>|</b>
-                    <a href="#">商城首页</a>
-                    <b>|</b>
-                    <a href="#">支付宝</a>
-                    <b>|</b>
-                    <a href="#">物流</a>
-                </p>
-            </div>
-            <div class="footer-bd">
-                <p>
-                    <a href="#">关于恒望</a>
-                    <a href="#">合作伙伴</a>
-                    <a href="#">联系我们</a>
-                    <a href="#">网站地图</a>
-                    <em>© 2015-2025 Hengwang.com 版权所有</em>
-                </p>
-            </div>
-        </div>
-
-    </div>
 
     <!--操作页面-->
 

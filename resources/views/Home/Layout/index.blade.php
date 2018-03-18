@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>搜索页面</title>
+    <title>{{Session::get('content')['title']}}</title>
 
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/audio.css">
@@ -76,9 +76,10 @@
 
     <div class="search-bar pr">
         <a name="index_none_header_sysc" href="/model/home/#"></a>
-        <form>
+        <form action="/goods/search" method="post">
+            {{ csrf_field() }}
             <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-            <input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
+            <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
         </form>
     </div>
 </div>
@@ -105,79 +106,100 @@
         })(window, document, 'script', '_MEIQIA');
         _MEIQIA('entId', 100382);
     </script>
-<!--菜单 -->
-<div class=tip>
-    <div id="sidebar">
-        <div id="wrap">
-            <div id="prof" class="item">
-                <a href="/model/home/#">
-                    <span class="setting"></span>
-                </a>
-                <div class="ibar_login_box status_login">
-                    <div class="avatar_box">
-                        <p class="avatar_imgbox"><img src="/model/home/images/no-img_mid_.jpg" /></p>
-                        <ul class="user_info">
-                            <li>用户名：sl1903</li>
-                            <li>级&nbsp;别：普通会员</li>
-                        </ul>
+    <!--菜单 -->
+    <div class=tip>
+        <div id="sidebar">
+            <div id="wrap">
+                <div id="prof" class="item">
+                    <a href="/model/home/#">
+                        <span class="setting"></span>
+                    </a>
+                    <div class="ibar_login_box status_login">
+                        <div class="avatar_box">
+                            <p class="avatar_imgbox"><img src="/model/home/images/no-img_mid_.jpg" /></p>
+                            <ul class="user_info">
+                                <li>用户名：sl1903</li>
+                                <li>级&nbsp;别：普通会员</li>
+                            </ul>
+                        </div>
+                        <div class="login_btnbox">
+                            <a href="/model/home/#" class="login_order">我的订单</a>
+                        </div>
+                        <i class="icon_arrow_white"></i>
                     </div>
-                    <div class="login_btnbox">
-                        <a href="/model/home/#" class="login_order">我的订单</a>
-                        <a href="/model/home/#" class="login_favorite">我的收藏</a>
-                    </div>
-                    <i class="icon_arrow_white"></i>
+
+                </div>
+                <div id="shopCart" class="item">
+                    <a href="{{ url('/cart') }}">
+                        <span class="message"></span>
+
+                    <p>
+                        购物车
+                    </p>
+                    <p class="cart_num">0</p>
+                    </a>
                 </div>
 
+                <div class="quick_toggle">
+                    <li class="qtitem">
+                        <a href="/model/home/#"><span class="kfzx"></span></a>
+                        <div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
+                    </li>
+                    <!--二维码 -->
+                    <li class="qtitem">
+                        <a href="/model/home/#none"><span class="mpbtn_qrcode"></span></a>
+                        <div class="mp_qrcode" style="display:none;"><img src="/model/home/images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
+                    </li>
+                    <li class="qtitem">
+                        <a href="/model/home/#top" class="return_top"><span class="top"></span></a>
+                    </li>
+                </div>
+
+                <!--回到顶部 -->
+                <div id="quick_links_pop" class="quick_links_pop hide"></div>
+
             </div>
-            <div id="shopCart" class="item">
-                <a href="{{ url('/cart') }}">
-                    <span class="message"></span>
-
-                <p>
-                    购物车
-                </p>
-                <p class="cart_num">0</p>
-                </a>
+        </div>
+        <div id="prof-content" class="nav-content">
+            <div class="nav-con-close">
+                <i class="am-icon-angle-right am-icon-fw"></i>
             </div>
-
-            <div class="quick_toggle">
-                <li class="qtitem">
-                    <a href="/model/home/#"><span class="kfzx"></span></a>
-                    <div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
-                </li>
-                <!--二维码 -->
-                <li class="qtitem">
-                    <a href="/model/home/#none"><span class="mpbtn_qrcode"></span></a>
-                    <div class="mp_qrcode" style="display:none;"><img src="/model/home/images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
-                </li>
-                <li class="qtitem">
-                    <a href="/model/home/#top" class="return_top"><span class="top"></span></a>
-                </li>
+            <div>
+                我
             </div>
+        </div>
+        <div id="shopCart-content" class="nav-content">
+            <div class="nav-con-close">
+                <i class="am-icon-angle-right am-icon-fw"></i>
+            </div>
+            <div>
+                购物车
+            </div>
+        </div>
 
-            <!--回到顶部 -->
-            <div id="quick_links_pop" class="quick_links_pop hide"></div>
 
+        <div class="theme-popover-mask"></div>
+    </div>
+    <div class="footer" >
+        <div class="footer-hd">
+            <p>
+                <b style="color:#000;">友情链接：</b>
+                @foreach(Session::get('link') as $k => $v)
+                    <a href="{{$v['url']}}">{{$v['name']}}</a>
+                    <b>|</b>
+                @endforeach
+            </p>
+        </div>
+        <div class="footer-bd">
+            <p>
+                <a href="#">关于甜丘</a>
+                <a href="#">合作伙伴</a>
+                <a href="#">联系我们</a>
+                <a href="#">网站地图</a>
+                <em>© 2015-2025 Hengwang.com 版权所有</em>
+            </p>
         </div>
     </div>
-    <div id="prof-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            我
-        </div>
-    </div>
-    <div id="shopCart-content" class="nav-content">
-        <div class="nav-con-close">
-            <i class="am-icon-angle-right am-icon-fw"></i>
-        </div>
-        <div>
-            购物车
-        </div>
-    </div>
 
-
-<div class="theme-popover-mask"></div>
-
+</body>
 </html>

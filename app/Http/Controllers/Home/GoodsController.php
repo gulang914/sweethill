@@ -43,9 +43,12 @@ class GoodsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function search(Request $request)
     {
-        //
+        $search = $request->index_none_header_sysc;
+        $goods = Goods::where('goods_name','like','%'.$search.'%')->get();
+        return view('/home/goods/index',['goods'=>$goods]);
+
     }
 
     /**

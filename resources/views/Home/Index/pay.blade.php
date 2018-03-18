@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0 ,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>结算页面</title>
+		<title>{{Session::get('content')['title']}}</title>
 		<link href="/model/home/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
 		<link href="/model/home/basic/css/demo.css" rel="stylesheet" type="text/css" />
 		<link href="/model/home/css/cartstyle.css" rel="stylesheet" type="text/css" />
@@ -25,34 +25,36 @@
 			<ul class="message-l">
 				<div class="topMessage">
 					<div class="menu-hd">
-						<a href="#" target="_top" class="h">亲，请登录</a>
-						<a href="#" target="_top">免费注册</a>
+						<a href="#" target="_top" class="h">尊敬的用户，{{Session::get('users')['nickname']}} 您好</a>
+						<!-- <a href="#" target="_top">免费注册</a> -->
 					</div>
 				</div>
 			</ul>
 			<ul class="message-r">
 				<div class="topMessage home">
-					<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
+					<div class="menu-hd"><a href="{{ url('/index') }}" target="_top" class="h">商城首页</a></div>
 				</div>
 				<div class="topMessage my-shangcheng">
 					<div class="menu-hd MyShangcheng"><a href="{{url('/user/index')}}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 				</div>
 				<div class="topMessage mini-cart">
-					<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+					<div class="menu-hd"><a id="mc-menu-hd" href="{{ url('/cart') }}" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
 				</div>
 				<div class="topMessage favorite">
-					<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
+
+				</div>
 			</ul>
 			</div>
 			<!--悬浮搜索框-->
 			<div class="nav white">
 				<div class="logo"><img src="/model/home/images/logo.png" /></div>
 				<div class="logoBig">
-					<li><img src="/model/home/images/logobig.png" /></li>
+					<li><img src="{{Session::get('content')['logo']}}" /></li>
 				</div>
 				<div class="search-bar pr">
 					<a name="index_none_header_sysc" href="#"></a>
-					<form>
+					<form action="/goods/search" method="post">
+						{{ csrf_field() }}
 						<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
 						<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
 					</form>
@@ -79,7 +81,7 @@
 					@endif
 								<div class="address-left">
 									<div class="user DefaultAddr">
-										<span class="buy-address-detail">   
+										<span class="buy-address-detail"></span>
                    						<span class="buy-user">{{ $v['name'] }}</span>
 										<span class="buy-phone">{{ $v['phone'] }}</span>
 									</div>
@@ -244,24 +246,25 @@
 												<li class="td td-item">
 													<div class="item-pic">
 														<a href="#" class="J_MakePoint">
-															<img src="/model/home/images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg"></a>
+															<img src="{{ $goods->goods_photo }}" style="width: 50px;" class="itempic J_ItemImg">
+														</a>
+														<input type="hidden" class="gid" value="{{ $goods->id }}">
 													</div>
 													<div class="item-info">
 														<div class="item-basic-info">
-															<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
+															<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">{{ $goods->goods_name }}</a>
 														</div>
 													</div>
 												</li>
 												<li class="td td-info">
 													<div class="item-props">
-														<span class="sku-line">颜色：12#川南玛瑙</span>
-														<span class="sku-line">包装：裸装</span>
+														<span class="sku-line">{{ $type }}</span>
 													</div>
 												</li>
 												<li class="td td-price">
 													<div class="item-price price-promo-promo">
 														<div class="price-content">
-															<em class="J_Price price-now">39.00</em>
+															<em class="J_Price price-now">{{ $price }}</em>
 														</div>
 													</div>
 												</li>
@@ -272,7 +275,7 @@
 														<span class="phone-title">购买数量</span>
 														<div class="sl">
 															<input class="min am-btn" name="" type="button" value="-" />
-															<input class="text_box" name="" type="text" value="3" style="width:30px;" />
+															<input class="text_box" name="" type="text" value="{{ $num }}" style="width:30px;" />
 															<input class="add am-btn" name="" type="button" value="+" />
 														</div>
 													</div>
@@ -280,14 +283,14 @@
 											</li>
 											<li class="td td-sum">
 												<div class="td-inner">
-													<em tabindex="0" class="J_ItemSum number">117.00</em>
+													<em tabindex="0" class="J_ItemSum number">{{ $price*$num }}</em>
 												</div>
 											</li>
 											<li class="td td-oplist">
 												<div class="td-inner">
 													<span class="phone-title">配送方式</span>
 													<div class="pay-logis">
-														快递<b class="sys_item_freprice">10</b>元
+														免运费
 													</div>
 												</div>
 											</li>
@@ -310,12 +313,6 @@
 						
 							<div class="clear"></div>
 							</div>
-							<!--含运费小计 -->
-							<div class="buy-point-discharge ">
-								<p class="price g_price ">
-									合计（含运费） <span>¥</span><em class="pay-sum">244.00</em>
-								</p>
-							</div>
 
 					
 							<!-- form表单提交订单信息 -->
@@ -327,17 +324,17 @@
 									<div class="box">
 										<div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：</em>
 											<span class="price g_price ">
-                                   				 <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee" name="totalmoney">244.00</em>
+                                   				 <span>¥</span> <em class="style-large-bold-red" id="J_ActualFee" name="totalmoney"></em>
 											</span>
 										</div>
 
 										<div id="holyshit268" class="pay-address">
-
 											<p class="buy-footer-address">
 												<span class="buy-line-title buy-line-title-type">寄送至：</span>
 												<span class="buy--address-detail">
 													<span class="dist" name="address">{{ $addr['address'] or '' }}</span>
-													<span class="street" name="address_detail">{{ $addr['address_detail'] or '' }}</span>
+													<input type="hidden" class="aid" value="{{ $addr['id'] or '' }}">
+													<span class="street xiangqing" name="address_detail">{{ $addr['address_detail'] or '' }}</span>
 												</span>
 												
 											</p>
@@ -364,54 +361,41 @@
 						</form>
 						</div>
 						<script type="text/javascript">
+							var price = $('.number').text();
+							$('.style-large-bold-red').text(price);
+
+                            $('.add').click(function(){
+                                var a = $(this).parent().find('.text_box').val();
+                                var b = parseInt(a);
+                                $(this).parent().find('.text_box').val(b);
+                                var c = $(this).parent().parent().parent().parent().parent().find('.td-price').find('.price-now').text();
+                                c = parseFloat(c);
+                                $(this).parent().parent().parent().parent().parent().find('.td-sum').find('em').text(c*(b+1));
+                                $('.style-large-bold-red').text(c*(b+1));
+
+                            });
+                            $('.min').click(function(){
+                                var a = $(this).parent().find('.text_box').val();
+                                var b = parseInt(a);
+                                if(b != 0){
+                                    $(this).parent().find('.text_box').val(b);
+                                    var c = $(this).parent().parent().parent().parent().parent().find('.td-price').find('.price-now').text();
+                                    c = parseFloat(c);
+                                    $(this).parent().parent().parent().parent().parent().find('.td-sum').find('em').text(c*(b-1));
+                                    $('.style-large-bold-red').text(c*(b-1));
+                                }
+
+                            });
+
 							$('#order').click(function(){
 								// 获取的订单表中的信息。 还需要商品id。？
-								var money = $('#J_ActualFee').text();
-								var address = $('.dist').text();
-								var address_detail = $('.street').text();
-								var name = $('#name').text();
-								var phone = $('#tel').text();
-								console.log(money);
-								console.log(address);
-								console.log(address_detail);
-								console.log(name);
-								console.log(phone);
-
-
-
-								//获取
-								// var data = $("#dingdan").serializeArray(); 
-								// console.log(data);    			
-								$.ajax({
-							            type: "POST",
-							            url: "/index/payorder",
-										headers: {
-								            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-								        },
-							            data: {'money':money, 'address':address, 'address_detail':address_detail, 'name':name, 'phone':phone}, //要发送的订单数据
-								    	async:true,
-								    	cache:false,
-							            success: function(data) {
-							            	// console.log(data);
-							    //         	if(data.status == 1){
-							    //       			layer.msg('添加成功', {
-											// 					  icon: 6,
-											// 					  anim: 4,
-											// 					  time: 1000 //1秒关闭（如果不配置，默认是3秒）
-											// 					}, function(){
-											// 					  parent.location.reload()
-											// 			});
-											// }else{
-											// 	layer.alert('添加失败', {
-											// 						  icon: 5,
-											// 						  skin: 'layer-ext-moon'
-											// 						})
-											// }
-							            },
-							            error: function(XMLHttpRequest, textStatus, errorThrown) {
-							                alert("上传失败，请检查网络后重试");
-							            }
-							        });
+								var gid = $('.gid').val();
+								var aid = $('.aid').val();
+								var money = $('.style-large-bold-red').text();
+                                if(aid == ''){
+                                    return false;
+								}
+                                window.location.href = '/index/success?gid='+gid+'&aid='+aid+'&money='+money;
 							});
 						</script>
 
@@ -421,18 +405,16 @@
 				<div class="footer">
 					<div class="footer-hd">
 						<p>
-							<a href="#">恒望科技</a>
-							<b>|</b>
-							<a href="#">商城首页</a>
-							<b>|</b>
-							<a href="#">支付宝</a>
-							<b>|</b>
-							<a href="#">物流</a>
+							<b style="color:#000;">友情链接：</b>
+							@foreach(Session::get('link') as $k => $v)
+								<a href="{{$v['url']}}">{{$v['name']}}</a>
+								<b>|</b>
+							@endforeach
 						</p>
 					</div>
 					<div class="footer-bd">
 						<p>
-							<a href="#">关于恒望</a>
+							<a href="#">关于甜丘</a>
 							<a href="#">合作伙伴</a>
 							<a href="#">联系我们</a>
 							<a href="#">网站地图</a>

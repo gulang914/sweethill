@@ -21,18 +21,14 @@
             <div class="long-title"><span class="all-goods">全部分类</span></div>
             <div class="nav-cont">
                 <ul>
-                    <li class="index"><a href="#">首页</a></li>
-                    <li class="qc"><a href="#">闪购</a></li>
-                    <li class="qc"><a href="#">限时抢</a></li>
-                    <li class="qc"><a href="#">团购</a></li>
-                    <li class="qc last"><a href="#">大包装</a></li>
+                    @foreach(Session::get('gps') as $k => $v)
+                        <li class="index"><a href="{{$v['routes']}}">{{$v['name']}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
         <ol class="am-breadcrumb am-breadcrumb-slash">
-            <li><a href="#">首页</a></li>
-            <li><a href="#">分类</a></li>
-            <li class="am-active">内容</li>
+
         </ol>
 
         <!--放大镜-->
@@ -127,7 +123,7 @@
                                                     <li class="sku-line">{{ $a->label_name }}<i><input type="hidden" name="{{ $v->label_name }}" value="{{ $a->label_name }}"></i></li>
                                                     @endforeach
                                                 </ul>
-
+                                                <input type="hidden" class="type" value="{{ $v->label_name }}">
                                             </div>
                                             @endforeach
 
@@ -171,7 +167,7 @@
         @else
             <li>
                 <div class="clearfix tb-btn tb-btn-buy theme-login">
-                    <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+                    <a id="LikBuy" class="shop" title="点此按钮到下一步确认购买信息" href="javascript:;">立即购买</a>
                 </div>
             </li>
             <li>
@@ -182,6 +178,25 @@
         @endif
     </div>
                 <script>
+                    //立即购买
+                    $('.sku-line').click(function () {
+                       var one =$(this).parent().parent().find('.cart-title').text();
+                       var two =$(this).text();
+                       $(this).parent().parent().find('.type').text(one+':'+two+';')
+                    });
+                    $('.shop').click(function(){
+
+                        var id = $('.gid').text();
+                        var num = $('#text_box').val();
+                        var price = $('.sys_item_price').text();
+                        var type = $('.type').text();
+//                        console.log(id);
+//                        console.log(num);
+//                        console.log(price);
+//                        console.log(type);
+                        window.location.href = '/index/pay?gid='+id+'&num='+num+'&price='+price+'&type='+type;
+                    });
+
                     $('#LikBasket').click(function () {
                         var gid = $('.gid').find('p').html();
                         var num = $('#text_box').val();
