@@ -130,7 +130,6 @@ Route::get('logout','LoginController@logout');
 Route::group(['namespace'=>'home','middleware'=>'homeLogin'],function(){	
 //前台首页
 Route::get('index','IndexController@index');
-
 //前台用户
 Route::get('user','UserController@index');
 

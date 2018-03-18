@@ -119,8 +119,9 @@ class LoginController extends Controller
         }
         //登陆成功以后把数据存到session
         session()->put('users',$users);
+
+        return redirect('index');            
         //成功跳转index页面
-        return redirect('index');
     }
 
     public function pass()

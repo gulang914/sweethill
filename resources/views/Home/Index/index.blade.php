@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>首页</title>
+    <meta name="keywords" content="{{Session::get('content')['content']}}">
+    <title>{{Session::get('content')['title']}}</title>
 
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/audio.css">
@@ -82,7 +82,7 @@
     <div class="nav white">
         <div class="logo"><img src="/model/home/images/logo.png" /></div>
         <div class="logoBig">
-            <li><img src="/model/home/images/logobig.png" /></li>
+            <li><img src="{{Session::get('content')['logo']}}" /></li>
         </div>
 
         <div class="search-bar pr">
@@ -115,11 +115,9 @@
         <div class="long-title"><span class="all-goods">全部分类</span></div>
         <div class="nav-cont">
             <ul>
-                <li class="index"><a href="#">首页</a></li>
-                <li class="qc"><a href="#">闪购</a></li>
-                <li class="qc"><a href="#">限时抢</a></li>
-                <li class="qc"><a href="#">团购</a></li>
-                <li class="qc last"><a href="#">大包装</a></li>
+                @foreach(Session::get('gps') as $k => $v)
+                <li class="index"><a href="{{$v['routes']}}">{{$v['name']}}</a></li>
+                @endforeach
             </ul>
         </div>
 
@@ -369,21 +367,15 @@
     <div class="footer ">
         <div class="footer-hd ">
             <p>
-                <a href="# ">恒望科技</a>
+        <b style="color:#000;">友情链接：</b>
+                @foreach(Session::get('link') as $k => $v)
+                <a href="{{$v['url']}}">{{$v['name']}}</a>
                 <b>|</b>
-                <a href="# ">商城首页</a>
-                <b>|</b>
-                <a href="# ">支付宝</a>
-                <b>|</b>
-                <a href="# ">物流</a>
+                @endforeach
             </p>
         </div>
         <div class="footer-bd ">
             <p>
-                <a href="# ">关于恒望</a>
-                <a href="# ">合作伙伴</a>
-                <a href="# ">联系我们</a>
-                <a href="# ">网站地图</a>
                 <em>© 2015-2025 Hengwang.com 版权所有</em>
             </p>
         </div>
@@ -521,98 +513,10 @@
         </div>
     </div>
 </div>
+
 <script>
     window.jQuery || document.write('<script src="/model/home/basic/js/jquery.min.js "><\/script>');
 </script>
 <script type="text/javascript " src="/model/home/basic/js/quick_links.js "></script>
-<div class="audio-box" id="mu">
-    <button class="mu" style="color:red;"><font size="3">></font></button>
-        <div class="audio-container">
-
-            <div class="audio-view">
-                <div class="audio-cover"></div>
-                <div class="audio-body">
-                    <h3 class="audio-title">未知歌曲</h3>
-                    <div class="audio-backs">
-                        <div class="audio-this-time">00:00</div>
-                        <div class="audio-count-time">00:00</div>
-                        <div class="audio-setbacks">
-                            <i class="audio-this-setbacks">
-                                <span class="audio-backs-btn"></span>
-                            </i>
-                            <span class="audio-cache-setbacks">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="audio-btn">
-                    <div class="audio-select">
-                        <div action="prev" class="icon-fast-backward"></div>
-                        <div action="play" data-on="icon-play" data-off="icon-pause" class="icon-play"></div>
-                        <div action="next" class="icon-fast-forward"></div>
-                        <!--<div action="menu" class="icon-list-alt"></div>-->
-                        <div action="volume" class="icon-volume-up">
-                            <div class="audio-set-volume">
-                                <div class="volume-box">
-                                    <i><span  class="audio-backs-btn"></span></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    <script type="text/javascript" src="/model/home/mu/js/audio.js"></script>
-<script type="text/javascript">
-    // $("#mu").slideUp(1000);
-    // $("button").click(function(){
-//   $("div").animate({left:'250px'});
-// }); 
-
-    $(".mu").click(function(){
-        if($(".mu").text() == '>') {
-            $("#mu").animate({left:'1160px'});
-            $(".mu").text('<');
-        } else {
-            $("#mu").animate({left:'0px'});
-            $(".mu").text('>');
-        }
-    });
-    window.onload = function() {
-        
-        var setConfig = {
-
-            song : [
-                {
-
-                    title : 'Despacito (Remix)',
-                    src : '/model/home/mu/mp3/Luis Fonsi、Daddy Yankee、Justin Bieber - Despacito (Remix).flac',
-                    cover : '/model/home/mu/images/de.jpg'
-                },
-                {
-
-                    title : '为你我受冷风吹',
-                    src : '/model/home/mu/mp3/林忆莲 - 为你我受冷风吹.flac',
-                    cover : '/model/home/mu/images/de.jpg'
-                }
-            ],
-            error : function(meg){
-
-                console.log(meg);
-            }
-        };
-        var audioFn = audioPlay(setConfig);
-
-        if(audioFn){
-
-            //开始加载音频,true为播放,false不播放
-            audioFn.loadFile(1);
-        }
-        
-    }
-</script>
-</body>
 
 </html>
