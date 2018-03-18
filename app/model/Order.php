@@ -13,10 +13,10 @@ class Order extends Model
     public $timestamps = false;
 
     //与商品表是一对多关系
-    public function goods()
-    {
-   		return $this->hasMany('App\model\Goods','oid'); 
-    }
+    // public function goods()
+    // {
+   	// 	return $this->hasMany('App\model\Goods','oid'); 
+    // }
 
 
     //与前台用户表的属于关系

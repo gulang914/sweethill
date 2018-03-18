@@ -68,19 +68,15 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $address = Address::find($id);
         //查询订单详情表中的商品名
         $order = Order::find($id);
-        // dump($order->goods);
-    
-        // 获取商品名
-        $data = $order->goods;
-        foreach ($data as $key => $value) {
-            $value = $value;
-        }
-        // dd($value->goods_name);
-        $goods = $value->goods_name;
-
+        // 地址表id
+        $aid = $order->aid;
+        $gid = $order->gid;
+        $address = Address::find($aid);
+        // dd($address);
+        $goods = Goods::find($gid);
+        // dd($goods);
 
         return view('admin.order.detail',['address'=>$address,'goods'=>$goods]);
     }
@@ -91,9 +87,16 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function orderedit($id)
     {
-        //
+        $order = Order::find($id);
+        $order->status = 2;
+        $res = $order->save();
+        if($res){
+            return redirect('/admin/order');
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**

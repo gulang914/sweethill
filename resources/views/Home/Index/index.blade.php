@@ -102,10 +102,10 @@
     <!--轮播 -->
     <div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
         <ul class="am-slides">
-            <li class="banner1"><a href="/model/home/introduction.html"><img src="{{ $onecar['car_img'] }}" /></a></li>
-            <li class="banner2"><a><img src="{{ $twocar['car_img'] }}" /></a></li>
-            <li class="banner3"><a><img src="{{ $threecar['car_img'] }}" /></a></li>
-            <li class="banner4"><a><img src="{{ $forecar['car_img'] }}" /></a></li>
+            <li class="banner1"><a href="/model/home/introduction.html"><img src="{{ $onecar['car_img'] }}" style="width: 1044px;" /></a></li>
+            <li class="banner2"><a><img src="{{ $twocar['car_img'] }}" style="width: 1044px;" /></a></li>
+            <li class="banner3"><a><img src="{{ $threecar['car_img'] }}" style="width: 1044px;"/></a></li>
+            <li class="banner4"><a><img src="{{ $forecar['car_img'] }}" style="width: 1044px;"/></a></li>
 
         </ul>
     </div>
@@ -185,24 +185,7 @@
                 });
             })
         </script>
-
-
-
-
-        <!--走马灯 -->
-        <!-- 广告 -->
-        @foreach($adv as $k => $v)
-        <div class="marqueen">
-            <span class="marqueen-title">商城头条</span>
-            <div class="demo">
-                <ul>
-                    <li><a target="_blank" href="#"><span>[特惠]</span>{{ $v['adv_disc'] }}</a></li>
-                    <li><a target="_blank" href="#"><span>[公告]</span>{{ $v['adv_post'] }}</a></li>
-                </ul>
-                <div class="advTip"><img src="{{ $v['adv_img'] }}"/></div>
-            </div>
-        </div>
-        @endforeach
+      
         <div class="clear"></div>
     </div>
     <script type="text/javascript">
@@ -222,6 +205,48 @@
         }
     </script>
 </div>
+<!-- 推荐位 -->
+<div class="am-g am-g-fixed recommendation">
+                        <div class="clock am-u-sm-3" "="">
+                            <img src="/model/home/images/2016.png ">
+                            <p>今日<br>推荐</p>
+                        </div>
+                        @foreach($recommend as $k => $v )
+                       
+                        <div class="am-u-sm-4 am-u-lg-3 ">
+                            <div class="info ">
+                                <h3>{{ $v['re_text'] }}</h3>
+                                <h4>{{ $v['re_detail'] }}</h4>
+                            </div>
+                            <div class="recommendationMain one">
+                                <img src="{{ $v['re_img'] }}" style="width: 120px">
+                            </div>
+                        </div>
+                        @endforeach
+
+
+
+
+                       <!--  <div class="am-u-sm-4 am-u-lg-3 ">
+                            <div class="info ">
+                                <h3>囤货过冬</h3>
+                                <h4>让爱早回家</h4>
+                            </div>
+                            <div class="recommendationMain two">
+                                <img src="/model/home/images/tj1.png ">
+                            </div>
+                        </div>
+                        <div class="am-u-sm-4 am-u-lg-3 ">
+                            <div class="info ">
+                                <h3>浪漫情人节</h3>
+                                <h4>甜甜蜜蜜</h4>
+                            </div>
+                            <div class="recommendationMain three ">
+                                <img src="/model/home/images/tj2.png ">
+                            </div>
+                        </div> -->
+
+                    </div>
 <div class="shopMainbg">
 
     <div id="f1">
@@ -386,7 +411,7 @@
     <div id="sidebar">
         <div id="wrap">
             <div id="prof" class="item ">
-                <a href="# ">
+                <a href="{{ url('/user') }}">
                     <span class="setting "></span>
                 </a>
                 <div class="ibar_login_box status_login ">
@@ -406,21 +431,17 @@
 
             </div>
             <div id="shopCart " class="item ">
-                <a href="{{ url('/cart') }} ">
+                <a href="{{ url('/cart') }}">
                     <span class="message "></span>
                 </a>
                 <p>
                     购物车
                 </p>
-                <p class="cart_num ">0</p>
             </div>
 
 
             <div class="quick_toggle ">
-                <li class="qtitem ">
-                    <a href="{{url('/user/')}}"><span class="kfzx "></span></a>
-                    <div class="mp_tooltip ">意见反馈<i class="icon_arrow_right_black "></i></div>
-                </li>
+             
                 <!--二维码 -->
                 <li class="qtitem ">
                     <a href="#none "><span class="mpbtn_qrcode "></span></a>

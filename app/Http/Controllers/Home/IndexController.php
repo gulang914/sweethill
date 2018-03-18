@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use Session;
 use App\model\Config;
+use App\model\recommend;
 use App\model\Carousel;
 use App\model\Adv;
 class IndexController extends Controller
@@ -62,9 +63,12 @@ class IndexController extends Controller
         $forecar = $car[3];
 
         //商城公告
-        $adv = Adv::get();
+        // $adv = Adv::get();
 
-        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar, 'adv'=>$adv]);
+        //推荐位
+        $recommend = recommend::get();
+        // dd($recommend);
+        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar,'recommend'=>$recommend]);
 
     }
 

@@ -85,7 +85,7 @@
 
             <div class="nav white">
                 <div class="logoBig">
-                    <li><img src="/model/home/images/logobig.png" /></li>
+                   <a href="{{url('/index')}}"><li><img src="/model/home/images/logobig.png" /></li></a>
                 </div>
 
                 <div class="search-bar pr">

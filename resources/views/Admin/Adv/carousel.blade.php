@@ -43,7 +43,7 @@
                                             <div class="am-form-group am-form-file">
                                                 <!-- 展示上传的图片 -->
                                                 <div  class="tpl-form-file-img">
-                                                    <img src="{{$data['car_img']}}" id="img1" alt="图片加载失败">
+                                                    <img src="{{$data['car_img']}}" style="width: 400px" id="img1" alt="图片加载失败">
                                                 </div>
                                                 <!-- 这是提交按钮 -->
                                                 <!-- <button type="text" class="am-btn am-btn-danger am-btn-sm">
