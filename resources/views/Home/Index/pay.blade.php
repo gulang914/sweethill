@@ -35,7 +35,7 @@
 					<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
 				</div>
 				<div class="topMessage my-shangcheng">
-					<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+					<div class="menu-hd MyShangcheng"><a href="{{url('/user/index')}}" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 				</div>
 				<div class="topMessage mini-cart">
 					<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
@@ -130,15 +130,22 @@
 				            success: function(data) {
 				            	// console.log(data);
 				            	if(data.status == 1){
-				            		layer.alert('设置成功', {
-														  icon: 6,
-														  skin: 'layer-ext-moon'
-														})
+				          //   		layer.alert('设置成功', {
+														//   icon: 6,
+														//   skin: 'layer-ext-moon'
+														// });
+
+				            		layer.msg('设置成功', {
+													  icon: 6,
+													  time: 1000 //1秒关闭（如果不配置，默认是3秒）
+													}, function(){
+													  parent.location.reload();
+											});
 								}else{
 									layer.alert('设置失败', {
 														  icon: 5,
 														  skin: 'layer-ext-moon'
-														})
+														});
 								}
 				            },
 				            error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -170,11 +177,6 @@
 				            success: function(data) {
 				            	// console.log(data);
 				            	if(data.status == 1){
-				          //   		layer.alert('删除成功', {
-														//   icon: 6,
-														//   skin: 'layer-ext-moon',
-														//   time: 5000
-														// })
 									layer.msg('删除成功', {
 													  icon: 6,
 													  time: 1000 //1秒关闭（如果不配置，默认是3秒）
@@ -315,14 +317,17 @@
 								</p>
 							</div>
 
-							<!--信息 -->
+					
+							<!-- form表单提交订单信息 -->
+							<form id="dingdan" method="POST">
+								<!-- {{ csrf_field() }} -->
 							<div class="order-go clearfix">
 								<!-- 支付页面的订单情况 -->
 								<div class="pay-confirm clearfix">
 									<div class="box">
 										<div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：</em>
 											<span class="price g_price ">
-                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">244.00</em>
+                                   				 <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee" name="totalmoney">244.00</em>
 											</span>
 										</div>
 
@@ -331,16 +336,16 @@
 											<p class="buy-footer-address">
 												<span class="buy-line-title buy-line-title-type">寄送至：</span>
 												<span class="buy--address-detail">
-													<span class="dist">{{ $addr['address'] }}</span>区
-													<span class="street">{{ $addr['address_detail'] }}</span>
+													<span class="dist" name="address">{{ $addr['address'] or '' }}</span>
+													<span class="street" name="address_detail">{{ $addr['address_detail'] or '' }}</span>
 												</span>
-												</span>
+												
 											</p>
 											<p class="buy-footer-address">
 												<span class="buy-line-title">收货人：</span>
 												<span class="buy-address-detail">   
-                                         <span class="buy-user">{{ $addr['name'] }} </span>
-												<span class="buy-phone">{{ $addr['phone'] }}</span>
+                                        		 <span class="buy-user" id="name" name="name">{{ $addr['name'] or ''}} </span>
+												<span class="buy-phone" id="tel" name="phone">{{ $addr['phone'] or ''}}</span>
 												</span>
 											</p>
 										</div>
@@ -348,13 +353,67 @@
 
 									<div id="holyshit269" class="submitOrder">
 										<div class="go-btn-wrap">
-											<a id="J_Go" href="{{ url('/index/success') }}" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
+											<a id="order" href="#" class="btn-go " tabindex="0" title="点击此按钮，提交订单">提交订单</a>
+											<!-- <input type="submit" value="提交"> -->
 										</div>
+										<!-- 点击提交订单会生成订单 -->
 									</div>
 									<div class="clear"></div>
 								</div>
 							</div>
+						</form>
 						</div>
+						<script type="text/javascript">
+							$('#order').click(function(){
+								// 获取的订单表中的信息。 还需要商品id。？
+								var money = $('#J_ActualFee').text();
+								var address = $('.dist').text();
+								var address_detail = $('.street').text();
+								var name = $('#name').text();
+								var phone = $('#tel').text();
+								console.log(money);
+								console.log(address);
+								console.log(address_detail);
+								console.log(name);
+								console.log(phone);
+
+
+
+								//获取
+								// var data = $("#dingdan").serializeArray(); 
+								// console.log(data);    			
+								$.ajax({
+							            type: "POST",
+							            url: "/index/payorder",
+										headers: {
+								            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+								        },
+							            data: {'money':money, 'address':address, 'address_detail':address_detail, 'name':name, 'phone':phone}, //要发送的订单数据
+								    	async:true,
+								    	cache:false,
+							            success: function(data) {
+							            	// console.log(data);
+							    //         	if(data.status == 1){
+							    //       			layer.msg('添加成功', {
+											// 					  icon: 6,
+											// 					  anim: 4,
+											// 					  time: 1000 //1秒关闭（如果不配置，默认是3秒）
+											// 					}, function(){
+											// 					  parent.location.reload()
+											// 			});
+											// }else{
+											// 	layer.alert('添加失败', {
+											// 						  icon: 5,
+											// 						  skin: 'layer-ext-moon'
+											// 						})
+											// }
+							            },
+							            error: function(XMLHttpRequest, textStatus, errorThrown) {
+							                alert("上传失败，请检查网络后重试");
+							            }
+							        });
+							});
+						</script>
 
 						<div class="clear"></div>
 					</div>

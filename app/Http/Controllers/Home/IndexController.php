@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use DB;
 use Session;
 use App\model\Config;
+use App\model\Carousel;
+use App\model\Adv;
 class IndexController extends Controller
 {
     /**
@@ -51,7 +53,18 @@ class IndexController extends Controller
             $cates[] = Cate::where('pid',$v->id)->get();
         }
         $users = Session()->get('users');
-        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users]);
+
+        //前台轮播图
+        $car = Carousel::get();
+        $onecar = $car[0];
+        $twocar = $car[1];
+        $threecar = $car[2];
+        $forecar = $car[3];
+
+        //商城公告
+        $adv = Adv::get();
+
+        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar, 'adv'=>$adv]);
 
     }
 
