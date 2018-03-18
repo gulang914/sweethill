@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e60e216b-5b4e-4609-90a4-e8bf782e1df8" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/SuccessController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/Home/Index/success.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Users.php" afterPath="$PROJECT_DIR$/app/model/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -646,15 +642,15 @@
       <workItem from="1521161682595" duration="21952000" />
       <workItem from="1521215563193" duration="866000" />
       <workItem from="1521276899713" duration="23880000" />
-      <workItem from="1521354667023" duration="8210000" />
+      <workItem from="1521354667023" duration="8800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324268000" />
+    <option name="totallyTimeSpent" value="324858000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="1" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
