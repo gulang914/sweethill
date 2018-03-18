@@ -20,8 +20,10 @@ class AddressController extends Controller
         //查询数据 根据用户的id查。 用户模型与地址模型是一对多的关系。
         //获取用户id  根据uid查
         // 3是从session中取出现在登陆的用户的id
-        // $uid = session('id');                        ---------------------------------
-        $address = Address::where('uid', 3)->get();
+        $users = session('users');
+        $uid = $users['id'];
+        $address = Address::where('uid',$uid)->get();
+        // dd($address);
         return view('home.index.address',['address'=>$address]);
     }
 
@@ -65,12 +67,10 @@ class AddressController extends Controller
         // dump($data['name']);
         //插入数据
         $add = new Address;
-
         //获取session中id。//添加地址时也应该插入uid，uid 从session中获取。
-        // $uid = session('id');
-        // $address->uid = $uid;
-        
-        //$add->uid = $uid;
+        $users = session('users');
+        $uid = $users['id'];
+        $add->uid = $uid;
         $add->name = $data['name'];
         $add->phone = $data['phone'];
         $add->address = $address;
@@ -177,10 +177,9 @@ class AddressController extends Controller
     {
         //接收ajax传来的要修改的默认地址的id
         $addid = $request->addid;
-        
-        //修改状态status 1变为 0          uid == 3是从sessoin中获取的。-----------------------------------------
-        //$uid = session('id');
-        DB::table('Address')->where('uid', 3)->where('status', 1)->update(['status' => 0]);
+        $users = session('users');
+        $uid = $users['id'];
+        DB::table('Address')->where('uid', $uid)->where('status', 1)->update(['status' => 0]);
 
         // 根据获取的id（地址表中的id）修改status值。
         $address = Address::find($addid);

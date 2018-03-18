@@ -186,7 +186,7 @@ Route::post('index/deleteaddress','Home\AddressController@deleteAddress');
 Route::resource('index/pay','Home\PayController');
 //前台支付页面地址添加路由，用ajax
 Route::post('index/addaddress','Home\PayController@addaddress');
-
 //前台提交订单到支付成功界面
 Route::resource('index/success','Home\SuccessController');
-
+//前台提交订单ajax，生成订单。
+Route::post('index/payorder','Home\OrderController@addorder');

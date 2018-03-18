@@ -18,11 +18,14 @@ class PayController extends Controller
      */
     public function index()
     {
-         // $uid = session('id');                        ---------------------------------
-        $address = Address::where('uid', 3)->get();
+        //session中获取用户id
+        $users = session('users');
+        $uid = $users['id'];
+        // dd($id);                        
+        $address = Address::where('uid', $uid)->get();
 
         //获取登陆用户的id，并且地址状态为默认选中状态。支付界面的订单详情。
-        $addr = Address::where('uid', 3)->where('status',1)->get();
+        $addr = Address::where('uid', $uid)->where('status',1)->get();
         foreach ($addr as $key => $value) {
             $addr = $value;
         }
@@ -30,7 +33,7 @@ class PayController extends Controller
         //$uid = session('id');
         //
        // $order = Order::where('uid', $uid)->where('gid',gid)->first();
-
+        // dd($address);
         return view('home.index.pay',['address'=>$address,'addr'=>$addr]);
     }
 
@@ -120,8 +123,10 @@ class PayController extends Controller
 
         $address = new Address; 
         //获取session中id。//添加地址时也应该插入uid，uid 从session中获取。
-        // $uid = session('id');
-        // $address->uid = $uid;    -------------------------------------------------------
+        //session中获取用户id
+        $users = session('users');
+        $uid = $users['id'];
+        $address->uid = $uid;
         $address->name = $name;
         $address->phone = $phone;
         $address->address = $addr;
