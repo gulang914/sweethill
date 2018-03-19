@@ -372,16 +372,20 @@
                         </div> -->
                         <div class="clear"></div>
 
-                       <!--PC版-->
-                        <div id="SOHUCS" sid="33"></div>
-                        <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
-                        <script type="text/javascript">
-                        window.changyan.api.config({
-                        appid: 'cytvJTGWq',
-                        conf: 'prod_4efd6514d309331e3480575261c12f73'
-                        });
-                        </script>
-                        <div class="clear"></div>
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2159458"></script>
+<!-- UY END -->
+<!--PC版-->
+<!-- <div id="SOHUCS" ></div>
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cytvJTGWq',
+conf: 'prod_4efd6514d309331e3480575261c12f73'
+});
+</script> -->
+
                     <!--PC版-->
 <!--PC和WAP自适应版-->
 <!-- <div id="SOHUCS" ></div> 

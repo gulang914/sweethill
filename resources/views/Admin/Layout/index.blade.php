@@ -204,7 +204,6 @@
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
               {{Session::get('user')['username']}}
           </span>
-                    <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
                 </div>
             </div>
 

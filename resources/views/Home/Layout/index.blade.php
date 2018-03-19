@@ -4,7 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="uyan_auth" content="6a21d65dc3" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="keywords" content="{{Session::get('content')['content']}}">
     <title>{{Session::get('content')['title']}}</title>
 
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/font-awesome.min.css">
@@ -71,7 +73,7 @@
 <div class="nav white">
     <div class="logo"><img src="/model/home/images/logo.png" /></div>
     <div class="logoBig">
-        <li><img src="/model/home/images/logobig.png" /></li>
+        <li><img src="{{url(Session::get('content')['logo'])}}" style="height:100px;"  /></li>
     </div>
 
     <div class="search-bar pr">
@@ -116,11 +118,11 @@
                     </a>
                     <div class="ibar_login_box status_login">
                         <div class="avatar_box">
-                            <p class="avatar_imgbox"><img src="/model/home/images/no-img_mid_.jpg" /></p>
-                            <ul class="user_info">
-                                <li>用户名：sl1903</li>
-                                <li>级&nbsp;别：普通会员</li>
-                            </ul>
+                            <p class="avatar_imgbox"><img src="{{Session::get('users')['photo']}} /></p>
+                            <ul class="user_info ">
+                            <li>用户名:{{Session::get('users')['nickname']}}</li>
+                            <li>手机号:{{Session::get('users')['phone']}}</li>
+                        </ul>
                         </div>
                         <div class="login_btnbox">
                             <a href="/model/home/#" class="login_order">我的订单</a>

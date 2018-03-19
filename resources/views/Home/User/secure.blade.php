@@ -75,18 +75,6 @@
 										</a>
 									</div>
 								</li>
-								<li>
-									<i class="i-safety-security"></i>
-									<div class="m-left">
-										<div class="fore1">安全问题</div>
-										<div class="fore2"><small>保护账户安全，验证您身份的工具之一。</small></div>
-									</div>
-									<div class="fore3">
-										<a href="question.html">
-											<div class="am-btn am-btn-secondary">认证</div>
-										</a>
-									</div>
-								</li>
 							</ul>
 						</div>
 					</div>
