@@ -27,6 +27,7 @@ class CateController extends Controller
             $search = Session(['cate_search']);
         } else {
             $search = '';
+            Session(['cate_search'=>$search]);
         }
         //分页
         if(!empty($request['perPage'])) {

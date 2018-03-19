@@ -1253,3 +1253,45 @@ response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </TemplateSMS>
 </Response>
 
+request body = <TemplateSMS>
+                    <to>15666405096</to>
+                    <appId>8aaf070862046099016217e150ec0489</appId>
+                    <templateId>1</templateId>
+                    <datas><data>8379</data><data>5</data></datas>
+                  </TemplateSMS>
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8aaf070862046099016217e150970483/SMS/TemplateSMS?sig=3569CB7A0E75C8561417E6588E7A7378
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Response>
+    <statusCode>112310</statusCode>
+    <statusMsg>【短信】应用未上线，模板短信接收号码外呼受限</statusMsg>
+</Response>
+
+request body = <TemplateSMS>
+                    <to>15666405096</to>
+                    <appId>8aaf070862046099016217e150ec0489</appId>
+                    <templateId>1</templateId>
+                    <datas><data>3182</data><data>5</data></datas>
+                  </TemplateSMS>
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8aaf070862046099016217e150970483/SMS/TemplateSMS?sig=EE2E9D53F38F4D7D5D10B6CEBA84976D
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Response>
+    <statusCode>112310</statusCode>
+    <statusMsg>【短信】应用未上线，模板短信接收号码外呼受限</statusMsg>
+</Response>
+
+request body = <TemplateSMS>
+                    <to>17600048183</to>
+                    <appId>8aaf070862046099016217e150ec0489</appId>
+                    <templateId>1</templateId>
+                    <datas><data>3339</data><data>5</data></datas>
+                  </TemplateSMS>
+request url = https://app.cloopen.com:8883/2013-12-26/Accounts/8aaf070862046099016217e150970483/SMS/TemplateSMS?sig=C347FC08D34E5C0C7B769F2442D6F938
+response body = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Response>
+    <statusCode>000000</statusCode>
+    <TemplateSMS>
+        <smsMessageSid>1307f0123b0e4743a7d0922260098043</smsMessageSid>
+        <dateCreated>20180319093544</dateCreated>
+    </TemplateSMS>
+</Response>
+

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\model\Cate;
+use App\model\Goods;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -63,8 +64,17 @@ class IndexController extends Controller
 
         //商城公告
         $adv = Adv::get();
+//dd($cates);
+        //分类商品列表
 
-        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar, 'adv'=>$adv]);
+        foreach ($cate as $k=>$v) {
+            foreach ($cates[$k] as $a) {
+                $goods[] = Goods::where('cid',$a->id)->take(6)->get();
+         }
+        }
+//        dd($goods['0']['0']->goods_name);
+//        dd($goods);
+        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar, 'adv'=>$adv,'goods'=>$goods]);
 
     }
 

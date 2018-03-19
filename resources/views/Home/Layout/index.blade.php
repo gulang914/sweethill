@@ -71,7 +71,7 @@
 <div class="nav white">
     <div class="logo"><img src="/model/home/images/logo.png" /></div>
     <div class="logoBig">
-        <li><img src="/model/home/images/logobig.png" /></li>
+        <li><img src="/model/home/images/logobig.png"/></li>
     </div>
 
     <div class="search-bar pr">

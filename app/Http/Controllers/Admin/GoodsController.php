@@ -58,6 +58,7 @@ class GoodsController extends Controller
             $search = Session(['goods_search']);
         } else {
             $search = '';
+            Session(['goods_search'=>$search]);
         }
         //分页
         if(!empty($request['perPage'])) {
@@ -233,6 +234,7 @@ class GoodsController extends Controller
             $search = Session(['goods_search']);
         } else {
             $search = '';
+            Session(['goods_search'=>$search]);
         }
         //分页
         if(!empty($request['perPage'])) {

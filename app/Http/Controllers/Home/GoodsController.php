@@ -23,7 +23,6 @@ class GoodsController extends Controller
         $pid = $cate->pid;
         if($pid == 0){
             $id = Cate::where('pid',$id)->lists('id');
-
         }
         $goods = Goods::where('cid',$id)->get();
 
