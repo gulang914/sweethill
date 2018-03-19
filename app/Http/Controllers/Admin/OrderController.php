@@ -77,7 +77,6 @@ class OrderController extends Controller
         // dd($address);
         $goods = Goods::find($gid);
         // dd($goods);
-
         return view('admin.order.detail',['address'=>$address,'goods'=>$goods]);
     }
 

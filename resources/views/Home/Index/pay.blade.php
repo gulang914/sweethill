@@ -389,12 +389,14 @@
 							$('#order').click(function(){
 								// 获取的订单表中的信息。 还需要商品id。？
 								var gid = $('.gid').val();
+								var type = $('.sku-line').text();
 								var aid = $('.aid').val();
 								var money = $('.style-large-bold-red').text();
+
                                 if(aid == ''){
                                     return false;
 								}
-                                window.location.href = '/index/success?gid='+gid+'&aid='+aid+'&money='+money;
+                                window.location.href = '/index/success?gid='+gid+'&aid='+aid+'&money='+money+'&type='+type;
 							});
 						</script>
 

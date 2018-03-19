@@ -24,14 +24,12 @@ class SuccessController extends Controller
         $users = session('users');
         $uid = $users['id'];
         $order_member = date('YmdHis',time()).rand('1111','9999');
-//        $order = new Order;
-//
-//        $order->gid = $gid;
-//        $order->aid = $aid;
-//        $order->totalmoney = $money;
-//        $order->uid = $uid;
-//        $order->order_member = $order_member;
-        $res = Order::create(['gid'=>$gid,'aid'=>$aid,'uid'=>$uid,'order_member'=>$order_member,'totalmoney'=>$money,'status'=>1]);
+        $order_time = date('Y-m-d H:i:s',time());
+
+        $type = $request->type;
+        // dd($type);                        //订单生成时间
+
+        $res = Order::create(['gid'=>$gid,'aid'=>$aid,'uid'=>$uid,'order_member'=>$order_member,'totalmoney'=>$money,'status'=>1,'order_time'=>$order_time,'type'=>$type]);
 
         if($res){
             $addr =Address::find($aid);
