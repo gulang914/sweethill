@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>框架</title>
+    <meta name="keywords" content="{{Session::get('content')['content']}}">
+    <title>{{Session::get('content')['title']}}</title>
 
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/model/home/mu/css/audio.css">
@@ -85,7 +86,7 @@
 
             <div class="nav white">
                 <div class="logoBig">
-                    <li><img src="/model/home/images/logobig.png" /></li>
+                    <li><img src="{{url(Session::get('content')['logo'])}}" style="height:100px;" /></li>
                 </div>
 
                 <div class="search-bar pr">
@@ -145,14 +146,12 @@
         <div class="footer">
             <div class="footer-hd">
                 <p>
-                    <a href="#">恒望科技</a>
-                    <b>|</b>
-                    <a href="#">商城首页</a>
-                    <b>|</b>
-                    <a href="#">支付宝</a>
-                    <b>|</b>
-                    <a href="#">物流</a>
-                </p>
+                <b style="color:#000;">友情链接：</b>
+                        @foreach(Session::get('link') as $k => $v)
+                        <a href="{{$v['url']}}">{{$v['name']}}</a>
+                        <b>|</b>
+                        @endforeach
+            </p>
             </div>
             <div class="footer-bd">
                 <p>
@@ -184,24 +183,6 @@
                 <ul>
                     <li><a href="{{url('index/order')}}">订单管理</a></li>
                     <li> <a href="/model/home/change.html">退款售后</a></li>
-                </ul>
-            </li>
-            <li class="person">
-                <a href="#">我的资产</a>
-                <ul>
-                    <li> <a href="/model/home/coupon.html">优惠券 </a></li>
-                    <li> <a href="/model/home/bonus.html">红包</a></li>
-                    <li> <a href="/model/home/bill.html">账单明细</a></li>
-                </ul>
-            </li>
-
-            <li class="person">
-                <a href="#">我的小窝</a>
-                <ul>
-                    <li> <a href="/model/home/collection.html">收藏</a></li>
-                    <li> <a href="/model/home/foot.html">足迹</a></li>
-                    <li> <a href="/model/home/comment.html">评价</a></li>
-                    <li> <a href="/model/home/news.html">消息</a></li>
                 </ul>
             </li>
 

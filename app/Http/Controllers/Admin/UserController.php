@@ -143,6 +143,7 @@ class UserController extends Controller
         $res = DB::table('user')->where('id',$id)->update($input);
         //判断是否修改成功
         if($res) {
+            Session::put('user',$user);
             return redirect('admin/user');
         } else {
             return back()->withErrors('修改失败');

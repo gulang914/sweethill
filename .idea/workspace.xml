@@ -2,68 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e60e216b-5b4e-4609-90a4-e8bf782e1df8" name="默认的" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/029a0ec6f4378a791d214268841d3cdf.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/07a832af2154bdc908e097f8e53f794c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/104e3cc965ed7c57a7d55cd164474e7f.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/15817b055101c86f0d52df3bed6b0e4f.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/1a43dffa7d08ec4bcb5a2d435e09b455.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/1cacd3b4946690a025f29a4d1853da66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/2303df112fbc4ecd1a7f2bd7367816cc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/2af146b4ad87b12844033a42b8770133.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/2dacf4709a2aeaac003641bf5458205d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/30791d4a90b9352953fa02ac61ac75ed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/387d758e380d4b6c299e91c4e07d5978.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/3b563b06820c20a43ef85536a8aed468.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/44e73bd18a4793c6f1a886e376e6e4c3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/47013ccc315aa215c252dbf87005db1a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/4d198bbde5e550eda94812173ff18dc5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/536626958104097c052bd81fed657f55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/5a62990c88ac0000949594b1cde6112d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/5f2f7a1e205236563f2d8b08b2a81a60.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/64d09c28b9046fcc218600c4e0f011bb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/68345ca01978b17ce21f4155996c2b40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/725e5555737d8f4829916839a8e0618d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/7c5e56f6f4335962cc2b9ca3687fc119.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/85b98d49140c238e74993fb84f580195.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/8a06f9f192f58e0485fdc95403adeed4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/8b50a9dc5bf8d2a4db3f640280183d9a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/901e66790e77282368da63e94cef4b97.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/91894fbadd0a216d715bf493f4bf622c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/9f1d385df584587f5b870161fde770e5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/a00f80e45f1a3e69665d20075e8d64c6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/b695115146704280569a2702f0481ccd.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/bbfe2980ecadc81913eb1464bfe6bff7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/c15c0b6f20d8eb0a31e552ee43dc7c49.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/c1c8cfd40d359d7ce214c871df12bf62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/c7d043b51099cd13b403425adf41e12f.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/cc9155ffdb3893831dcf7af4b1ebd0d6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/d3e1601633204ec7479b0d16a673647a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/d46244ba55e52ee310543d059e2e8ae9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/dc86b5ec000c96f1c658243462da741c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/e5cac82492d2d526edca9fb5efbc5afe.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/e5e2c36ceffa0d24a3db7815c11584e4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/eb262480391c408ab59ac6fae9672dde.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/ecd1cc1daa61836799177fc6e44a8f7c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/ecfd36c15809478e320b6d03d61340fe.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/f1878be0c458c982ffa30dfb109c4a14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/upload/image/goods/ff04bfbee5ddbdecd953f8ebf80b7085.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/5a4a0e859c1e0be3f89ef116cdc62f00.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/5a4a0e859c1e0be3f89ef116cdc62f00.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/6b5af1f762d420e726728108c15cd5f7.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/6b5af1f762d420e726728108c15cd5f7.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/7a61ebd30a8e99826da6de9013732db1.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/7a61ebd30a8e99826da6de9013732db1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/9c4a72b0fae94d656a7842891db517a9.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/9c4a72b0fae94d656a7842891db517a9.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/ed9c76cb8e38039ede3e26823e6420d4.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/ed9c76cb8e38039ede3e26823e6420d4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/ef41fc56d7d527c0afe2cee256f5cca1.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/ef41fc56d7d527c0afe2cee256f5cca1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload/image/goods/fa36c9babbf2535e7c9c8c37a282d2e4.jpg" afterPath="$PROJECT_DIR$/public/upload/image/goods/fa36c9babbf2535e7c9c8c37a282d2e4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/GoodsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/GoodsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/config/20180319011855943.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024311443.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024328447.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024359579.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024531984.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024553307.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024606188.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/user/20180319024724513.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/users/20180319023144410.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Users.php" afterPath="$PROJECT_DIR$/app/model/Users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.txt" afterPath="$PROJECT_DIR$/log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/cate/list.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/cate/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Admin/Layout/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Goods/detal.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Goods/detal.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Index/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Index/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Index/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Index/register.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Index/success.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Index/success.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/Layout/user.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/Layout/user.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/User/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/User/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/Home/User/secure.blade.php" afterPath="$PROJECT_DIR$/resources/views/Home/User/secure.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,58 +45,11 @@
         <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="394">
-              <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="6c3df8026f2cd4147204379baf20d4d9" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/framework/views/6c3df8026f2cd4147204379baf20d4d9">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="319" column="24" lean-forward="false" selection-start-line="319" selection-start-column="24" selection-end-line="319" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoodsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/GoodsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Home/Goods/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="45" column="66" lean-forward="false" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="76" column="20" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding />
+              <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+              <folding>
+                <element signature="e#6127#6131#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#b#0;n#p#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,7 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/IndexController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/../PHP198BBS/config.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/cate/index.blade.php" />
@@ -229,18 +141,19 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/SuccessController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/Home/Goods/cart.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Home/Index/success.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Home/Goods/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Home/Goods/detal.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GoodsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/cate/list.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/GoodsController.php" />
         <option value="$PROJECT_DIR$/storage/framework/views/6c3df8026f2cd4147204379baf20d4d9" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" />
         <option value="$PROJECT_DIR$/resources/views/Home/Index/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Index/success.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Home/Index/register.blade.php" />
       </list>
     </option>
   </component>
@@ -257,8 +170,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-43" />
+    <option name="y" value="3" />
     <option name="width" value="1456" />
     <option name="height" value="876" />
   </component>
@@ -692,15 +605,15 @@
       <workItem from="1521276899713" duration="23880000" />
       <workItem from="1521354667023" duration="25535000" />
       <workItem from="1521396011699" duration="2867000" />
-      <workItem from="1521421241932" duration="9632000" />
+      <workItem from="1521421241932" duration="10119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354092000" />
+    <option name="totallyTimeSpent" value="354579000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="1" />
+    <frame x="-43" y="3" width="1456" height="876" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -739,13 +652,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/goods/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="61" column="106" lean-forward="false" selection-start-line="61" selection-start-column="106" selection-end-line="61" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/goods_detal/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -944,7 +850,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Users.php">
+    <entry file="file://$PROJECT_DIR$/app/model/users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="22" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="22" selection-end-column="5" />
@@ -997,30 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/SuccessController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="37" column="73" lean-forward="false" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
-          <folding>
-            <element signature="e#45#67#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11486">
-          <caret line="47" column="35" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="47" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/success.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/cate/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1375">
@@ -1061,19 +943,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/pay.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="100">
+          <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/6c3df8026f2cd4147204379baf20d4d9">
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="319" column="24" lean-forward="false" selection-start-line="319" selection-start-column="24" selection-end-line="319" selection-end-column="24" />
+        <state relative-caret-position="300">
+          <caret line="30" column="62" lean-forward="true" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/success.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="45" column="54" lean-forward="true" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/SuccessController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="37" column="73" lean-forward="false" selection-start-line="37" selection-start-column="73" selection-end-line="37" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Home/Layout/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="120" column="63" lean-forward="false" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="97" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#li#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1521434042943" expanded="false" signature="5991:6004" ph="..." />
+            <marker date="1521434042943" expanded="false" signature="7109:7120" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,14 +991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="76" column="20" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/GoodsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1101,11 +1003,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/GoodsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/6c3df8026f2cd4147204379baf20d4d9">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="319" column="24" lean-forward="false" selection-start-line="319" selection-start-column="24" selection-end-line="319" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Home/Index/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
-          <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-          <folding />
+          <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+          <folding>
+            <element signature="e#6127#6131#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#b#0;n#p#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
