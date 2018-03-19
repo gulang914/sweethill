@@ -82,7 +82,13 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        $res = $order->delete();
+        if($res){
+            return redirect('/index/order')->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 
     /**
@@ -125,8 +131,8 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function deleteorder($id)
+    public function deleteorder(Request $request)
     {
-        echo 123;
+        dd($request);
     }
 }

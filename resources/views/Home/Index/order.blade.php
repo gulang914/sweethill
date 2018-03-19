@@ -2,6 +2,27 @@
 @section('content')
 <div class="user-order">
 
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@if(Session::has('success'))
+<div class="alert alert-info">
+ 	{{Session::get('success')}} 
+</div>
+@endif
+<script type="text/javascript">
+	setInterval(function(){
+		$('.alert-info').hide();
+	},2000);
+</script>
+
 						<!--标题 -->
 						<div class="am-cf am-padding">
 							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">订单管理</strong> / <small>Order</small></div>
@@ -51,6 +72,7 @@
 										@foreach($order as $k => $v)
 										<div class="order-status5">
 											<div class="order-title">
+												
 												<div class="dd-num">订单编号：<a href="javascript:;">{{ $v['order_member'] }}</a></div>
 												<span>成交时间：{{ $v['order_time'] }}</span>
 												<!-- <em>店铺：小桔灯</em> -->
@@ -81,7 +103,7 @@
 
 															<!-- 商品的单价 -->
 															<div class="item-price">
-																￥{{ $price }}
+																￥{{ $price}}
 															</div>
 														</li>
 														<li class="td td-number">
@@ -125,13 +147,72 @@
 														</li>
 														@if($v['status'] <= 2)
 														<li class="td td-change">
-															<a href="#">
-																<div class="am-btn am-btn-danger anniu">
-																	删除订单
-																</div>
-															</a>
+															
+																<!-- <div class="am-btn am-btn-danger anniu"> -->
+																	<form action="/index/order/{{ $v['id'] }}" method="get">
+																		<!-- <input type="hidden" name="id" value="{{ $v['id'] }}"> -->
+																		{{ csrf_field() }}
+																		<a href="#">
+																			<input type="submit" value="删除订单" class="am-btn am-btn-danger anniu">
+																		</a>
+																	</form>
+																<!-- </div> -->
 														</li>
 														@endif
+
+															<script type="text/javascript">
+																// $('.delete').click(function(){
+																	
+																// 	var oid = $('.oid').val();
+																// 	console.log(oid);
+
+									                                
+									                                // window.location.href = '/index/success?gid='+gid+'&aid='+aid+'&money='+money+'&type='+type;
+																// });
+
+																// 删除地址
+																// $('.delete').click(function(){
+																// 	alert(1);
+																// 	//获取id
+																// 	var addid = $(this).parent('.new-addr-btn').find('.addressid').val();
+																// 	// console.log(addid);	
+																// 	var formData = new FormData();
+																// 	formData.append('addid',addid);				
+																	// console.log(addid);
+																	// $.ajax({
+																 //            type: "POST",
+																 //            url: "/index/deleteaddress",
+																	// 		headers: {
+																	//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+																	//         },
+																 //            data: formData, //要发送的数据
+																 //            contentType: false,
+																 //            processData: false,
+																	//     	async:true,
+																	//     	cache:false,
+																 //            success: function(data) {
+																 //            	// console.log(data);
+																 //            	if(data.status == 1){
+																	// 				layer.msg('删除成功', {
+																	// 								  icon: 6,
+																	// 								  time: 1000 //1秒关闭（如果不配置，默认是3秒）
+																	// 								}, function(){
+																	// 								  parent.location.reload()
+																	// 						});
+																	// 			}else{
+																	// 				layer.alert('删除失败', {
+																	// 									  icon: 5,
+																	// 									  skin: 'layer-ext-moon'
+																	// 									})
+																	// 			}
+																 //            },
+																 //            error: function(XMLHttpRequest, textStatus, errorThrown) {
+																 //                alert("上传失败，请检查网络后重试");
+																 //            }
+																 //        });
+																// });
+															</script>
+
 													</div>
 												</div>
 											</div>
@@ -229,7 +310,7 @@
 															</li>
 															<li class="td td-price">
 																<div class="item-price">
-																	￥{{ $price }}
+																	￥{{ $price}}
 																</div>
 															</li>
 															<li class="td td-number">
@@ -335,7 +416,7 @@
 															</li>
 															<li class="td td-price">
 																<div class="item-price">
-																	￥{{ $price }}
+																	￥{{ $price}}
 																</div>
 															</li>
 															<li class="td td-number">
@@ -438,7 +519,7 @@
 															</li>
 															<li class="td td-price">
 																<div class="item-price">
-																	￥{{ $price }}
+																	￥{{ $price}}
 																</div>
 															</li>
 															<li class="td td-number">
