@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\model\Order;
 use App\model\Goods;
+use DB;
 
 class OrderController extends Controller
 {
@@ -17,14 +18,32 @@ class OrderController extends Controller
      * @return 前台订单页面
      */
     public function index()
-    {
-        //查询订单数据表，将数据绑定到模板中
-        //根据用户的id查询该用户的订单，根据该用户的订单查询商品信息 三表联查。
-        $order = Order::all();
-        $goods = Goods::all();
-        // dd($order);
-            
-        return view('home.index.order',['order'=>$order,'goods'=>$goods]);
+    {   
+        //获取session中用户的id
+        $users = session('users');
+        $uid = $users['id'];
+        //用户的所有订单
+        $order = Order::where('uid',$uid)->get();
+        // dd($order);        
+
+        //根据用户id获取订单表中的商品gid。
+        // DB::table('order')->where('uid',$uid)->get()
+        $gid = DB::table('order')->where('uid',$uid)->value('gid');
+        // dd($gid);
+
+        //根据商品的id获取商品的信息。
+        $goods = Goods::where('id', $gid)->first();
+        // dd($goods);
+
+        //查商品单价在商品详情表中。
+        $price = $goods->goodsdetail->goods_price;
+        // dd($price);
+
+        //获取商品对应的标签
+        
+
+        
+        return view('home.index.order',['order'=>$order,'goods'=>$goods,'price'=>$price]);
     }
 
     /**
@@ -46,13 +65,13 @@ class OrderController extends Controller
     public function addorder(Request $request)
     {
 //        money':money, 'address':address, 'address_detail':address_detail, 'name':name, 'phone':phone
-        $money = $request->money;
-        $address = $request->address;
-        $address_detail = $request->address_detail;
-        $name = $request->name;
-        $phone = $request->phone;
-        $users = session('users');
-        $uid = $users['id'];
+        // $money = $request->money;
+        // $address = $request->address;
+        // $address_detail = $request->address_detail;
+        // $name = $request->name;
+        // $phone = $request->phone;
+        // $users = session('users');
+        // $uid = $users['id'];
     }
 
     /**

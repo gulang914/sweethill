@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use Session;
 use App\model\Config;
+use App\model\recommend;
 use App\model\Carousel;
 use App\model\Adv;
 class IndexController extends Controller
@@ -62,9 +63,7 @@ class IndexController extends Controller
         $threecar = $car[2];
         $forecar = $car[3];
 
-        //商城公告
-        $adv = Adv::get();
-//dd($cates);
+
         //分类商品列表
 
         foreach ($cate as $k=>$v) {
@@ -74,7 +73,13 @@ class IndexController extends Controller
         }
 //        dd($goods['0']['0']->goods_name);
 //        dd($goods);
-        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar, 'adv'=>$adv,'goods'=>$goods]);
+//        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar, 'adv'=>$adv,'goods'=>$goods]);
+        // $adv = Adv::get();
+
+        //推荐位
+        $recommend = recommend::get();
+        // dd($recommend);
+        return view('home/index/index',['cate'=>$cate,'cates'=>$cates,'users',$users,'onecar'=>$onecar, 'twocar'=>$twocar, 'threecar'=>$threecar, 'forecar'=>$forecar,'recommend'=>$recommend,'goods'=>$goods]);
 
     }
 

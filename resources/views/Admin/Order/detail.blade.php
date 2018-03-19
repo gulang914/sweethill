@@ -16,32 +16,32 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">收货人姓名 <span class="tpl-form-line-small-title">name</span></label>
                                         <div class="am-u-sm-12">
-                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="{{$address->name}}">
+                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" value="{{$address->name}}" disabled="none">
                                             <!-- <small>请填写标题文字10-20字左右。</small> -->
                                         </div>
                                     </div>
 									<div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">收货人电话 <span class="tpl-form-line-small-title">phone</span></label>
                                         <div class="am-u-sm-12">
-                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="{{$address->phone}}">
+                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" value="{{$address->phone}}" disabled="none">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">收货人地址 <span class="tpl-form-line-small-title">address</span></label>
                                         <div class="am-u-sm-12">
-                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="{{$address->address}}">
+                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" value="{{$address->address}}" disabled="none">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">收货人详细地址 <span class="tpl-form-line-small-title">add_detail</span></label>
                                         <div class="am-u-sm-12">
-                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="{{$address->address_detail}}">
+                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="" value="{{$address->address_detail}}" disabled="none">
                                         </div>
                                     </div>
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">商品名称 <span class="tpl-form-line-small-title">product name</span></label>
                                         <div class="am-u-sm-12">
-                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="{{ $goods }}">
+                                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="" value="{{ $goods['goods_name'] }}" disabled="none">
                                         </div>
                                     </div>
                                     <div class="am-form-group">

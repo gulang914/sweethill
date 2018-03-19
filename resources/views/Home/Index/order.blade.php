@@ -63,18 +63,17 @@
 																
 																<!-- 商品的图片 -->
 																<a href="#" class="J_MakePoint">
-																	<img src="/model/home/images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg">
+																	<img src="{{ $goods['goods_photo'] }}" class="itempic J_ItemImg">
 																</a>
 															</div>
 															<div class="item-info">
 																<div class="item-basic-info">
 																	
 																	<!-- 商品名称 -->
-																	<a href="#">
-																		<p>美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
-																		<p class="info-little">颜色：12#川南玛瑙
-																		<br>包装：裸装 </p>
-																	</a>
+																	
+																		<p>商品名称：{{ $goods['goods_name'] }}</p>
+																		<p class="info-little">类型：{{$v['type']}}</p>
+																		
 																</div>
 															</div>
 														</li>
@@ -82,42 +81,54 @@
 
 															<!-- 商品的单价 -->
 															<div class="item-price">
-																{{ $v['totalmoney'] }}
+																￥{{ $price }}
 															</div>
 														</li>
 														<li class="td td-number">
 															<div class="item-number">
-																<span>×</span>2
+																<span>×</span>{{(int)($v['totalmoney']/$price)}}
 															</div>
 														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
-																
+																<div class="item-operation">
+																	<a href="refund.html">退款</a>
+																</div>
 															</div>
 														</li>
 													</ul>
 										
 												</div>
 												<div class="order-right">
+												
+													
+											
 													<li class="td td-amount">
 														<!-- 商品总价 -->
+
 														<div class="item-amount">
-															合计：676.00
-															<p>含运费：<span>10.00</span></p>
+															合计：{{ $v['totalmoney'] }}
 														</div>
 													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
+																@if($v['status'] == 2)
 																<p class="Mystatus">交易成功</p>
-																<p class="order-info"><a href="orderinfo.html">订单详情</a></p>
-																<p class="order-info"><a href="logistics.html">查看物流</a></p>
+																@endif
+																@if($v['status'] == 1)
+																	<p class="Mystatus">买家已付款</p>
+																@endif
+																<!-- <p class="order-info"><a href="orderinfo.html">订单详情</a></p> -->
+																<p class="order-info"><a href="logistics.html"></a></p>
 															</div>
 														</li>
+														@if($v['status'] <= 2)
 														<li class="td td-change">
 															<div class="am-btn am-btn-danger anniu">
 																删除订单</div>
 														</li>
+														@endif
 													</div>
 												</div>
 											</div>
@@ -439,18 +450,15 @@
 																<div class="item-pic">
 																	<a href="#" class="J_MakePoint">
 																		<!-- 此图片是商品图片，从商品表获取 -->
-																		<img src="/model/home/images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg">
+																		<img src="{{ $goods['goods_photo'] }}" class="itempic J_ItemImg">
 																	</a>
 																</div>
 																<div class="item-info">
 																	<div class="item-basic-info">
-																		<!-- 商品名从商品表中获取 -->
-																		<a href="#">
-																			<p>美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
-																			<p class="info-little">颜色：12#川南玛瑙
-																				<br>包装：裸装 </p>
-																		</a>
-																	</div>
+																	<!-- 商品名称 -->
+																		<p>商品名称：{{ $goods['goods_name'] }}</p>
+																		<p class="info-little">类型：{{$v['type']}}</p>
+																</div>
 																</div>
 															</li>
 															<li class="td td-price">
@@ -460,7 +468,7 @@
 															</li>
 															<li class="td td-number">
 																<div class="item-number">
-																	<span>×</span>2
+																	<span>×</span>{{(int)($v['totalmoney']/$price)}}
 																</div>
 															</li>
 															<li class="td td-operation">
@@ -482,8 +490,9 @@
 														<div class="move-right">
 															<li class="td td-status">
 																<div class="item-status">
+																@if($v['status'] == 1)
 																	<p class="Mystatus">买家已付款</p>
-																	<p class="order-info"><a href="orderinfo.html">订单详情</a></p>
+																@endif
 																</div>
 															</li>
 															<li class="td td-change">
@@ -523,8 +532,14 @@
 										</div>
 									</div>
 
+									
+
+
+
+
 									<div class="order-main">
 										<div class="order-list">
+										
 											<!-- 待收货标签中的订单 -->
 											@foreach($order as $k => $v)
 											<div class="order-status3">
@@ -581,9 +596,9 @@
 															<li class="td td-status">
 																<div class="item-status">
 																	<p class="Mystatus">卖家已发货</p>
-																	<p class="order-info"><a href="orderinfo.html">订单详情</a></p>
-																	<p class="order-info"><a href="logistics.html">查看物流</a></p>
-																	<p class="order-info"><a href="#">延长收货</a></p>
+																	<!-- <p class="order-info"><a href="orderinfo.html">订单详情</a></p> -->
+																	<p class="order-info"><a href="logistics.html"></a></p>
+																	<p class="order-info"><a href="#"></a></p>
 																</div>
 															</li>
 															<li class="td td-change">
@@ -627,6 +642,8 @@
 
 									<div class="order-main">
 										<div class="order-list">
+											
+
 											<!--待评价中的订单	-->
 										@foreach($order as $k => $v)
 										<div class="order-status4">
@@ -683,8 +700,8 @@
 															<li class="td td-status">
 																<div class="item-status">
 																	<p class="Mystatus">交易成功</p>
-																	<p class="order-info"><a href="orderinfo.html">订单详情</a></p>
-																	<p class="order-info"><a href="logistics.html">查看物流</a></p>
+																	<!-- <p class="order-info"><a href="orderinfo.html">订单详情</a></p> -->
+																	<p class="order-info"><a href="logistics.html"></a></p>
 																</div>
 															</li>
 															<li class="td td-change">

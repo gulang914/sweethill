@@ -83,12 +83,68 @@
                                                 @endif
                                                 
                                                 <td class="am-text-middle">
-                                                    <div class="tpl-table-black-operation">
+                                                    <div class="tpl-table-black-operation" style="display: inline;">
                                                             <a href="/admin/order/{{ $v['id'] }}" class="tpl-table-black-operation-del">
-                                                                <i class="am-icon-trash"></i> 订单详情
+                                                                订单详情
                                                             </a>
                                                     </div>
+                                                     @if($v['status'] == 1)
+                                                        <div class="tpl-table-black-operation" style="display: inline;">
+                                                            <a href="/admin/orderedit/{{ $v['id'] }}" class="tpl-table-black-operation-del">
+                                                                点击发货
+                                                            </a>
+                                                        </div>
+                                                     @endif
                                                 </td>
+                                               <!--  <script type="text/javascript">
+                                                    $('.fahuo').click(function(){
+                                                        alert(1);
+                                                            //获取
+                                                            var addid = $(this).parent('.new-addr-btn').find('.addressid').val();
+                                                            // console.log(addid);  
+                                                            var formData = new FormData();
+                                                            formData.append('addid',addid);             
+                                                            $.ajax({
+                                                                    type: "POST",
+                                                                    url: "/index/addredit",
+                                                                    headers: {
+                                                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                                    },
+                                                                    data: formData, //要发送的数据
+                                                                    contentType: false,
+                                                                    processData: false,
+                                                                    async:true,
+                                                                    cache:false,
+                                                                    success: function(data) {
+                                                                        // console.log(data);
+                                                                  //       if(data.status == 1){
+                                                                  // //        layer.alert('设置成功', {
+                                                                  //                               //   icon: 6,
+                                                                  //                               //   skin: 'layer-ext-moon'
+                                                                  //                               // });
+
+                                                                  //           layer.msg('设置成功', {
+                                                                  //                             icon: 6,
+                                                                  //                             time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                                                                  //                           }, function(){
+                                                                  //                             parent.location.reload();
+                                                                  //                   });
+                                                                  //       }else{
+                                                                  //           layer.alert('设置失败', {
+                                                                  //                                 icon: 5,
+                                                                  //                                 skin: 'layer-ext-moon'
+                                                                  //                               });
+                                                                  //       }
+                                                                    },
+                                                                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                                                        alert("上传失败，请检查网络后重试");
+                                                                    }
+                                                                });
+                                                        });
+                                                </script>
+                                                -->
+
+
                                             </tr>
                                                 @endforeach
                                      

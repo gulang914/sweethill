@@ -67,7 +67,8 @@ Route::resource('admin/goods','Admin\GoodsController');
 
 //后台订单路由
 Route::resource('admin/order','Admin\OrderController');
-
+//后台订单修改状态路由
+Route::get('admin/orderedit/{id}','Admin\OrderController@orderedit');
 //后台广告模块文件上传路由
 Route::post('admin/upload','Admin\AdvController@upload');
 //后台广告模块路由

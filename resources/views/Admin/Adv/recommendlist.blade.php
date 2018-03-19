@@ -14,6 +14,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>推荐位文本</th>
+                                            <th>推荐位详情</th>
                                             <th>推荐位图片</th>
                                             <th>操作</th>
                                         </tr>
@@ -23,6 +24,7 @@
                                         <tr class="gradeX">
                                             <td>{{$v['id']}}</td>
                                             <td>{{$v['re_text']}}</td>
+                                            <td>{{$v['re_detail']}}</td>
                                             <!-- <td>{{$v['car_img']}}</td> -->
                                             
                                             <td><img src="{{$v['re_img']}}" style="width: 70px"></td>

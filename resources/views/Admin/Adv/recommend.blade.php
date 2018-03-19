@@ -19,6 +19,7 @@
                                     <a href="javascript:;" class="am-icon-cog"></a>
                                 </div>
                             </div>
+
                             <div class="widget-body am-fr">
 
                                 <form action="{{url('admin/recommend')}}" id="art_form" class="am-form tpl-form-line-form" method="post" enctype="multipart/form-data">
@@ -26,13 +27,18 @@
                                     <input type="hidden" name="id" value="{{$data['id']}}">
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">推荐文本 <span class="tpl-form-line-small-title">Title</span></label>
-                                        
                                         <div class="am-u-sm-9">
                                             <input type="text" class="tpl-form-input" id="user-name" name="re_text" value="{{$data['re_text']}}" placeholder="">
                                             <!-- <small>请填写标题文字4-6字左右。</small> -->
                                         </div>
                                     </div>
-                                   
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">推荐文本内容<span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" class="tpl-form-input" id="user-name" name="re_text" value="{{$data['re_detail']}}" placeholder="">
+                                            <!-- <small>请填写标题文字4-6字左右。</small> -->
+                                        </div>
+                                    </div>
                                     
 
                                     <div class="am-form-group">
