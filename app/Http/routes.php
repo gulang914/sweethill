@@ -193,3 +193,5 @@ Route::post('index/addaddress','Home\PayController@addaddress');
 Route::resource('index/success','Home\SuccessController');
 //前台提交订单ajax，生成订单。
 Route::post('index/payorder','Home\OrderController@addorder');
+//前台用户中心删除订单
+Route::post('index/order','Home\OrderController@deleteorder');

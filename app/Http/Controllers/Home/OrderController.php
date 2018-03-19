@@ -42,7 +42,7 @@ class OrderController extends Controller
         //获取商品对应的标签
         
 
-        
+
         return view('home.index.order',['order'=>$order,'goods'=>$goods,'price'=>$price]);
     }
 
@@ -117,5 +117,16 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+     /**
+     * 前台用户中心删除订单
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteorder($id)
+    {
+        echo 123;
     }
 }
