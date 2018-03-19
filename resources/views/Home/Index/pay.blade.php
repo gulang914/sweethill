@@ -48,7 +48,7 @@
 			<div class="nav white">
 				<div class="logo"><img src="/model/home/images/logo.png" /></div>
 				<div class="logoBig">
-					<li><img src="{{Session::get('users')['photo']}}" /></li>
+					<li><img src="{{url(Session::get('content')['logo'])}}" style="width:150px;"/></li>
 				</div>
 				<div class="search-bar pr">
 					<a name="index_none_header_sysc" href="#"></a>

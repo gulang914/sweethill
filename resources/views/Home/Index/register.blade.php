@@ -20,12 +20,12 @@
 
 	<body>
 		<div class="login-boxtitle">
-			<a href="home/demo.html"><img alt="" src="/model/home/images/logobig.png" /></a>
+			<a href="home/demo.html"><img alt="" src="{{url(Session::get('content')['logo'])}}" /></a>
 		</div>
 
 		<div class="res-banner">
 			<div class="res-main">
-				<div class="login-banner-bg"><span></span><img src="{{Session::get('users')['photo']}}" /></div>
+				<div class="login-banner-bg"><span></span><img src="/model/home/images/big.jpg" /></div>
 				<div class="login-box">
 
 						<div class="am-tabs" id="doc-my-tabs">

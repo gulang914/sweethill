@@ -82,7 +82,7 @@
     <div class="nav white">
         <div class="logo"><img src="/model/home/images/logo.png" /></div>
         <div class="logoBig">
-            <li><img src="{{url(Session::get('content')['logo'])}}"  /></li>
+            <li><img src="{{url(Session::get('content')['logo'])}}" style="width: 200px;" /></li>
         </div>
 
         <div class="search-bar pr">
